@@ -92,12 +92,15 @@ h1,h2,.logo span{font-family:'Playfair Display',Georgia,serif;font-weight:700}
 .hero-card .wm{aspect-ratio:4/3;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,#5B6F80,#3B4A57);color:#fff;font:700 44px 'Playfair Display',Georgia,serif;text-align:center;padding:20px}
 .hero{background:radial-gradient(1100px 420px at 85% 0,#B9C4CE66,transparent),#F4F5F6} .hero h1 span{color:#5B6F80}
 </style>
+<style>.doc .ph{width:100%;aspect-ratio:1;object-fit:cover;object-position:center 15%;border-radius:16px;margin-bottom:14px;background:#eef1f4}
+.wk .ba{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}.wk figure{margin:0;position:relative}.wk img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;display:block}
+.wk figcaption{position:absolute;left:8px;top:8px;background:rgba(20,30,40,.75);color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:8px}</style>
 </head>
 <body>
 <div class="demo" data-i="demo"></div>
 <header><div class="wrap nav">
   <a href="#top" class="logo"><img class="lg" src="https://ams2-cdn.2gis.com/previews/1254481758355718147/091a59a6-fedb-4864-b213-04070f52b2e0/1/ru/image_128x128.png?api-version=2.0" alt="Just smile dental" onerror="this.outerHTML='<span class=mono>J</span>'"><span data-c="name"></span></a>
-  <nav class="menu"><a href="#services" data-i="m1"></a><a href="#prices" data-i="m2"></a><a href="#doctors" data-i="m3"></a><a href="#reviews" data-i="m4"></a><a href="#contacts" data-i="m5"></a></nav>
+  <nav class="menu"><a href="#services" data-i="m1"></a><a href="#prices" data-i="m2"></a><a href="#doctors" data-i="m3"></a><a href="#works" data-i="m6"></a><a href="#reviews" data-i="m4"></a><a href="#contacts" data-i="m5"></a></nav>
   <div class="right"><div class="lang"><button data-l="ru">RU</button><button data-l="tj">ТҶ</button></div><a class="btn btn-p js-wa" data-i="book"></a></div>
 </div></header>
 
@@ -133,6 +136,15 @@ h1,h2,.logo span{font-family:'Playfair Display',Georgia,serif;font-weight:700}
   <div class="grid g3" id="docs"></div>
 </div></section>
 
+<section id="works"><div class="wrap">
+  <h2 data-i="wkT"></h2><p class="sub" data-i="wkS"></p>
+  <div class="grid g3">
+    <div class="card wk"><div class="ba"><figure><img src="img/w1a.jpg" alt="" loading="lazy"><figcaption data-i="b4"></figcaption></figure><figure><img src="img/w1b.jpg" alt="" loading="lazy"><figcaption data-i="af"></figcaption></figure></div><h3 data-i="w1"></h3></div>
+    <div class="card wk"><div class="ba"><figure><img src="img/w2a.jpg" alt="" loading="lazy"><figcaption data-i="b4"></figcaption></figure><figure><img src="img/w2b.jpg" alt="" loading="lazy"><figcaption data-i="af"></figcaption></figure></div><h3 data-i="w2"></h3></div>
+    <div class="card wk"><div class="ba"><figure><img src="img/w4a.jpg" alt="" loading="lazy"><figcaption data-i="b4"></figcaption></figure><figure><img src="img/w4b.jpg" alt="" loading="lazy"><figcaption data-i="af"></figcaption></figure></div><h3 data-i="w4"></h3></div>
+  </div>
+</div></section>
+
 <section id="reviews"><div class="wrap">
   <h2 data-i="rvT"></h2><p class="sub" data-i="rvS"></p>
   <div class="grid g3" id="revs"></div>
@@ -164,33 +176,33 @@ h1,h2,.logo span{font-family:'Playfair Display',Georgia,serif;font-weight:700}
    НАСТРОЙКА ПОД КЛИЕНТА — меняйте только этот блок.
    Все тексты, цены, телефон и адрес берутся отсюда.
    ========================================================= */
-const CLINIC = {"name": "Just smile dental", "phone": "+992 90 040 05 50", "whatsapp": "992900400550", "address": "г. Душанбе, ул. Маяковского, 79, 1 этаж", "hours": "Круглосуточно, без выходных", "instagram": "@just_smile__dental", "mapLink": "https://2gis.tj/dushanbe/firm/70000001117131247", "years": "5,0 ★", "patients": "4", "rating": "24/7", "currency": "сомони", "services": [["tooth", "Лечение зубов", "Лечение кариеса и каналов.", "Табобати дандон", "Табобати кариес ва каналҳо.", null], ["shine", "Эстетика улыбки", "Красивая и здоровая улыбка — подберём решение на консультации.", "Зебоии табассум", "Табассуми зебо ва солим — дар машварат роҳи ҳалро интихоб мекунем.", null], ["clean", "Профилактика", "Осмотр и рекомендации по уходу за зубами.", "Пешгирӣ", "Муоина ва тавсияҳо оид ба нигоҳубини дандон.", null]], "prices": [], "doctors": [], "reviews": [], "hasRating": true, "geo": [38.553647, 68.747688]};
+const CLINIC = {"name": "Just smile dental", "phone": "+992 90 040 05 50", "whatsapp": "992900400550", "address": "г. Душанбе, 33 мкр, ул. Маяковского, 79", "hours": "Круглосуточно, без выходных", "instagram": "@just_smile__dental", "mapLink": "https://2gis.tj/dushanbe/firm/70000001117131247", "years": "5,0 ★", "patients": "4", "rating": "24/7", "currency": "сомони", "services": [["tooth", "Лечение кариеса и пульпита", "Лечение каналов и реставрация под коффердамом.", "Табобати кариес ва пулпит", "Табобати каналҳо ва барқарорсозӣ бо коффердам.", null], ["crown", "Циркониевые коронки", "Прочные и эстетичные коронки на передние и жевательные зубы.", "Коронкаҳои сирконӣ", "Коронкаҳои мустаҳкам ва зебо барои дандонҳои пеш ва хоянда.", null], ["shine", "Эстетическая реставрация", "Восстановление формы и цвета зуба с точным подбором оттенка.", "Барқарорсозии эстетикӣ", "Барқарор кардани шакл ва ранги дандон бо интихоби дақиқи оҳанг.", null], ["brace", "Брекеты и элайнеры", "Диагностика прикуса, план лечения и выравнивание зубов.", "Брекетҳо ва элайнерҳо", "Ташхиси газиш, нақшаи табобат ва рост кардани дандонҳо.", null], ["clean", "Детская стоматология", "Лечение без страха и профилактика кариеса у детей.", "Дандонпизишкии кӯдакона", "Табобат бе тарс ва пешгирии кариес дар кӯдакон.", null], ["implant", "Цифровое 3D-сканирование", "Сканер вместо слепков — точнее и комфортнее для пациента.", "Сканеркунии рақамии 3D", "Сканер ба ҷои қолаб — дақиқтар ва барои бемор қулайтар.", null]], "prices": [], "doctors": [["img/doc1.jpg", "Якубов Алиджон", "Детский стоматолог, терапевт. Профилактика и лечение кариеса и пульпита, забота о дёснах.", "Дандонпизишки кӯдакона, терапевт. Пешгирӣ ва табобати кариес ва пулпит, нигоҳубини милк.", ""], ["img/doc2.jpg", "Толибов Назар Хусейнович", "Врач-стоматолог. Реставрация зубов, лечение пульпита и периодонтита.", "Духтури дандон. Барқарорсозии дандон, табобати пулпит ва периодонтит.", ""], ["img/doc3.jpg", "Муродалиев Мухаммад", "Стоматолог-ортодонт. Брекеты, элайнеры, диагностика прикуса.", "Дандонпизишк-ортодонт. Брекетҳо, элайнерҳо, ташхиси газиш.", ""]], "reviews": [], "hasRating": true, "geo": [38.553647, 68.747688]};
 const T = {
- ru:{demo:"Демо-версия сайта для клиники Just smile dental. Контакты и услуги взяты из открытой карточки 2GIS.",m1:"Услуги",m2:"Цены",m3:"Врачи",m4:"Отзывы",m5:"Контакты",book:"Записаться",tag:"Стоматологическая клиника · Душанбе",
-  h1:"Здоровые зубы и <span>красивая улыбка</span>",lead:"Приём круглосуточно. Запишитесь в WhatsApp.",
+ ru:{m6:"Работы",wkT:"Наши работы",wkS:"Реальные случаи наших врачей — до и после лечения",b4:"До",af:"После",w1:"Реставрация жевательного зуба",w2:"Восстановление передних зубов",w4:"Лечение каналов и реставрация",demo:"Демо-версия сайта для клиники Just smile dental. Контакты — из 2GIS, врачи и работы — из открытого Instagram клиники.",m1:"Услуги",m2:"Цены",m3:"Врачи",m4:"Отзывы",m5:"Контакты",book:"Записаться",tag:"Стоматологическая клиника · Душанбе",
+  h1:"Здоровые зубы и <span>красивая улыбка</span>",lead:"Стоматология 24/7 в 33 мкр: терапевт, детский стоматолог, ортодонт. Цифровой 3D-сканер и циркониевые коронки.",
   wa:"Записаться в WhatsApp",call:"Позвонить",s1:"рейтинг в 2GIS",s2:"оценок пациентов",s3:"без выходных",
   svT:"Услуги",svS:"Всё для здоровья зубов в одной клинике",from:"от",prT:"Цены",prS:"Прозрачные цены без скрытых доплат",prN:"Точная стоимость — после бесплатной консультации.",free:"бесплатно",
   whT:"Почему выбирают нас",whS:"Четыре причины доверить нам свою улыбку",
-  w:[["Круглосуточно", "Принимаем 24 часа в сутки, без выходных."], ["Удобная оплата", "Электронным кошельком, наличными."], ["Запись в WhatsApp", "Напишите — подберём удобное время."], ["Удобный адрес", "улица Маяковского, 79."]],
-  dcT:"Наши врачи",dcS:"Опытные специалисты с регулярным обучением",exp:"Стаж",yrs:"лет",
+  w:[["Круглосуточно", "Принимаем 24 часа в сутки, без выходных."], ["Цифровой 3D-сканер", "Точные коронки без неприятных слепков."], ["Детский стоматолог", "Лечим детей спокойно и без страха."], ["Ортодонт", "Брекеты и элайнеры для взрослых и детей."]],
+  dcT:"Наши врачи",dcS:"Специалисты по терапии, ортодонтии и детской стоматологии",exp:"Стаж",yrs:"лет",
   rvT:"Отзывы пациентов",rvS:"Рейтинг 5,0 по 4 оценкам в 2GIS",rvBtn:"Читать отзывы в 2GIS",cons:"Стоимость — по записи",ph:"пример",
   bkT:"Запишитесь на бесплатную консультацию",bkS:"Оставьте имя и телефон — администратор перезвонит и подберёт удобное время.",
   fName:"Ваше имя",fPhone:"Телефон",fSel:"Выберите услугу",fBtn:"Записаться",fOk:"Спасибо! Откроется WhatsApp с вашей заявкой.",
   ctT:"Контакты",ctS:"Приходите или напишите нам",cAddr:"Адрес",cPhone:"Телефон",cHours:"Часы",route:"Построить маршрут",mapPh:"Здесь будет карта 2GIS или Google с меткой клиники",
-  fqT:"Частые вопросы",faq:[["Сколько стоит консультация?", "Стоимость уточняйте по телефону или в WhatsApp — ответим быстро."], ["Когда вы работаете?", "Круглосуточно, без выходных."], ["Как можно оплатить?", "Электронным кошельком, наличными."]],
+  fqT:"Частые вопросы",faq:[["Сколько стоит консультация?", "Стоимость уточняйте по телефону или в WhatsApp — ответим быстро."], ["Когда вы работаете?", "Круглосуточно, без выходных."], ["Лечите ли вы детей?", "Да, у нас работает детский стоматолог."], ["Ставите ли вы брекеты и элайнеры?", "Да, ортодонт проведёт диагностику прикуса и составит план лечения."], ["Как можно оплатить?", "Электронным кошельком, наличными."]],
   msg:"Здравствуйте! Хочу записаться"},
- tj:{demo:"Намунаи сомона барои клиникаи Just smile dental. Тамосҳо ва хизматҳо аз корти кушодаи 2GIS гирифта шудаанд.",m1:"Хизматҳо",m2:"Нархҳо",m3:"Духтурон",m4:"Фикрҳо",m5:"Тамос",book:"Сабти ном",tag:"Клиникаи дандонпизишкӣ · Душанбе",
-  h1:"Дандонҳои солим ва <span>табассуми зебо</span>",lead:"Қабули шабонарӯзӣ. Дар WhatsApp сабт шавед.",
+ tj:{m6:"Корҳо",wkT:"Корҳои мо",wkS:"Ҳолатҳои воқеии духтурони мо — пеш ва баъд аз табобат",b4:"Пеш",af:"Баъд",w1:"Барқарорсозии дандони хоянда",w2:"Барқарорсозии дандонҳои пеш",w4:"Табобати канал ва барқарорсозӣ",demo:"Намунаи сомона барои клиникаи Just smile dental. Тамосҳо аз 2GIS, духтурон ва корҳо аз Instagram-и кушодаи клиника.",m1:"Хизматҳо",m2:"Нархҳо",m3:"Духтурон",m4:"Фикрҳо",m5:"Тамос",book:"Сабти ном",tag:"Клиникаи дандонпизишкӣ · Душанбе",
+  h1:"Дандонҳои солим ва <span>табассуми зебо</span>",lead:"Дандонпизишкии 24/7 дар мкр 33: терапевт, дандонпизишки кӯдакона, ортодонт. Сканери рақамии 3D ва коронкаҳои сирконӣ.",
   wa:"Сабт дар WhatsApp",call:"Занг задан",s1:"рейтинг дар 2GIS",s2:"баҳои беморон",s3:"бе истироҳат",
   svT:"Хизматҳо",svS:"Ҳама чиз барои саломатии дандон дар як клиника",from:"аз",prT:"Нархҳо",prS:"Нархҳои шаффоф бе пардохтҳои пинҳонӣ",prN:"Нархи дақиқ — баъд аз муоинаи ройгон.",free:"ройгон",
   whT:"Чаро моро интихоб мекунанд",whS:"Чор сабаб барои эътимод ба мо",
-  w:[["Шабонарӯзӣ", "24 соат дар як шабонарӯз, бе рӯзи истироҳат."], ["Пардохти қулай", "Бо ҳамёни электронӣ, нақд."], ["Сабт дар WhatsApp", "Нависед — вақти қулайро интихоб мекунем."], ["Суроғаи қулай", "улица Маяковского, 79."]],
-  dcT:"Духтурони мо",dcS:"Мутахассисони ботаҷриба бо омӯзиши мунтазам",exp:"Собиқа",yrs:"сол",
+  w:[["Шабонарӯзӣ", "24 соат дар як шабонарӯз, бе рӯзи истироҳат."], ["Сканери рақамии 3D", "Коронкаҳои дақиқ бе қолабҳои ногувор."], ["Дандонпизишки кӯдакона", "Кӯдаконро ором ва бе тарс табобат мекунем."], ["Ортодонт", "Брекетҳо ва элайнерҳо барои калонсолон ва кӯдакон."]],
+  dcT:"Духтурони мо",dcS:"Мутахассисони терапия, ортодонтия ва дандонпизишкии кӯдакона",exp:"Собиқа",yrs:"сол",
   rvT:"Фикри беморон",rvS:"Рейтинги 5,0 аз 4 баҳо дар 2GIS",rvBtn:"Фикрҳоро дар 2GIS хонед",cons:"Нарх — ҳангоми сабт",ph:"намуна",
   bkT:"Барои машварати ройгон сабт шавед",bkS:"Ном ва телефонро гузоред — маъмур занг мезанад ва вақти қулайро интихоб мекунад.",
   fName:"Номи шумо",fPhone:"Телефон",fSel:"Хизматро интихоб кунед",fBtn:"Сабт шудан",fOk:"Ташаккур! WhatsApp бо дархости шумо кушода мешавад.",
   ctT:"Тамос",ctS:"Биёед ё ба мо нависед",cAddr:"Суроға",cPhone:"Телефон",cHours:"Вақти корӣ",route:"Роҳро нишон диҳед",mapPh:"Дар ин ҷо харитаи 2GIS ё Google бо нишони клиника ҷойгир мешавад",
-  fqT:"Саволҳои зиёд додашаванда",faq:[["Машварат чанд пул аст?", "Нархро тавассути телефон ё WhatsApp пурсед — зуд ҷавоб медиҳем."], ["Вақти корӣ кай аст?", "Шабонарӯзӣ, бе рӯзи истироҳат."], ["Чӣ тавр пардохт кардан мумкин аст?", "Бо ҳамёни электронӣ, нақд."]],
+  fqT:"Саволҳои зиёд додашаванда",faq:[["Машварат чанд пул аст?", "Нархро тавассути телефон ё WhatsApp пурсед — зуд ҷавоб медиҳем."], ["Вақти корӣ кай аст?", "Шабонарӯзӣ, бе рӯзи истироҳат."], ["Чӣ тавр пардохт кардан мумкин аст?", "Бо ҳамёни электронӣ, нақд."], ["Шумо кӯдаконро табобат мекунед?", "Ҳа, дар клиника дандонпизишки кӯдакона кор мекунад."], ["Брекет ва элайнер мегузоред?", "Ҳа, ортодонт газишро ташхис карда, нақшаи табобат тартиб медиҳад."]],
   msg:"Салом! Мехоҳам сабт шавам"}
 };
 
@@ -216,7 +228,7 @@ function render(){
   svc.innerHTML=CLINIC.services.map(s=>`<div class="card"><div class="ic">${svg(IC[s[0]])}</div><h3>${tj?s[3]:s[1]}</h3><p>${tj?s[4]:s[2]}</p><div class="price">${s[5]?t.from+" "+fmt(s[5])+" "+CLINIC.currency:t.cons}</div></div>`).join("");
   prc.innerHTML=CLINIC.prices.map(p=>`<tr><td>${tj?p[1]:p[0]}</td><td>${p[2]?fmt(p[2])+" "+CLINIC.currency:t.free}</td></tr>`).join("");
   why.innerHTML=t.w.map((w,i)=>`<div class="card"><div class="ic">${svg(WI[i])}</div><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join("");
-  docs.innerHTML=CLINIC.doctors.map(d=>`<div class="card doc"><div class="av">${d[0]}</div><h3>${d[1]}</h3><p>${tj?d[3]:d[2]}</p><p style="margin-top:8px"><b>${t.exp}:</b> ${d[4]} ${t.yrs}</p></div>`).join("");
+  docs.innerHTML=CLINIC.doctors.map(d=>`<div class="card doc">${d[0].startsWith("img/")?`<img class="ph" src="${d[0]}" alt="${d[1]}" loading="lazy">`:`<div class="av">${d[0]}</div>`}<h3>${d[1]}</h3><p>${tj?d[3]:d[2]}</p>${d[4]?`<p style="margin-top:8px"><b>${t.exp}:</b> ${d[4]} ${t.yrs}</p>`:""}</div>`).join("");
   const hide=(id,on)=>{document.getElementById(id).style.display=on?"none":"";document.querySelectorAll('.menu a[href="#'+id+'"]').forEach(a=>a.style.display=on?"none":"")};
   hide("prices",!CLINIC.prices.length);hide("doctors",!CLINIC.doctors.length);hide("reviews",!CLINIC.hasRating&&!CLINIC.reviews.length);hide("book",!CLINIC.whatsapp);if(!CLINIC.whatsapp)document.querySelectorAll(".js-wa").forEach(a=>a.style.display="none");document.querySelectorAll("[data-c=hours]").forEach(e=>e.textContent=tj?"Шабонарӯзӣ, бе рӯзи истироҳат":CLINIC.hours);document.querySelectorAll(".stats>div").forEach((d,i)=>d.style.display=[CLINIC.years,CLINIC.patients,CLINIC.rating][i]?"":"none");
   revs.innerHTML=!CLINIC.reviews.length?`<div class="card rev" style="grid-column:1/-1;text-align:center"><div class="stars" style="font-size:28px">★★★★★</div><h3 style="font-size:28px">${CLINIC.years.replace(" ★","")}</h3><p>${t.rvS}</p><a class="btn btn-o" style="margin-top:14px" target="_blank" rel="noopener" href="${CLINIC.mapLink}/tab/reviews">${t.rvBtn}</a></div>`:CLINIC.reviews.map(r=>`<div class="card rev"><div class="stars">★★★★★</div><p>${tj?r[1]:r[0]}</p><div class="who">${r[2]}<span class="ph">${t.ph}</span></div></div>`).join("");
