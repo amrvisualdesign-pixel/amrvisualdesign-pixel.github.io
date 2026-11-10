@@ -1,736 +1,304 @@
 <!DOCTYPE html>
-<html lang="en" data-header="bar" data-hero="split" data-tours="grid" data-facts="strip" data-land="grad" data-how="timeline" data-faq="cards" data-contact="center" data-foot="simple" data-mq="yes" data-grad="no" data-theme="light" data-btn="soft" data-order="C">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tajik Travel Agency · Trips across Tajikistan with an experienced local team</title>
-<meta name="description" content="Tajik Travel Agency creates trips across Tajikistan for travelers from all over the world. Our guides show you the main sights of Dushanbe and the natural corners of the country.">
-<meta property="og:title" content="Tajik Travel Agency · Trips across Tajikistan with an experienced local team">
-<meta property="og:description" content="Tajik Travel Agency creates trips across Tajikistan for travelers from all over the world. Our guides show you the main sights of Dushanbe and the natural corners of the country.">
-<meta name="theme-color" content="#10201A">
-<meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-<!-- Demo for Tajik Travel Agency. Facts come from the company's own public profiles; durations and contacts are to be confirmed. -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tajik Travel Agency · City or nature?</title>
+<meta name="description" content="Tajik Travel Agency: trips across Tajikistan, from the sights of Dushanbe to mountain lakes. A local team for travelers from all over the world.">
+<meta name="theme-color" content="#F4EFE6"><meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+<!-- Demo for Tajik Travel Agency (team led by Muhammad). Facts from their public profile; contacts and details to be confirmed. -->
 <style>
-:root{
-  --bg:#F4F7F2; --surface:#FFFFFF; --ink:#18261F; --muted:#5C666B; --line:#E4DCCF; --deep:#10201A; --field:#FCFBF8;
-  --g1:#0E8A64; --g2:#0C7C9C; --g3:#9BD34B; --g4:#F2B33D;
-  --fh:'PT Serif',system-ui,sans-serif; --fb:'PT Sans',system-ui,sans-serif;
-  --r:16px; --r-sm:12px; --wrap:1200px; --pad:24px; --ease:cubic-bezier(.2,.7,.2,1);
-}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--fb);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6;overflow-x:hidden}
-img,svg,canvas{display:block;max-width:100%}
-a{color:inherit}
-h1,h2,h3,.brand,.fact b,.stat b,.giant{font-family:var(--fh)}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:200}
-.skip:focus{left:16px}
-:focus-visible{outline:3px solid var(--g2);outline-offset:3px;border-radius:6px}
-.grad-text{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.progress{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));z-index:120;pointer-events:none}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.01em;min-width:0}
-.brand .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mark{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;display:grid;place-items:center;font-size:15px;font-weight:800}
-nav ul{display:flex;gap:26px;list-style:none}
-nav a{text-decoration:none;font-weight:600;font-size:15px;color:var(--muted);background:linear-gradient(var(--g1),var(--g1)) 0 100%/0 2px no-repeat;transition:background-size .25s var(--ease),color .2s}
-nav a:hover{color:var(--ink);background-size:100% 2px}
-.right{display:flex;align-items:center;gap:10px}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
-.lang button{border:0;background:transparent;font:inherit;font-size:13px;font-weight:700;padding:7px 11px;min-height:36px;border-radius:999px;cursor:pointer;color:var(--muted)}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:12px;width:44px;height:44px;cursor:pointer;color:var(--ink);padding:0;place-items:center}
-.menu-btn svg{width:22px;height:22px}
-.menu-btn .i-close{display:none}
-.menu-btn[aria-expanded="true"] .i-open{display:none}
-.menu-btn[aria-expanded="true"] .i-close{display:block}
-body.lock{overflow:hidden}
-
-/* glass header: floats over the hero */
-[data-header="glass"] header{position:fixed;top:12px;left:12px;right:12px;max-width:1120px;margin:0 auto;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:transparent;transition:background .3s,border-color .3s,box-shadow .3s}
-[data-header="glass"] header::before{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);z-index:-1;transition:background .3s}
-[data-header="glass"] .bar{height:60px;padding:0 10px 0 14px}
-[data-header="glass"] header:not(.scrolled):not(.menu-open) .brand,[data-header="glass"] header:not(.scrolled):not(.menu-open) nav a{color:#fff}
-[data-header="glass"] header:not(.scrolled):not(.menu-open) .lang{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35)}
-[data-header="glass"] header:not(.scrolled):not(.menu-open) .lang button{color:rgba(255,255,255,.85)}
-[data-header="glass"] header:not(.scrolled):not(.menu-open) .lang button[aria-pressed="true"]{background:#fff;color:#111}
-[data-header="glass"] header.scrolled{border-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.10)}
-[data-header="glass"] header.scrolled::before{background:color-mix(in srgb,var(--bg) 82%,transparent)}
-[data-header="glass"] .wrap.bar{max-width:none}
-/* minimal header: logo, language and a menu button on every screen */
-[data-header="minimal"] nav{display:none}
-[data-header="minimal"] .menu-btn{display:grid}
-[data-header="minimal"] header{border-bottom:0;background:color-mix(in srgb,var(--bg) 90%,transparent)}
-
-/* full-screen menu */
-nav.open{display:block!important;position:fixed;top:0;left:0;right:0;bottom:0;z-index:49;padding:110px var(--pad) 40px;overflow-y:auto;background:var(--bg)}
-nav.open::before{content:"";position:absolute;inset:0;background:radial-gradient(700px circle at 100% 0,color-mix(in srgb,var(--g1) 28%,transparent),transparent 60%),radial-gradient(600px circle at 0 100%,color-mix(in srgb,var(--g3) 26%,transparent),transparent 60%);pointer-events:none}
-nav.open ul{position:relative;flex-direction:column;gap:0;max-width:720px;margin:0 auto}
-nav.open li{border-bottom:1px solid var(--line)}
-nav.open a{font-family:var(--fh);font-size:clamp(24px,5vw,40px);font-weight:700;color:var(--ink)!important;display:flex;justify-content:space-between;align-items:center;padding:16px 0;background:none}
-nav.open a::after{content:"→";color:var(--g1)}
-header .bar{position:relative;z-index:51}
-.brand,.right{position:relative;z-index:52}
-
-/* ---------- buttons ---------- */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:14px;font:inherit;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .18s var(--ease),box-shadow .25s,background-position .5s}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(1px) scale(.98)}
-.btn-primary{color:#fff;background:linear-gradient(110deg,var(--g1),var(--g2),var(--g1));background-size:200% 100%;box-shadow:0 10px 26px color-mix(in srgb,var(--g1) 38%,transparent)}
-.btn-primary:hover{background-position:100% 0}
-.btn-ghost{background:transparent;border-color:currentColor;color:inherit}
-.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.wa-ico{width:20px;height:20px;flex:none}
-[data-btn="pill"] .btn{border-radius:999px}
-[data-btn="pill"]{--r:24px;--r-sm:18px}
-[data-btn="square"] .btn{border-radius:4px;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
-[data-btn="square"]{--r:6px;--r-sm:6px}
-[data-btn="square"] .mark{border-radius:8px}
-
-/* ---------- animated gradient canvas ---------- */
-canvas.gfx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:calc(100svh - 68px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;isolation:isolate}
-[data-header="glass"] .hero{min-height:100svh}
-.hero .art{position:absolute;inset:0;z-index:0}
-.hero .art svg{width:100%;height:100%}
-.hero .hero-gfx{z-index:1;mix-blend-mode:soft-light;opacity:.75}
-.hero::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(10,14,18,.30) 0%,rgba(10,14,18,.30) 40%,rgba(10,14,18,.80) 100%)}
-.hero .wrap{position:relative;z-index:3;width:100%;padding-bottom:64px}
-.kicker{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
-.hero h1{font-size:clamp(36px,5.6vw,76px);line-height:1.03;font-weight:800;letter-spacing:-.025em;max-width:15ch}
-.hero p{font-size:clamp(17px,1.6vw,20px);max-width:56ch;margin:22px 0 32px;opacity:.95}
-.hero .actions{display:flex;flex-wrap:wrap;gap:14px}
-.hero .kicker,.hero h1,.hero p{text-shadow:0 2px 16px rgba(0,0,0,.35)}
-[data-enter] .wrap>*{animation:enter .9s var(--ease) both}
-[data-enter] .wrap>*:nth-child(2){animation-delay:.08s}
-[data-enter] .wrap>*:nth-child(3){animation-delay:.16s}
-[data-enter] .wrap>*:nth-child(4){animation-delay:.24s}
-@keyframes enter{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-
-/* hero: living gradient with the photo in an arch (the shape of a Tajik iwan) */
-[data-hero="arch"] .hero{align-items:center}
-[data-hero="arch"] .hero .hero-gfx{mix-blend-mode:normal;opacity:1;z-index:0}
-[data-hero="arch"] .hero::after{background:linear-gradient(90deg,rgba(10,14,18,.42),rgba(10,14,18,.06) 70%)}
-[data-hero="arch"] .hero .art{position:absolute;inset:auto;z-index:3;right:max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));top:50%;transform:translateY(-44%);width:min(36vw,470px);aspect-ratio:3/4;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.35);border:6px solid rgba(255,255,255,.6)}
-[data-hero="arch"] .hero .wrap{padding-top:120px;padding-bottom:90px}
-[data-hero="arch"] .hero h1,[data-hero="arch"] .hero p{max-width:min(54vw,620px)}
-/* hero: split */
-[data-hero="split"] .hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--ink)}
-[data-hero="split"] .hero::after{display:none}
-[data-hero="split"] .hero .art{position:relative;inset:auto;order:2}
-[data-hero="split"] .hero .hero-gfx{mix-blend-mode:normal;opacity:1;width:50%;z-index:0}
-[data-hero="split"] .hero .wrap{order:1;align-self:center;max-width:640px;margin:0 0 0 auto;padding:64px 48px 64px var(--pad)}
-[data-hero="split"] .hero h1{font-size:clamp(34px,4.2vw,60px);max-width:16ch}
-/* hero: centered */
-[data-hero="center"] .hero{align-items:center;text-align:center}
-[data-hero="center"] .hero .wrap{display:flex;flex-direction:column;align-items:center;padding:110px var(--pad) 80px}
-[data-hero="center"] .hero h1{max-width:20ch;font-size:clamp(34px,5vw,70px)}
-[data-hero="center"] .hero p{margin-left:auto;margin-right:auto}
-[data-hero="center"] .hero .actions{justify-content:center}
-/* hero: framed photo on a gradient field */
-[data-hero="framed"] .hero{display:block;min-height:0;padding:22px 0 0;color:#fff}
-[data-hero="framed"] .hero .hero-gfx{mix-blend-mode:normal;opacity:1;z-index:0}
-[data-hero="framed"] .hero::after{background:rgba(10,14,18,.18)}
-[data-hero="framed"] .hero .art{position:relative;inset:auto;z-index:3;height:min(50vh,520px);min-height:320px;max-width:calc(var(--wrap) - 2*var(--pad));margin:0 auto;border-radius:30px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25)}
-[data-header="glass"][data-hero="framed"] .hero{padding-top:90px}
-[data-hero="framed"] .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:12px 48px;align-items:end;padding-top:30px;padding-bottom:40px}
-[data-hero="framed"] .hero .kicker{grid-column:1/-1;margin:0}
-[data-hero="framed"] .hero h1{font-size:clamp(32px,3.6vw,54px);max-width:none}
-[data-hero="framed"] .hero p{margin:0 0 6px}
-[data-hero="framed"] .hero .actions{grid-column:1/-1;margin-top:16px}
-
-/* ---------- marquee of places ---------- */
-.mq{order:0;overflow:hidden;padding:26px 0;background:var(--bg);border-bottom:1px solid var(--line)}
-.mq-track{display:flex;width:max-content;animation:mq 46s linear infinite}
-.mq span{font-family:var(--fh);font-size:clamp(28px,4vw,54px);font-weight:800;white-space:nowrap;padding-right:.6em;background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3),var(--g1));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.01em}
-@keyframes mq{to{transform:translateX(-50%)}}
-[data-mq="no"] .mq{display:none}
-
-/* ---------- sections ---------- */
-main{display:flex;flex-direction:column}
-main>section{padding:100px 0;scroll-margin-top:72px;order:6;position:relative}
-main>.hero{order:0;padding:0}
-#faq{order:8}#contact{order:9}
-[data-order="A"] #routes{order:1}[data-order="A"] #land{order:2}[data-order="A"] #why{order:3}[data-order="A"] #how{order:4}[data-order="A"] #about{order:5}
-[data-order="B"] #why{order:1}[data-order="B"] #land{order:2}[data-order="B"] #routes{order:3}[data-order="B"] #about{order:4}[data-order="B"] #how{order:5}
-[data-order="C"] #about{order:1}[data-order="C"] #routes{order:2}[data-order="C"] #land{order:3}[data-order="C"] #why{order:4}[data-order="C"] #how{order:5}
-[data-order="D"] #land{order:1}[data-order="D"] #why{order:2}[data-order="D"] #routes{order:3}[data-order="D"] #how{order:4}[data-order="D"] #about{order:5}
-.sec-head{max-width:760px;margin-bottom:46px}
-h2{font-size:clamp(30px,3.8vw,50px);line-height:1.08;letter-spacing:-.02em;font-weight:800}
-[data-grad="yes"] main>section:not(.dark):not(.on-grad) h2{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.sec-head p{color:var(--muted);margin-top:14px;font-size:18px}
-.aura{background:radial-gradient(640px circle at 0% 0%,color-mix(in srgb,var(--g3) 16%,transparent),transparent 62%),radial-gradient(560px circle at 100% 100%,color-mix(in srgb,var(--g2) 13%,transparent),transparent 62%)}
-.dark{background:var(--deep);color:#fff}
-.dark .sec-head p{color:#B9C3C6}
-.on-grad{color:#fff;overflow:hidden;isolation:isolate}
-.on-grad>.wrap{position:relative;z-index:2}
-.on-grad .sec-head p,.on-grad .lead{color:rgba(255,255,255,.92)}
-.on-grad::after{content:"";position:absolute;inset:0;background:rgba(10,14,18,.22);z-index:1}
-
-/* scroll reveal */
-html.js .rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-html.js .rv.in{opacity:1;transform:none}
-
-/* ---------- facts ---------- */
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;min-width:0;position:relative;overflow:hidden}
-.fact::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--g1),var(--g2))}
-.fact b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;overflow-wrap:anywhere}
-.fact span{color:var(--muted);font-size:15.5px}
-[data-facts="strip"] .facts{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-[data-facts="strip"] .fact{background:none;border:0;border-radius:0;border-right:1px solid var(--line);padding:30px 26px}
-[data-facts="strip"] .fact::before{display:none}
-[data-facts="strip"] .fact b{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-facts="strip"] .fact:last-child{border-right:0}
-[data-facts="band"] #why{background:var(--deep);color:#fff}
-[data-facts="band"] #why h2{color:#fff;background:none}
-[data-facts="band"] .fact{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
-[data-facts="band"] .fact b{color:#fff}
-[data-facts="band"] .fact span{color:#C6D0D3}
-
-/* ---------- Tajikistan in numbers ---------- */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.stat{min-width:0}
-.stat b{display:block;font-size:clamp(38px,4.6vw,64px);line-height:1;font-weight:800;letter-spacing:-.03em;margin-bottom:12px;white-space:nowrap}
-.stat>span{font-size:15.5px;opacity:.9;display:block;max-width:26ch}
-[data-land="grad"] #land{color:#fff}
-[data-land="light"] #land .stat b{background:linear-gradient(100deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-land="light"] #land .stat{border-top:3px solid var(--g1);padding-top:18px}
-[data-land="light"] #land .stat>span{color:var(--muted);opacity:1}
-
-/* ---------- tours ---------- */
-.tours{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
-.tour{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s;min-width:0}
-.tour.wide{grid-column:span 3}
-.tour:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(20,30,35,.14)}
-.tour .pic{position:relative;aspect-ratio:16/10;overflow:hidden}
-.tour .pic svg{width:100%;height:100%;transition:transform .5s var(--ease)}
-.tour:hover .pic svg,.tour:hover img.ph{transform:scale(1.04)}
-.tour .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
-.tour .dur{align-self:flex-start;font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(100deg,var(--g1),var(--g2));padding:4px 10px;border-radius:999px}
-.tour h3{font-size:22px;line-height:1.2;letter-spacing:-.01em}
-.tour p{color:var(--muted);font-size:15.5px;flex:1}
-.tour .price{font-size:18px;font-weight:800}
-.tour .ask{align-self:flex-start;margin-top:4px;font-weight:700;color:var(--g1);text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;background:linear-gradient(currentColor,currentColor) 0 85%/0 2px no-repeat;transition:background-size .25s var(--ease)}
-.tour .ask:hover{background-size:100% 2px}
-[data-tours="list"] .tours{grid-template-columns:1fr;gap:18px}
-[data-tours="list"] .tour,[data-tours="list"] .tour.wide{grid-column:auto;flex-direction:row}
-[data-tours="list"] .tour .pic{width:42%;flex:none;aspect-ratio:auto;min-height:260px}
-[data-tours="list"] .tour .body{padding:30px 34px;justify-content:center}
-[data-tours="list"] .tour h3{font-size:27px}
-[data-tours="overlay"] .tour{position:relative;min-height:460px;border:0;color:#fff;justify-content:flex-end;background:#222}
-[data-tours="overlay"] .tour .pic{position:absolute;inset:0;aspect-ratio:auto}
-[data-tours="overlay"] .tour .pic::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.8) 100%)}
-[data-tours="overlay"] .tour .body{position:relative;z-index:2;flex:none}
-[data-tours="overlay"] .tour p{color:rgba(255,255,255,.88)}
-[data-tours="overlay"] .tour .ask{color:#fff}
-/* stack: cards pile up while you scroll */
-[data-tours="stack"] .tours{display:block}
-[data-tours="stack"] .tour{position:sticky;top:calc(96px + var(--i,0) * 18px);flex-direction:row;min-height:380px;margin-bottom:34px;box-shadow:0 24px 50px rgba(20,30,35,.16)}
-[data-tours="stack"] .tour .pic{width:50%;flex:none;aspect-ratio:auto}
-[data-tours="stack"] .tour .body{padding:40px;justify-content:center}
-[data-tours="stack"] .tour h3{font-size:clamp(26px,3vw,38px)}
-[data-tours="stack"] .tour:hover{transform:none}
-
-/* ---------- how it works ---------- */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
-.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--fh);font-weight:800;letter-spacing:.06em}
-.step h3{font-size:24px;margin:12px 0 10px;letter-spacing:-.01em}
-[data-how="steps"] #how{background:var(--deep);color:#fff}
-[data-how="steps"] #how .sec-head p{color:#B9C3C6}
-[data-how="steps"] .step{border-top:2px solid rgba(255,255,255,.18);padding-top:24px}
-[data-how="steps"] .step::before{color:var(--g3)}
-[data-how="steps"] .step p{color:#C9D1D3}
-[data-how="timeline"] .steps{position:relative}
-[data-how="timeline"] .steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;border-radius:4px;background:var(--line)}
-[data-how="timeline"] .steps::after{content:"";position:absolute;left:0;top:27px;height:4px;border-radius:4px;width:calc(var(--p,0)*100%);background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3))}
-[data-how="timeline"] .step{position:relative;z-index:1}
-[data-how="timeline"] .step::before{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;font-size:18px;box-shadow:0 0 0 8px var(--bg)}
-[data-how="timeline"] .step p{color:var(--muted)}
-[data-how="cards"] .step{border-radius:var(--r);padding:34px 30px;color:#fff;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(145deg,var(--g1),var(--g2))}
-[data-how="cards"] .step:nth-child(2){background:linear-gradient(145deg,var(--g2),var(--g3))}
-[data-how="cards"] .step:nth-child(3){background:linear-gradient(145deg,var(--g3),var(--g4))}
-[data-how="cards"] .step::before{font-size:64px;line-height:1;opacity:.9;margin-bottom:auto}
-[data-how="cards"] .step p{color:rgba(255,255,255,.92)}
-
-/* ---------- about ---------- */
-.about{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
-.about .pic{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
-.about .pic svg{width:100%;height:100%}
-.about p{font-size:18px;margin-top:18px;opacity:.85}
-.langs{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
-.langs span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
-
-/* ---------- FAQ ---------- */
-.faq-wrap{display:grid;gap:36px}
-.faq-side p{color:var(--muted);margin:14px 0 22px;font-size:18px}
-.faq-side .btn{display:none}
-details{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-weight:700;font-size:19px;position:relative;min-height:44px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:6px;top:15px;font-size:28px;font-weight:500;color:var(--g1);transition:transform .25s var(--ease)}
-details[open] summary::after{transform:rotate(45deg)}
-details p{padding:0 0 22px;color:var(--muted);max-width:68ch}
-[data-faq="split"] .faq-wrap{grid-template-columns:5fr 7fr;gap:60px;align-items:start}
-[data-faq="split"] .faq-side{position:sticky;top:100px}
-[data-faq="split"] .faq-side .btn{display:inline-flex}
-[data-faq="cards"] .faq{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-[data-faq="cards"] details{border:0;background:var(--surface);border-radius:var(--r);padding:6px 26px 6px;position:relative;overflow:hidden;border:1px solid var(--line)}
-[data-faq="cards"] details::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,var(--g1),var(--g3))}
-[data-faq="cards"] summary{cursor:default;padding-right:0}
-[data-faq="cards"] summary::after{display:none}
-
-/* ---------- contact ---------- */
-.contact{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
-.channels{display:flex;flex-direction:column;gap:12px;margin-top:28px}
-.channel{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;text-decoration:none;font-weight:700;min-height:56px;transition:transform .2s var(--ease)}
-.channel:hover{transform:translateY(-2px)}
-.channel small{font-weight:500;color:var(--muted)}
-form{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:7px;min-width:0}
-.field.full{grid-column:1/-1}
-label{font-weight:700;font-size:14px}
-input,select,textarea{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:var(--field);color:var(--ink);min-height:50px;width:100%}
-textarea{min-height:110px;resize:vertical}
-.note{grid-column:1/-1;font-size:13.5px;color:var(--muted)}
-.err{color:#C0362C;font-size:13.5px;font-weight:600;display:none}
-.field.bad .err{display:block}
-.field.bad input{border-color:#C0362C}
-.result{grid-column:1/-1;display:none;background:color-mix(in srgb,var(--g3) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--g3) 40%,transparent);border-radius:10px;padding:16px}
-.result.show{display:block}
-.result a{font-weight:800;color:var(--g1)}
-[data-contact="split"] #contact{background:var(--deep);color:#fff}
-[data-contact="split"] #contact .lead{color:#C9D1D3}
-[data-contact="center"] #contact .contact{grid-template-columns:1fr;max-width:760px;margin:0 auto;text-align:center}
-[data-contact="center"] #contact .channels{flex-direction:row;flex-wrap:wrap;justify-content:center}
-[data-contact="center"] #contact .channel{flex:1 1 200px;background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-[data-contact="center"] #contact .channel small{color:rgba(255,255,255,.85)}
-[data-contact="center"] #contact form{text-align:left;background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.lead{margin-top:14px;font-size:18px}
-
-/* ---------- footer ---------- */
-footer{position:relative;overflow:hidden;isolation:isolate}
-.f-band,.f-giant,.f-cols{display:none}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14.5px;padding:34px 0}
-.foot b{color:var(--ink)}
-.demo-line{font-size:13px;color:var(--muted);opacity:.85;padding-bottom:110px}
-.credits a{color:inherit}
-[data-foot="simple"] footer{border-top:1px solid var(--line)}
-[data-foot="giant"] footer{background:var(--deep);color:#fff;padding-top:70px}
-[data-foot="giant"] .f-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
-[data-foot="giant"] .f-cols h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:12px}
-[data-foot="giant"] .f-cols a,[data-foot="giant"] .f-cols span{display:block;text-decoration:none;opacity:.9;padding:4px 0}
-[data-foot="giant"] .f-giant{display:block;font-weight:800;line-height:.85;letter-spacing:-.04em;font-size:clamp(56px,13vw,210px);white-space:nowrap;margin:56px 0 8px;background:linear-gradient(100deg,var(--g1),var(--g2),var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent}
-[data-foot="giant"] .foot,[data-foot="giant"] .foot b{color:rgba(255,255,255,.75)}
-[data-foot="giant"] .demo-line{color:rgba(255,255,255,.6)}
-[data-foot="band"] .f-band{display:block;position:relative;padding:90px 0;color:#fff;text-align:center}
-[data-foot="band"] .f-band .wrap{position:relative;z-index:2}
-[data-foot="band"] .f-band h2{color:#fff;font-size:clamp(34px,5vw,64px);margin-bottom:26px;background:none}
-[data-foot="band"] .f-band::after{content:"";position:absolute;inset:0;background:rgba(10,14,18,.18);z-index:1}
-
-/* mobile action bar */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:4px}
+button{font:inherit;color:inherit}
+.skip{position:absolute;left:-9999px}.skip:focus{left:14px;top:12px;z-index:99;background:#111;color:#fff;padding:10px 14px}
+.ph{position:relative;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s cubic-bezier(.23,1,.32,1)}
+.ph img.ok{opacity:1}
+.ph .fb{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px}
+.qa-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.23,1,.32,1)}
+.qa-a>div{overflow:hidden}
+button[aria-expanded="true"]+.qa-a{grid-template-rows:1fr}
+.ready{display:none}.ready.show{display:block}
+[data-field] .err{display:none}[data-field].bad .err{display:block}
 .mbar{display:none}
+@media (max-width:620px){.mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:45;transform:translateY(150%);transition:transform .35s cubic-bezier(.23,1,.32,1)}.mbar.on{transform:none}.mbar>*{flex:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 
-/* ---------- dark theme ---------- */
-[data-theme="dark"]{--bg:#0F171A;--surface:#17232A;--line:#26353C;--muted:#9FB0B5;--ink:#ECF1F2;--deep:#081013;--field:#0E161A}
-[data-theme="dark"] .mark{color:#fff}
-
-@media (max-width:1024px){
-  .facts,.stats{grid-template-columns:repeat(2,1fr)}
-  .tour,.tour.wide{grid-column:span 3}
-  .about,.contact,[data-faq="split"] .faq-wrap{grid-template-columns:1fr;gap:36px}
-  [data-faq="split"] .faq-side{position:static}
-  .about .pic{aspect-ratio:16/10;order:-1}
-  [data-hero="split"] .hero{grid-template-columns:1fr}
-  [data-hero="split"] .hero .art{order:0;height:44vh;min-height:280px}
-  [data-hero="split"] .hero .hero-gfx{width:100%;top:44vh;height:auto;bottom:0}
-  [data-hero="split"] .hero .wrap{margin:0;max-width:none;padding:40px var(--pad) 48px}
-  [data-hero="framed"] .hero .wrap{grid-template-columns:1fr}
-  [data-hero="arch"] .hero{flex-direction:column;align-items:stretch}
-  [data-hero="arch"] .hero .art{position:relative;right:auto;top:auto;transform:none;width:min(70vw,360px);margin:110px auto 0}
-  [data-hero="arch"] .hero .wrap{padding-top:34px}
-  [data-hero="arch"] .hero h1,[data-hero="arch"] .hero p{max-width:none}
-  [data-foot="giant"] .f-cols{grid-template-columns:1fr 1fr}
-  [data-tours="stack"] .tour{flex-direction:column;min-height:0}
-  [data-tours="stack"] .tour .pic{width:100%;aspect-ratio:16/10}
-  [data-tours="stack"] .tour .body{padding:24px}
-}
-@media (max-width:820px){
-  nav{display:none}
-  .menu-btn{display:grid}
-  .steps{grid-template-columns:1fr}
-  [data-how="timeline"] .steps::before,[data-how="timeline"] .steps::after{left:27px;right:auto;top:0;bottom:0;width:4px;height:auto}
-  [data-how="timeline"] .steps::after{height:calc(var(--p,0)*100%);bottom:auto}
-  [data-how="timeline"] .step{padding-left:84px}
-  [data-how="timeline"] .step::before{position:absolute;left:0;top:0}
-  [data-faq="cards"] .faq{grid-template-columns:1fr}
-  main>section{padding:76px 0}
-}
-@media (max-width:620px){
-  :root{--pad:18px}
-  .tours{grid-template-columns:1fr}
-  .tour,.tour.wide{grid-column:auto}
-  .facts{grid-template-columns:1fr 1fr;gap:12px}
-  .fact{padding:18px}
-  .fact b{font-size:19px}
-  .stats{gap:26px 16px}
-  .stat b{font-size:34px}
-  .stat>span{font-size:14px}
-  form{grid-template-columns:1fr;padding:20px}
-  .hero .actions .btn{width:100%}
-  .hero h1{font-size:32px}
-  h2{font-size:28px}
-  h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
-  .lang button{padding:7px 9px}
-  .brand .t{display:none}
-  [data-header="glass"] header{top:8px;left:8px;right:8px}
-  [data-hero="framed"] .hero .art{height:42vh;min-height:250px;margin:0 12px;border-radius:22px}
-  [data-tours="list"] .tour,[data-tours="list"] .tour.wide{flex-direction:column}
-  [data-tours="list"] .tour .pic{width:100%;min-height:0;aspect-ratio:16/10}
-  [data-tours="list"] .tour .body{padding:22px}
-  [data-tours="overlay"] .tour{min-height:380px}
-  [data-tours="stack"] .tour{top:calc(80px + var(--i,0) * 12px)}
-  [data-facts="strip"] .fact{border-right:0;border-bottom:1px solid var(--line);padding:18px 4px}
-  [data-facts="strip"] .facts{border-bottom:0}
-  [data-foot="giant"] .f-cols{grid-template-columns:1fr}
-  .mq{padding:18px 0}
-  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 94%,transparent);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s var(--ease)}
-  .mbar.on{transform:none}
-  .mbar .btn{width:100%}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  html.js .rv{opacity:1;transform:none}
-}
+:root{--bg:#F4EFE6;--card:#FFFDF8;--ink:#1D2A24;--mut:#55625B;--acc:#E0603F;--acc-2:#C44F31;--tone:#C98A3D;--tone-soft:#EADBC2;--f:'Nunito',system-ui,sans-serif;--e:cubic-bezier(.23,1,.32,1);--pad:26px}
+body.nature{--bg:#E6F1EA;--tone:#1F7A55;--tone-soft:#C9E3D3}
+body{background:var(--bg);color:var(--ink);font:500 17px/1.6 var(--f);transition:background .6s var(--e)}
+::selection{background:var(--acc);color:#fff}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:6px}
+.w{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 94%,transparent);transition:background .6s var(--e)}
+.hb{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font:900 20px var(--f);text-decoration:none;letter-spacing:-.01em}
+.logo i{font-style:normal;color:var(--tone);transition:color .6s}
+.r{display:flex;align-items:center;gap:6px}
+.lang{display:flex;background:var(--card);border-radius:999px;padding:4px}
+.lang button{background:none;border:0;cursor:pointer;font:800 12.5px var(--f);padding:8px 11px;min-height:40px;border-radius:999px;color:var(--mut)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--card)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:16px;background:var(--acc);color:#fff;font:800 16px var(--f);text-decoration:none;border:0;cursor:pointer;transition:transform .16s var(--e),background .2s}
+.btn:hover{background:var(--acc-2)}.btn:active{transform:scale(.97)}
+/* hero */
+.hero{padding:clamp(40px,7vh,80px) 0 clamp(50px,8vh,90px);text-align:center}
+.hero h1{font:900 clamp(44px,7.4vw,110px)/.95 var(--f);letter-spacing:-.04em}
+.hero h1 .or{color:var(--mut);font-weight:700;font-size:.55em;letter-spacing:-.01em;display:inline-block;margin:0 .2em;vertical-align:.2em}
+.hero h1 .c{color:#C98A3D}.hero h1 .n{color:#1F7A55}
+.hero p{max-width:54ch;margin:22px auto 0;color:var(--mut);font-size:19px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(36px,6vh,60px)}
+.duo .ph{aspect-ratio:5/4;border-radius:32px}
+.duo .ph:first-child{border-radius:32px 32px 32px 120px}
+.duo .ph:last-child{border-radius:32px 120px 32px 32px}
+.duo .ph .fb{font:900 30px var(--f);color:rgba(29,42,36,.22)}
+.duo .ph:first-child .fb{background:#EADBC2}.duo .ph:last-child .fb{background:#C9E3D3}
+/* the switch */
+.pickr{padding:clamp(70px,10vh,120px) 0}
+.toggle{display:flex;justify-content:center}
+.tg{position:relative;display:grid;grid-template-columns:1fr 1fr;background:var(--card);border-radius:999px;padding:6px;width:min(100%,520px);box-shadow:0 12px 30px -16px rgba(0,0,0,.25)}
+.tg button{position:relative;z-index:1;border:0;background:none;cursor:pointer;min-height:58px;font:900 19px var(--f);color:var(--mut);transition:color .3s}
+.tg button[aria-selected="true"]{color:#fff}
+.tg .knob{position:absolute;top:6px;bottom:6px;left:6px;width:calc(50% - 6px);border-radius:999px;background:var(--tone);transition:transform .45s var(--e),background .6s}
+body.nature .tg .knob{transform:translateX(100%)}
+.lede{text-align:center;max-width:40ch;margin:26px auto 0;color:var(--mut)}
+.list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.tour{background:var(--card);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--e),box-shadow .25s}
+@media (hover:hover) and (pointer:fine){.tour:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}}
+.tour .ph{aspect-ratio:4/3}
+.tour .ph .fb{font:900 24px var(--f);color:rgba(29,42,36,.22);background:var(--tone-soft)}
+.tour .b{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tour .len{align-self:flex-start;font:800 13px var(--f);color:var(--tone);background:var(--tone-soft);padding:4px 12px;border-radius:999px;transition:background .6s,color .6s}
+.tour h3{font:900 23px/1.15 var(--f);letter-spacing:-.01em}
+.tour p{color:var(--mut);font-size:15.5px;flex:1}
+.tour a{font:800 15px var(--f);color:var(--acc);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.swap{transition:opacity .25s var(--e),filter .25s var(--e),transform .25s var(--e)}
+.swap.out{opacity:0;filter:blur(6px);transform:translateY(8px)}
+/* team */
+.team{padding:clamp(70px,10vh,120px) 0}
+.tbox{background:var(--ink);color:#F1EDE4;border-radius:40px;padding:clamp(30px,5vw,70px);display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,5vw,70px);align-items:center}
+.tbox h2{font:900 clamp(32px,4vw,54px)/1.02 var(--f);letter-spacing:-.03em}
+.tbox p{margin-top:16px;color:#C9CFC9}
+.tbox .ph{aspect-ratio:1;border-radius:50% 50% 32px 32px}
+.tbox .ph .fb{font:900 26px var(--f);color:rgba(255,255,255,.25);background:#2C3B34}
+/* questions */
+.faq{padding:clamp(70px,10vh,120px) 0}
+.faq h2{font:900 clamp(32px,4vw,54px)/1.02 var(--f);letter-spacing:-.03em;text-align:center}
+#qs{max-width:820px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px}
+.q{background:var(--card);border-radius:22px;padding:0 24px}
+.q button{width:100%;display:flex;justify-content:space-between;gap:16px;align-items:center;background:none;border:0;text-align:left;padding:20px 0;min-height:44px;cursor:pointer;font:800 18px/1.35 var(--f)}
+.q i{flex:none;width:30px;height:30px;border-radius:10px;background:var(--tone-soft);position:relative;transition:background .6s}
+.q i::before{content:"";position:absolute;left:9px;top:8px;width:9px;height:9px;border-right:2.5px solid var(--tone);border-bottom:2.5px solid var(--tone);transform:rotate(45deg);transition:transform .3s var(--e),top .3s}
+.q button[aria-expanded="true"] i::before{transform:rotate(225deg);top:12px}
+.q p{padding:0 0 22px;color:var(--mut)}
+/* chat-style contact */
+.chat{padding:clamp(70px,10vh,120px) 0 clamp(90px,12vh,140px)}
+.cbox{max-width:760px;margin:0 auto;background:var(--card);border-radius:36px;padding:clamp(22px,4vw,44px);box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
+.cbox h2{font:900 clamp(28px,3.4vw,44px)/1.05 var(--f);letter-spacing:-.02em}
+.bub{margin-top:18px;max-width:80%;background:var(--tone-soft);padding:14px 18px;border-radius:22px 22px 22px 6px;font-weight:700;transition:background .6s}
+form{margin-top:18px;display:grid;gap:12px}
+[data-field]{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+[data-field] label{font:800 13px var(--f);color:var(--mut)}
+input,select,textarea{font:600 16px var(--f);border:2px solid #E7E0D3;border-radius:22px 22px 6px 22px;padding:13px 16px;min-height:52px;width:min(100%,520px);background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
+textarea{min-height:90px;resize:vertical}
+.err{color:#B3261E;font-size:13px;font-weight:800}
+.fine{font-size:13px;color:var(--mut);text-align:right}
+.ready{font-weight:800;text-align:right}.ready a{color:var(--acc)}
+.send{justify-self:end}
+.ch{display:flex;gap:18px;margin-top:18px;font-weight:800;flex-wrap:wrap}
+footer{padding:26px 0 110px;color:var(--mut);font-size:13.5px}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:900px){.list{grid-template-columns:1fr 1fr}.tbox{grid-template-columns:1fr}}
+@media (max-width:620px){:root{--pad:18px}.list{grid-template-columns:1fr}.duo{gap:10px}.duo .ph:first-child{border-radius:24px 24px 24px 70px}.duo .ph:last-child{border-radius:24px 70px 24px 24px}.hb .btn{display:none}.hero h1{font-size:46px}.bub{max-width:100%}}
 </style>
 </head>
 <body>
-<div class="progress" aria-hidden="true"></div>
-<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
-
-<header>
-  <div class="wrap bar">
-    <a class="brand" href="#top" aria-label="Tajik Travel Agency"><span class="mark">T</span><span class="t" data-i18n="brand">Tajik Travel Agency</span></a>
-    <nav id="nav" aria-label="Main">
-      <ul>
-        <li><a href="#routes" data-i18n="nav_routes">Routes</a></li>
-        <li><a href="#land" data-i18n="nav_land">Tajikistan</a></li>
-        <li><a href="#about" data-i18n="nav_about">About</a></li>
-        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="right">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
-        <button type="button" data-lang="tg" aria-pressed="false">TJ</button>
-      </div>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    </div>
-  </div>
-</header>
-
+<a class="skip" href="#main" data-t="skip"></a>
+<header><div class="w hb"><a class="logo" href="#top">Tajik <i>Travel</i> Agency</a><div class="r"><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="ru" aria-pressed="false">RU</button><button type="button" data-lang="tg" aria-pressed="false">TJ</button></div><a class="btn" href="#chat" data-t="hdr"></a></div></div></header>
 <main id="main">
-  <section class="hero" id="top" data-enter>
-    <canvas class="gfx hero-gfx" aria-hidden="true"></canvas>
-    <div class="art" data-scene="lakes" data-wide="1" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="kicker" data-i18n="kicker"></div>
-      <h1 data-i18n="h1"></h1>
-      <p data-i18n="hero_p"></p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#contact"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span data-i18n="btn_plan"></span></a>
-        <a class="btn btn-ghost" href="#routes" data-i18n="btn_routes"></a>
-      </div>
-    </div>
-  </section>
+<section class="hero" id="top" data-hero><div class="w">
+  <h1><span class="c" data-t="w_city"></span><span class="or" data-t="w_or"></span><span class="n" data-t="w_nat"></span></h1>
+  <p data-t="hero_p"></p>
+  <div class="duo"><div class="ph" data-photo="Dushanbe_Flagpole.jpg|Vakhsh_River.jpg" data-label="w_city" data-eager="1"></div><div class="ph" data-photo="Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg|Nurek_Reservoir,_Tajikistan.jpg" data-label="w_nat" data-eager="1"></div></div>
+</div></section>
 
-  <div class="mq" aria-hidden="true"><div class="mq-track"><span data-i18n="mq"></span><span data-i18n="mq"></span></div></div>
+<section class="pickr" id="pick"><div class="w">
+  <div class="toggle"><div class="tg" role="tablist"><span class="knob" aria-hidden="true"></span><button type="button" role="tab" aria-selected="true" data-m2="city" data-t="w_city"></button><button type="button" role="tab" aria-selected="false" data-m2="nature" data-t="w_nat"></button></div></div>
+  <p class="lede swap" id="lede"></p>
+  <div class="list swap" id="list"></div>
+</div></section>
 
-  <section id="why" class="aura" aria-labelledby="why-h">
-    <div class="wrap">
-      <div class="sec-head rv"><h2 id="why-h" data-i18n="why_h"></h2></div>
-      <div class="facts" id="facts"></div>
-    </div>
-  </section>
+<section class="team"><div class="w"><div class="tbox">
+  <div><h2 data-t="tm_h"></h2><p data-t="tm_p1"></p><p data-t="tm_p2"></p></div>
+  <div class="ph" data-photo="Alichur_TJ.JPG|Temple_Vrang.jpg" data-label="tm_l"></div>
+</div></div></section>
 
-  <section id="land" aria-labelledby="land-h">
-    <canvas class="gfx land-gfx" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <div class="sec-head rv"><h2 id="land-h" data-i18n="land_h"></h2><p data-i18n="land_p"></p></div>
-      <div class="stats">
-        <div class="stat rv"><b><span class="cnt" data-to="90">0</span>%+</b><span data-i18n="l1"></span></div>
-        <div class="stat rv"><b><span class="cnt" data-to="7495">0</span><span data-i18n="u_m"></span></b><span data-i18n="l2"></span></div>
-        <div class="stat rv"><b><span class="cnt" data-to="77">0</span><span data-i18n="u_km"></span></b><span data-i18n="l3"></span></div>
-        <div class="stat rv"><b><span class="cnt" data-to="4655">0</span><span data-i18n="u_m"></span></b><span data-i18n="l4"></span></div>
-      </div>
-    </div>
-  </section>
+<section class="faq"><div class="w"><h2 data-t="fq_h"></h2><div id="qs"></div></div></section>
 
-  <section id="routes" aria-labelledby="routes-h">
-    <div class="wrap">
-      <div class="sec-head rv"><h2 id="routes-h" data-i18n="routes_h"></h2><p data-i18n="routes_p"></p></div>
-      <div class="tours" id="tours"></div>
-    </div>
-  </section>
-
-  <section id="how" class="aura" aria-labelledby="how-h">
-    <div class="wrap">
-      <div class="sec-head rv"><h2 id="how-h" data-i18n="how_h"></h2><p data-i18n="how_p"></p></div>
-      <div class="steps">
-        <div class="step rv"><h3 data-i18n="s1"></h3><p data-i18n="s1p"></p></div>
-        <div class="step rv"><h3 data-i18n="s2"></h3><p data-i18n="s2p"></p></div>
-        <div class="step rv"><h3 data-i18n="s3"></h3><p data-i18n="s3p"></p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" aria-labelledby="about-h">
-    <div class="wrap about">
-      <div class="pic rv" data-scene="village" aria-hidden="true"></div>
-      <div class="rv">
-        <h2 id="about-h" data-i18n="about_h"></h2>
-        <p data-i18n="about_p1"></p>
-        <p data-i18n="about_p2"></p>
-        <div class="langs"><span>Русский</span><span>English</span><span>Тоҷикӣ</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" class="aura" aria-labelledby="faq-h">
-    <div class="wrap faq-wrap">
-      <div class="faq-side rv"><h2 id="faq-h" data-i18n="faq_h"></h2><p data-i18n="faq_p"></p><a class="btn btn-primary" href="#contact" data-i18n="mbar"></a></div>
-      <div class="faq">
-        <details class="rv"><summary data-i18n="q1"></summary><p data-i18n="a1"></p></details>
-        <details class="rv"><summary data-i18n="q2"></summary><p data-i18n="a2"></p></details>
-        <details class="rv"><summary data-i18n="q3"></summary><p data-i18n="a3"></p></details>
-        <details class="rv"><summary data-i18n="q4"></summary><p data-i18n="a4"></p></details>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" aria-labelledby="contact-h">
-    <canvas class="gfx contact-gfx" aria-hidden="true"></canvas>
-    <div class="wrap contact">
-      <div class="rv">
-        <h2 id="contact-h" data-i18n="contact_h"></h2>
-        <p class="lead" data-i18n="contact_p"></p>
-        <div class="channels">
-          <a class="channel" id="ch-wa" href="#"><span>WhatsApp</span><small>+992 •• ••• •• ••</small></a>
-          <a class="channel" id="ch-tg" href="#"><span>Telegram</span><small>@tajiktravel</small></a>
-          <a class="channel" id="ch-mail" href="#"><span>Email</span><small>hello@tajiktravel.example</small></a>
-        </div>
-      </div>
-      <form id="trip" novalidate class="rv">
-        <div class="field"><label for="f-name" data-i18n="l_name"></label><input id="f-name" name="name" autocomplete="name"><span class="err" data-i18n="e_name"></span></div>
-        <div class="field"><label for="f-dates" data-i18n="l_dates"></label><input id="f-dates" name="dates" data-i18n-ph="ph_dates"></div>
-        <div class="field"><label for="f-people" data-i18n="l_people"></label><input id="f-people" name="people" type="number" min="1" inputmode="numeric" value="2"></div>
-        <div class="field"><label for="f-route" data-i18n="l_route"></label><select id="f-route" name="route"></select></div>
-        <div class="field full"><label for="f-msg" data-i18n="l_msg"></label><textarea id="f-msg" name="msg" data-i18n-ph="ph_msg"></textarea></div>
-        <div class="field full"><button class="btn btn-primary" type="submit"><span data-i18n="send"></span></button></div>
-        <p class="note" data-i18n="note"></p>
-        <div class="result" id="result" role="status"><span data-i18n="ready"></span> <a id="wa-link" href="#" target="_blank" rel="noopener" data-i18n="open_wa"></a></div>
-      </form>
-    </div>
-  </section>
+<section class="chat" id="chat"><div class="w"><div class="cbox">
+  <h2 data-t="ct_h"></h2>
+  <div class="bub" data-t="ct_b"></div>
+  <form id="form" novalidate>
+    <div data-field><label for="n" data-t="l_n"></label><input id="n" data-m="m_n" autocomplete="name" data-ph="ph_n"><span class="err" data-t="e_n"></span></div>
+    <div data-field><label for="r" data-t="l_r"></label><select id="r" data-m="m_r"></select></div>
+    <div data-field><label for="d" data-t="l_d"></label><input id="d" data-m="m_d" data-ph="ph_d"></div>
+    <div data-field><label for="m" data-t="l_m"></label><textarea id="m" data-m="m_m" data-ph="ph_m"></textarea></div>
+    <button class="btn send" type="submit" data-t="send"></button>
+    <p class="fine" data-t="fine"></p>
+    <p class="ready" id="ready" role="status"><span data-t="ready"></span> <a id="wa" href="#" target="_blank" rel="noopener" data-t="open"></a></p>
+  </form>
+  <div class="ch"><a data-wa href="#">WhatsApp</a><a data-tg href="#">Telegram</a><span>+992 •• ••• •• ••</span></div>
+</div></div></section>
 </main>
-
-<footer>
-  <div class="f-band"><canvas class="gfx band-gfx" aria-hidden="true"></canvas><div class="wrap"><h2 data-i18n="band_h"></h2><a class="btn btn-primary" href="#contact" style="background:#fff;color:#111"><span data-i18n="btn_plan"></span></a></div></div>
-  <div class="wrap">
-    <div class="f-cols">
-      <div><b style="font-size:20px" data-i18n="brand"></b><p style="opacity:.75;margin-top:10px;max-width:36ch" data-i18n="kicker"></p></div>
-      <div><h4 data-i18n="f_explore"></h4><a href="#routes" data-i18n="nav_routes"></a><a href="#land" data-i18n="nav_land"></a><a href="#about" data-i18n="nav_about"></a><a href="#faq" data-i18n="nav_faq"></a></div>
-      <div><h4 data-i18n="f_contact"></h4><a href="#contact">WhatsApp</a><a href="#contact">Telegram</a><a href="#contact">Email</a></div>
-      <div><h4 data-i18n="f_lang"></h4><span>Русский</span><span>English</span><span>Тоҷикӣ</span></div>
-    </div>
-    <div class="f-giant" aria-hidden="true" style="font-size:min(210px, calc(150vw / 19))">Tajik Travel Agency</div>
-    <div class="foot"><span><b data-i18n="f_name"></b> · <span data-i18n="f_line"></span></span><span>© 2026</span></div>
-    <p class="demo-line credits" id="credits" hidden><span data-i18n="photos"></span> <span id="credit-links"></span></p>
-    <p class="demo-line" data-i18n="demo"></p>
-  </div>
-</footer>
-
-<div class="mbar"><a class="btn btn-primary" href="#contact"><span data-i18n="mbar"></span></a></div>
-
+<footer><div class="w"><span>Tajik Travel Agency · <span data-t="f_l"></span></span><span id="credits" hidden><span data-t="photos"></span> <span id="cl"></span></span></div><div class="w" style="margin-top:8px" data-t="demo"></div></footer>
+<div class="mbar"><a class="btn" href="#chat" data-t="hdr"></a></div>
 <script>
+var SLUG="tajiktravel", PHONE="992000000000", TG="tajiktravel";
+var SETS={city:[["c1","Dushanbe_Flagpole.jpg|Vakhsh_River.jpg"],["c2","Panjakent_7-4-19.jpg"],["c3","Vakhsh_River.jpg|Nurek_Reservoir,_Tajikistan.jpg"]],nature:[["n1","Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg"],["n2","Nurek_Reservoir,_Tajikistan.jpg|Iskanderkul.jpg"],["n3","Pamir_Highway-1.jpg|Ak-Baital_Pass.jpg"]]};
+var T={
+en:{skip:"Skip to content",hdr:"Write to us",w_city:"City",w_or:"or",w_nat:"Nature",hero_p:"Tajik Travel Agency shows travelers from all over the world the main sights of Dushanbe and the natural corners of the country. Choose what you came for, or take both.",
+l_city:"Monuments, museums and bazaars: the stories of Dushanbe and the old towns.",l_nat:"Lakes, gorges and passes, a few hours from the capital.",
+c1:"Dushanbe in a day",c1l:"1 day",c1p:"The flagpole, Rudaki Park, the National Museum and the bazaar.",c2:"Ancient Panjakent",c2l:"1–2 days",c2p:"Ruins of a Sogdian town and the museum of Rudaki.",c3:"Hisor fortress",c3l:"Half a day",c3p:"The restored gate and the old madrasa west of Dushanbe.",
+n1:"Seven Lakes",n1l:"2–3 days",n1p:"A chain of lakes in the Fann Mountains, each a different colour.",n2:"Iskanderkul",n2l:"1 day",n2p:"Over the Anzob pass to the turquoise lake and its waterfall.",n3:"Pamir Highway",n3l:"10–14 days",n3p:"The long road across the Pamirs.",ask:"Ask about this trip",
+tm_l:"Our team",tm_h:"A local team, led by Muhammad",tm_p1:"We are the team of Tajik Travel Agency. We create trips across Tajikistan for travelers from all over the world.",tm_p2:"Our guides show you the main sights of the capital and take you to the mountains and lakes that make the country special.",
+fq_h:"Questions we hear most",
+qs:[["Can we combine the city and the mountains?","Yes. A common plan is a day in Dushanbe and then a few days in the Fann Mountains. Tell us your dates and we will suggest the order."],["How far are the mountains from Dushanbe?","Iskanderkul is about three hours by road through the Anzob pass, so it works as a long day trip."],["When is the best time for the lakes?","From May to October the roads to the lakes are usually open."],["Do you take families with children?","Yes. Tell us the ages and we plan shorter walks and more stops."],["What should we bring for the mountains?","Comfortable shoes and a warm layer; the weather in the mountains changes quickly."]],
+ct_h:"Let's talk about your trip",ct_b:"Hi! Tell us what you would like to see, and we will reply in WhatsApp.",
+l_n:"Your name",ph_n:"Your name",e_n:"Please enter your name",l_r:"Trip",l_d:"Dates",ph_d:"e.g. 10–15 May",l_m:"Anything else?",ph_m:"Interests, people, wishes",send:"Send in WhatsApp",fine:"The message opens in WhatsApp. Nothing is sent from this page.",ready:"Ready:",open:"open WhatsApp",
+hello:"Hello Tajik Travel Agency! I found your website.",m_n:"Name",m_r:"Trip",m_d:"Dates",m_m:"Message",
+f_l:"Trips across Tajikistan",photos:"Photos: Wikimedia Commons, Creative Commons licences:",demo:"Demo prepared for Tajik Travel Agency. Details and contacts to be confirmed; the photos will be replaced with your own.",title:"Tajik Travel Agency · City or nature?"},
+ru:{skip:"Перейти к содержанию",hdr:"Написать нам",w_city:"Город",w_or:"или",w_nat:"Природа",hero_p:"Tajik Travel Agency показывает гостям со всего мира главные места Душанбе и природные уголки страны. Выберите, ради чего едете, или возьмите всё.",
+l_city:"Памятники, музеи и базары: истории Душанбе и древних городов.",l_nat:"Озёра, ущелья и перевалы в нескольких часах от столицы.",
+c1:"Душанбе за день",c1l:"1 день",c1p:"Флагшток, парк Рудаки, Национальный музей и базар.",c2:"Древний Пенджикент",c2l:"1–2 дня",c2p:"Руины согдийского города и музей Рудаки.",c3:"Гиссарская крепость",c3l:"Полдня",c3p:"Восстановленные ворота и старое медресе к западу от Душанбе.",
+n1:"Семь озёр",n1l:"2–3 дня",n1p:"Цепочка озёр в Фанских горах, у каждого свой цвет.",n2:"Искандеркуль",n2l:"1 день",n2p:"Через перевал Анзоб к бирюзовому озеру и водопаду.",n3:"Памирский тракт",n3l:"10–14 дней",n3p:"Долгая дорога через Памир.",ask:"Спросить про поездку",
+tm_l:"Наша команда",tm_h:"Местная команда, руководитель Мухаммад",tm_p1:"Мы — команда Tajik Travel Agency. Создаём путешествия по Таджикистану для туристов со всего мира.",tm_p2:"Наши гиды покажут главные места столицы и отвезут в горы и к озёрам, ради которых едут в Таджикистан.",
+fq_h:"Что у нас спрашивают чаще всего",
+qs:[["Можно совместить город и горы?","Да. Частый вариант: день в Душанбе, потом несколько дней в Фанских горах. Напишите даты, и мы предложим порядок."],["Далеко ли горы от Душанбе?","До Искандеркуля около трёх часов по дороге через перевал Анзоб, поэтому туда можно съездить за длинный день."],["Когда лучше ехать на озёра?","С мая по октябрь дороги к озёрам обычно открыты."],["Вы берёте семьи с детьми?","Да. Скажите возраст детей, и мы спланируем короткие прогулки и больше остановок."],["Что взять в горы?","Удобную обувь и тёплую кофту: погода в горах меняется быстро."]],
+ct_h:"Давайте обсудим поездку",ct_b:"Здравствуйте! Расскажите, что хотите увидеть, и мы ответим в WhatsApp.",
+l_n:"Ваше имя",ph_n:"Ваше имя",e_n:"Пожалуйста, введите имя",l_r:"Поездка",l_d:"Даты",ph_d:"например, 10–15 мая",l_m:"Что-то ещё?",ph_m:"Интересы, сколько вас, пожелания",send:"Отправить в WhatsApp",fine:"Сообщение откроется в WhatsApp. С этой страницы ничего не отправляется.",ready:"Готово:",open:"открыть WhatsApp",
+hello:"Здравствуйте, Tajik Travel Agency! Нашёл(ла) ваш сайт.",m_n:"Имя",m_r:"Поездка",m_d:"Даты",m_m:"Сообщение",
+f_l:"Путешествия по Таджикистану",photos:"Фото: Wikimedia Commons, лицензии Creative Commons:",demo:"Демо для Tajik Travel Agency. Детали и контакты нужно подтвердить; фото заменятся вашими.",title:"Tajik Travel Agency · Город или природа?"},
+tg:{skip:"Гузаштан ба мундариҷа",hdr:"Ба мо нависед",w_city:"Шаҳр",w_or:"ё",w_nat:"Табиат",hero_p:"Tajik Travel Agency ба меҳмонон аз тамоми ҷаҳон ҷойҳои асосии Душанбе ва гӯшаҳои табиии кишварро нишон медиҳад. Интихоб кунед, ки барои чӣ меоед, ё ҳардуро гиред.",
+l_city:"Ёдгориҳо, осорхонаҳо ва бозорҳо: таърихи Душанбе ва шаҳрҳои қадим.",l_nat:"Кӯлҳо, дараҳо ва ағбаҳо дар чанд соат аз пойтахт.",
+c1:"Душанбе дар як рӯз",c1l:"1 рӯз",c1p:"Парчамафрози, боғи Рӯдакӣ, Осорхонаи миллӣ ва бозор.",c2:"Панҷакенти қадим",c2l:"1–2 рӯз",c2p:"Харобаҳои шаҳри суғдӣ ва осорхонаи Рӯдакӣ.",c3:"Қалъаи Ҳисор",c3l:"Ним рӯз",c3p:"Дарвозаи барқароршуда ва мадрасаи кӯҳна дар ғарби Душанбе.",
+n1:"Ҳафткӯл",n1l:"2–3 рӯз",n1p:"Занҷираи кӯлҳо дар кӯҳҳои Фон, ҳар кадом ранги худро дорад.",n2:"Искандаркӯл",n2l:"1 рӯз",n2p:"Тавассути ағбаи Анзоб то кӯли фирӯзаранг ва шаршарааш.",n3:"Шоҳроҳи Помир",n3l:"10–14 рӯз",n3p:"Роҳи дароз аз Помир.",ask:"Дар бораи сафар пурсед",
+tm_l:"Дастаи мо",tm_h:"Дастаи маҳаллӣ, роҳбар Муҳаммад",tm_p1:"Мо дастаи Tajik Travel Agency ҳастем. Барои сайёҳон аз тамоми ҷаҳон сафарҳо дар Тоҷикистон месозем.",tm_p2:"Роҳбаладони мо ҷойҳои асосии пойтахтро нишон дода, шуморо ба кӯҳҳо ва кӯлҳое мебаранд, ки барои онҳо ба Тоҷикистон меоянд.",
+fq_h:"Он чи аз мо бештар мепурсанд",
+qs:[["Шаҳр ва кӯҳро якҷоя кардан мумкин аст?","Бале. Варианти маъмул: як рӯз дар Душанбе, баъд чанд рӯз дар кӯҳҳои Фон. Санаҳоро нависед, мо тартибро пешниҳод мекунем."],["Кӯҳҳо аз Душанбе дуранд?","То Искандаркӯл тақрибан се соат бо роҳ тавассути ағбаи Анзоб, бинобар ин дар як рӯзи дароз рафта омадан мумкин аст."],["Ба кӯлҳо кай рафтан беҳтар аст?","Аз май то октябр роҳҳо ба кӯлҳо одатан кушодаанд."],["Оилаҳоро бо кӯдакон мегиред?","Бале. Синну соли кӯдаконро гӯед, мо сайрҳои кӯтоҳ ва истгоҳҳои бештар ба нақша мегирем."],["Ба кӯҳ чӣ гирем?","Пойафзоли бароҳат ва либоси гарм: ҳаво дар кӯҳ зуд тағйир меёбад."]],
+ct_h:"Биёед дар бораи сафар гап занем",ct_b:"Салом! Гӯед, ки чиро дидан мехоҳед, мо дар WhatsApp ҷавоб медиҳем.",
+l_n:"Номи шумо",ph_n:"Номи шумо",e_n:"Лутфан номатонро ворид кунед",l_r:"Сафар",l_d:"Санаҳо",ph_d:"масалан, 10–15 май",l_m:"Боз чизе?",ph_m:"Шавқ, шумораи одамон, хоҳишҳо",send:"Дар WhatsApp фиристодан",fine:"Паём дар WhatsApp кушода мешавад. Аз ин саҳифа ҳеҷ чиз фиристода намешавад.",ready:"Тайёр:",open:"WhatsApp-ро кушоед",
+hello:"Салом, Tajik Travel Agency! Сайти шуморо дидам.",m_n:"Ном",m_r:"Сафар",m_d:"Санаҳо",m_m:"Паём",
+f_l:"Сафарҳо дар Тоҷикистон",photos:"Аксҳо: Wikimedia Commons, иҷозатномаҳои Creative Commons:",demo:"Сайти намунавӣ барои Tajik Travel Agency. Тафсилот ва тамосҳо бояд тасдиқ шаванд; аксҳо бо аксҳои худи шумо иваз карда мешаванд.",title:"Tajik Travel Agency · Шаҳр ё табиат?"}};
+/* shared plumbing: languages, photos, WhatsApp form, header state. The design lives in each page. */
 document.documentElement.classList.add("js");
-var CLIENT_PHONE = "992000000000";      /* digits only, for wa.me: replace before launch */
-var CLIENT_TELEGRAM = "tajiktravel";
-var CLIENT_EMAIL = "hello@tajiktravel.example";
-var T = {"en": {"skip": "Skip to content", "nav_routes": "Routes", "nav_how": "How it works", "nav_about": "About", "nav_faq": "FAQ", "nav_contact": "Contact", "btn_plan": "Plan my trip on WhatsApp", "btn_routes": "See the routes", "why_h": "Why travel with Tajik Travel Agency", "routes_h": "Routes travelers ask for most", "routes_p": "Each tour can be changed. Length and stops fit your dates; the price depends on group size and season.", "ask": "Ask the price", "how_h": "How a trip is planned", "how_p": "Three messages and your route is ready.", "s1": "Write on WhatsApp", "s1p": "Tell us your dates, how many people are coming and what you want to see.", "s2": "Get a route and a price", "s2p": "You receive a day-by-day plan and the full price for your group.", "s3": "Travel", "s3p": "Your guide and driver meet you in Dushanbe and stay with you on the road.", "faq_h": "Questions before you book", "q1": "When is the best time for the Pamir Highway?", "a1": "From June to September the high passes are usually open and the weather is stable. The Fann Mountains are good from May to October.", "q2": "Do I need a special permit for the Pamirs?", "a2": "Yes. The Pamirs (GBAO) need a separate permit in addition to your visa. Ask about it when you plan the route.", "q3": "How do I get a visa?", "a3": "Many travelers apply for Tajikistan's e-Visa online before the trip. The rules depend on your passport, so check them for your country.", "q4": "Can the route be changed?", "a4": "Yes. Tell us your dates and interests, and the days, stops and pace are set around you.", "contact_h": "Plan your trip", "contact_p": "Fill in a few details and send them to Tajik Travel Agency on WhatsApp.", "l_name": "Your name", "e_name": "Please enter your name", "l_dates": "Travel dates", "ph_dates": "e.g. 10–20 July", "l_people": "Number of people", "l_route": "Route", "o_none": "Not sure yet", "l_msg": "Message", "ph_msg": "What would you like to see?", "send": "Send on WhatsApp", "note": "Your message opens in WhatsApp. Nothing is sent from this page.", "ready": "Your message is ready:", "open_wa": "Open WhatsApp", "f_line": "Tours in Tajikistan · Dushanbe", "demo": "Demo site prepared for Tajik Travel Agency. Texts, durations and contacts are to be confirmed; the photos will be replaced with your own.", "mbar": "Message on WhatsApp", "msg_hello": "Hello Tajik Travel Agency! I found your website.", "msg_name": "Name", "msg_dates": "Dates", "msg_people": "People", "msg_route": "Route", "photos": "Photos: Wikimedia Commons, Creative Commons licences, authors on the file pages:", "about_h": "About us", "from_": "from", "nav_land": "Tajikistan", "land_h": "Tajikistan in numbers", "land_p": "A small country with some of the highest mountains on Earth.", "l1": "of the country is covered by mountains", "l2": "Ismoil Somoni Peak, the highest point", "l3": "Fedchenko Glacier, one of the longest outside the polar regions", "l4": "Ak-Baital, the highest pass of the Pamir Highway", "u_m": " m", "u_km": " km", "mq": "Pamir · Wakhan · Iskanderkul · Seven Lakes · Fann Mountains · Hisor · Panjakent · Murghab · Khorog · Karakul · ", "faq_p": "Still have a question? Write on WhatsApp and get an answer from a person, not a bot.", "band_h": "Tajikistan is waiting for you", "f_explore": "Explore", "f_contact": "Contact", "f_lang": "Languages", "brand": "Tajik Travel Agency", "f_name": "Tajik Travel Agency", "kicker": "Dushanbe · Mountains · Lakes", "h1": "Trips across Tajikistan with an experienced local team", "hero_p": "Tajik Travel Agency creates trips across Tajikistan for travelers from all over the world. Our guides show you the main sights of Dushanbe and the natural corners of the country.", "about_p1": "We are the team of Tajik Travel Agency, led by Muhammad. We create trips across Tajikistan for travelers from all over the world.", "about_p2": "Our experienced guides show you the main sights of the capital and take you to the mountains and lakes that make the country special.", "title": "Tajik Travel Agency · Trips across Tajikistan with an experienced local team", "fb0": "Local team", "fs0": "experienced guides from Tajikistan", "fb1": "City + nature", "fs1": "Dushanbe, mountains and lakes", "fb2": "Worldwide guests", "fs2": "tours in English and Russian", "fb3": "Your dates", "fs3": "each route is built around you", "t5": "Dushanbe and Hisor fortress", "t5d": "1 day", "t5p": "The capital's museums, bazaar and parks, and the Hisor fortress west of the city.", "t4": "Iskanderkul day trip", "t4d": "1 day", "t4p": "From Dushanbe over the Anzob pass to Iskanderkul lake and the waterfall nearby. Back the same evening.", "t3": "Fann Mountains and Seven Lakes", "t3d": "3–5 days", "t3p": "Iskanderkul, the Seven Lakes near Panjakent and treks in the Fann range.", "t1": "Pamir Highway", "t1d": "10–14 days", "t1p": "Dushanbe to Khorog, the Wakhan Valley, Murghab and on to Osh. Passes up to 4,655 m and nights in Pamiri homestays."}, "ru": {"skip": "Перейти к содержанию", "nav_routes": "Маршруты", "nav_how": "Как это работает", "nav_about": "О нас", "nav_faq": "Вопросы", "nav_contact": "Контакты", "btn_plan": "Спланировать поездку в WhatsApp", "btn_routes": "Смотреть маршруты", "why_h": "Почему Tajik Travel Agency", "routes_h": "Маршруты, о которых спрашивают чаще всего", "routes_p": "Каждый тур можно изменить. Длительность и остановки подстраиваются под ваши даты, цена зависит от размера группы и сезона.", "ask": "Узнать цену", "how_h": "Как планируется поездка", "how_p": "Три сообщения, и маршрут готов.", "s1": "Напишите в WhatsApp", "s1p": "Напишите даты, сколько вас и что хотите увидеть.", "s2": "Получите маршрут и цену", "s2p": "Вы получаете план по дням и полную цену для вашей группы.", "s3": "Путешествуйте", "s3p": "Гид и водитель встречают вас в Душанбе и сопровождают всю дорогу.", "faq_h": "Вопросы перед бронированием", "q1": "Когда лучше ехать по Памирскому тракту?", "a1": "С июня по сентябрь высокие перевалы обычно открыты и погода стабильная. В Фанские горы хорошо ехать с мая по октябрь.", "q2": "Нужно ли специальное разрешение на Памир?", "a2": "Да. Для поездки на Памир (ГБАО) кроме визы нужен отдельный пропуск. Спросите о нём, когда будете планировать маршрут.", "q3": "Как получить визу?", "a3": "Многие путешественники заранее оформляют электронную визу Таджикистана онлайн. Правила зависят от паспорта, поэтому проверьте их для своей страны.", "q4": "Можно ли изменить маршрут?", "a4": "Да. Напишите даты и интересы, и дни, остановки и темп подберут под вас.", "contact_h": "Спланируйте поездку", "contact_p": "Заполните несколько полей и отправьте Tajik Travel Agency в WhatsApp.", "l_name": "Ваше имя", "e_name": "Пожалуйста, введите имя", "l_dates": "Даты поездки", "ph_dates": "например, 10–20 июля", "l_people": "Количество человек", "l_route": "Маршрут", "o_none": "Пока не знаю", "l_msg": "Сообщение", "ph_msg": "Что вы хотели бы увидеть?", "send": "Отправить в WhatsApp", "note": "Сообщение откроется в WhatsApp. С этой страницы ничего не отправляется.", "ready": "Сообщение готово:", "open_wa": "Открыть WhatsApp", "f_line": "Туры по Таджикистану · Душанбе", "demo": "Демо-сайт, подготовленный для Tajik Travel Agency. Тексты, сроки и контакты нужно подтвердить; фото заменятся вашими.", "mbar": "Написать в WhatsApp", "msg_hello": "Здравствуйте! Нашёл(ла) ваш сайт.", "msg_name": "Имя", "msg_dates": "Даты", "msg_people": "Человек", "msg_route": "Маршрут", "photos": "Фото: Wikimedia Commons, лицензии Creative Commons, авторы на страницах файлов:", "about_h": "О компании", "from_": "от", "nav_land": "Таджикистан", "land_h": "Таджикистан в цифрах", "land_p": "Небольшая страна с одними из самых высоких гор на Земле.", "l1": "территории страны занимают горы", "l2": "пик Исмоила Сомони, высшая точка", "l3": "ледник Федченко, один из самых длинных вне полярных областей", "l4": "Ак-Байтал, самый высокий перевал Памирского тракта", "u_m": " м", "u_km": " км", "mq": "Памир · Вахан · Искандеркуль · Семь озёр · Фанские горы · Гиссар · Пенджикент · Мургаб · Хорог · Каракуль · ", "faq_p": "Остались вопросы? Напишите в WhatsApp, и вам ответит человек, а не бот.", "band_h": "Таджикистан ждёт вас", "f_explore": "Разделы", "f_contact": "Контакты", "f_lang": "Языки", "brand": "Tajik Travel Agency", "f_name": "Tajik Travel Agency", "kicker": "Душанбе · Горы · Озёра", "h1": "Путешествия по Таджикистану с опытной местной командой", "hero_p": "Tajik Travel Agency создаёт путешествия по Таджикистану для туристов со всего мира. Наши гиды покажут главные достопримечательности Душанбе и природные уголки страны.", "about_p1": "Мы — команда Tajik Travel Agency, руководитель Мухаммад. Создаём путешествия по Таджикистану для туристов со всего мира.", "about_p2": "Опытные гиды покажут вам главные места столицы и отвезут в горы и к озёрам, ради которых едут в Таджикистан.", "title": "Tajik Travel Agency · Путешествия по Таджикистану с опытной местной командой", "fb0": "Местная команда", "fs0": "опытные гиды из Таджикистана", "fb1": "Город и природа", "fs1": "Душанбе, горы и озёра", "fb2": "Гости со всего мира", "fs2": "туры на английском и русском", "fb3": "Ваши даты", "fs3": "маршрут строится под вас", "t5": "Душанбе и Гиссарская крепость", "t5d": "1 день", "t5p": "Музеи, базар и парки столицы и Гиссарская крепость к западу от города.", "t4": "Искандеркуль за один день", "t4d": "1 день", "t4p": "Из Душанбе через перевал Анзоб к озеру Искандеркуль и водопаду рядом с ним. Вечером обратно.", "t3": "Фанские горы и Семь озёр", "t3d": "3–5 дней", "t3p": "Искандеркуль, Семь озёр возле Пенджикента и треки в Фанских горах.", "t1": "Памирский тракт", "t1d": "10–14 дней", "t1p": "Душанбе, Хорог, Ваханская долина, Мургаб и дальше до Оша. Перевалы до 4655 м и ночёвки в памирских домах."}, "tg": {"skip": "Гузаштан ба мундариҷа", "nav_routes": "Масирҳо", "nav_how": "Чӣ тавр кор мекунад", "nav_about": "Дар бораи мо", "nav_faq": "Саволҳо", "nav_contact": "Тамос", "btn_plan": "Сафарро дар WhatsApp ба нақша гиред", "btn_routes": "Масирҳоро бинед", "why_h": "Чаро Tajik Travel Agency", "routes_h": "Масирҳое, ки сайёҳон бештар мепурсанд", "routes_p": "Ҳар сафарро тағйир додан мумкин аст. Давомнокӣ ва истгоҳҳо ба санаҳои шумо мувофиқ карда мешаванд, нарх аз шумораи гурӯҳ ва мавсим вобаста аст.", "ask": "Нархро пурсед", "how_h": "Сафар чӣ тавр ба нақша гирифта мешавад", "how_p": "Се паём ва масири шумо тайёр аст.", "s1": "Дар WhatsApp нависед", "s1p": "Санаҳо, шумораи одамон ва он чиро, ки дидан мехоҳед, нависед.", "s2": "Масир ва нархро гиред", "s2p": "Шумо нақшаи рӯз ба рӯз ва нархи пурраро барои гурӯҳатон мегиред.", "s3": "Сафар кунед", "s3p": "Роҳбалад ва ронанда шуморо дар Душанбе пешвоз гирифта, дар тамоми роҳ ҳамроҳатон мебошанд.", "faq_h": "Саволҳо пеш аз фармоиш", "q1": "Барои шоҳроҳи Помир кадом вақт беҳтар аст?", "a1": "Аз июн то сентябр ағбаҳои баланд одатан кушодаанд ва ҳаво устувор аст. Ба кӯҳҳои Фон аз май то октябр рафтан хуб аст.", "q2": "Барои Помир иҷозатномаи махсус лозим аст?", "a2": "Бале. Барои сафар ба Помир (ВМКБ) ба ғайр аз раводид иҷозатномаи алоҳида лозим аст. Дар бораи гирифтани он ҳамроҳи масир пурсед.", "q3": "Раводидро чӣ тавр гирам?", "a3": "Бисёр сайёҳон пеш аз сафар раводиди электронии Тоҷикистонро онлайн мегиранд. Қоидаҳо аз шиносномаи шумо вобастаанд, бинобар ин онҳоро барои кишвари худ санҷед.", "q4": "Масирро тағйир додан мумкин аст?", "a4": "Бале. Санаҳо ва хоҳишҳои худро нависед, рӯзҳо, истгоҳҳо ва суръат барои шумо интихоб карда мешаванд.", "contact_h": "Сафари худро ба нақша гиред", "contact_p": "Якчанд маълумотро пур кунед ва дар WhatsApp фиристед.", "l_name": "Номи шумо", "e_name": "Лутфан номатонро ворид кунед", "l_dates": "Санаҳои сафар", "ph_dates": "масалан, 10–20 июл", "l_people": "Шумораи одамон", "l_route": "Масир", "o_none": "Ҳоло намедонам", "l_msg": "Паём", "ph_msg": "Чиро дидан мехоҳед?", "send": "Дар WhatsApp фиристодан", "note": "Паём дар WhatsApp кушода мешавад. Аз ин саҳифа ҳеҷ чиз фиристода намешавад.", "ready": "Паёми шумо тайёр аст:", "open_wa": "WhatsApp-ро кушоед", "f_line": "Сафарҳо дар Тоҷикистон · Душанбе", "demo": "Сайти намунавӣ барои Tajik Travel Agency. Матнҳо, мӯҳлатҳо ва тамосҳо бояд тасдиқ шаванд; аксҳо бо аксҳои худи шумо иваз карда мешаванд.", "mbar": "Дар WhatsApp нависед", "msg_hello": "Салом! Сайти шуморо дидам.", "msg_name": "Ном", "msg_dates": "Санаҳо", "msg_people": "Нафар", "msg_route": "Масир", "photos": "Аксҳо: Wikimedia Commons, иҷозатномаҳои Creative Commons, муаллифон дар саҳифаҳои файлҳо:", "about_h": "Дар бораи мо", "from_": "аз", "nav_land": "Тоҷикистон", "land_h": "Тоҷикистон дар рақамҳо", "land_p": "Кишвари хурд бо баъзе аз баландтарин кӯҳҳои рӯи замин.", "l1": "қаламрави кишварро кӯҳҳо ташкил медиҳанд", "l2": "қуллаи Исмоили Сомонӣ, нуқтаи баландтарин", "l3": "пиряхи Федченко, яке аз дарозтаринҳо берун аз минтақаҳои қутбӣ", "l4": "Ақбайтал, баландтарин ағбаи шоҳроҳи Помир", "u_m": " м", "u_km": " км", "mq": "Помир · Вахон · Искандаркӯл · Ҳафткӯл · Кӯҳҳои Фон · Ҳисор · Панҷакент · Мурғоб · Хоруғ · Қарокӯл · ", "faq_p": "Савол доред? Дар WhatsApp нависед, ба шумо одам ҷавоб медиҳад, на бот.", "band_h": "Тоҷикистон шуморо интизор аст", "f_explore": "Бахшҳо", "f_contact": "Тамос", "f_lang": "Забонҳо", "brand": "Tajik Travel Agency", "f_name": "Tajik Travel Agency", "kicker": "Душанбе · Кӯҳҳо · Кӯлҳо", "h1": "Сафар дар Тоҷикистон бо дастаи ботаҷрибаи маҳаллӣ", "hero_p": "Tajik Travel Agency барои сайёҳон аз тамоми ҷаҳон сафарҳо дар Тоҷикистон ташкил мекунад. Роҳбаладони мо ҷойҳои диданбоби Душанбе ва гӯшаҳои табиии кишварро нишон медиҳанд.", "about_p1": "Мо дастаи Tajik Travel Agency ҳастем, роҳбари мо Муҳаммад аст. Барои сайёҳон аз тамоми ҷаҳон сафарҳо дар Тоҷикистон ташкил мекунем.", "about_p2": "Роҳбаладони ботаҷрибаи мо ҷойҳои асосии пойтахтро нишон дода, шуморо ба кӯҳҳо ва кӯлҳои зебои кишвар мебаранд.", "title": "Tajik Travel Agency · Сафар дар Тоҷикистон бо дастаи ботаҷрибаи маҳаллӣ", "fb0": "Дастаи маҳаллӣ", "fs0": "роҳбаладони ботаҷрибаи тоҷик", "fb1": "Шаҳр ва табиат", "fs1": "Душанбе, кӯҳҳо ва кӯлҳо", "fb2": "Меҳмонон аз ҷаҳон", "fs2": "сафарҳо бо забонҳои англисӣ ва русӣ", "fb3": "Санаҳои шумо", "fs3": "масир барои шумо тартиб дода мешавад", "t5": "Душанбе ва қалъаи Ҳисор", "t5d": "1 рӯз", "t5p": "Осорхонаҳо, бозор ва боғҳои пойтахт ва қалъаи Ҳисор дар ғарби шаҳр.", "t4": "Искандаркӯл дар як рӯз", "t4d": "1 рӯз", "t4p": "Аз Душанбе тавассути ағбаи Анзоб то кӯли Искандаркӯл ва шаршараи наздики он. Бегоҳ бозгашт.", "t3": "Кӯҳҳои Фон ва Ҳафткӯл", "t3d": "3–5 рӯз", "t3p": "Искандаркӯл, Ҳафткӯл дар наздикии Панҷакент ва пиёдагардӣ дар кӯҳҳои Фон.", "t1": "Шоҳроҳи Помир", "t1d": "10–14 рӯз", "t1p": "Аз Душанбе то Хоруғ, водии Вахон, Мурғоб ва то Ош. Ағбаҳо то 4655 м ва шабгузаронӣ дар хонаҳои помирӣ."}};
-var CFG = {"slug": "tajiktravel", "tours": ["t5", "t4", "t3", "t1"], "scenes": {"t5": "city", "t4": "lake", "t3": "lakes", "t1": "pass"}, "prices": [], "photo": {"hero": ["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg"], "about": ["Alichur_TJ.JPG"]}, "rot": 3};
-var REDUCED = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* facts, tours and route options */
-(function(){
-  var f=document.getElementById("facts"), i;
-  for(i=0;i<4;i++){f.insertAdjacentHTML("beforeend",'<div class="fact rv"><b data-i18n="fb'+i+'"></b><span data-i18n="fs'+i+'"></span></div>');}
-  var tw=document.getElementById("tours"), sel=document.getElementById("f-route");
-  CFG.tours.forEach(function(t,k){
-    var wide=(CFG.tours.length===4)||(CFG.tours.length===5&&k<2);
-    tw.insertAdjacentHTML("beforeend",'<article class="tour rv'+(wide?' wide':'')+'" style="--i:'+k+'"><div class="pic" data-scene="'+CFG.scenes[t]+'" aria-hidden="true"></div><div class="body"><span class="dur" data-i18n="'+t+'d"></span><h3 data-i18n="'+t+'"></h3><p data-i18n="'+t+'p"></p>'+(CFG.prices.indexOf(t)>-1?'<strong class="price" data-i18n="'+t+'pr"></strong>':'')+'<a class="ask" href="#contact" data-tour="'+t+'"><span data-i18n="ask"></span> →</a></div></article>');
-    sel.insertAdjacentHTML("beforeend",'<option value="'+t+'" data-i18n="'+t+'"></option>');
-  });
-  sel.insertAdjacentHTML("beforeend",'<option value="none" data-i18n="o_none"></option>');
-  if(document.documentElement.dataset.faq==="cards"){document.querySelectorAll(".faq details").forEach(function(d){d.open=true;d.querySelector("summary").addEventListener("click",function(e){e.preventDefault();});});}
-})();
-
-/* language */
-var lang="en";
-function fmt(n){return n.toLocaleString(lang==="en"?"en-US":"ru-RU");}
+var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+var lang = "en";
 function setLang(l){
-  if(!T[l]) l="en"; lang=l;
-  document.documentElement.lang=l;
-  var d=T[l];
-  document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n"); if(d[k]!=null) el.textContent=d[k];});
-  document.querySelectorAll("[data-i18n-ph]").forEach(function(el){var k=el.getAttribute("data-i18n-ph"); if(d[k]!=null) el.placeholder=d[k];});
-  document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed", b.dataset.lang===l?"true":"false");});
-  document.querySelectorAll(".cnt.done").forEach(function(c){c.textContent=fmt(+c.dataset.to);});
-  document.title=d.title;
-  try{localStorage.setItem(CFG.slug+"-lang",l);}catch(e){}
+  lang = T[l] ? l : "en"; var d = T[lang]; document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(function(el){var v=d[el.dataset.t]; if(v!=null) el.textContent=v;});
+  document.querySelectorAll("[data-th]").forEach(function(el){var v=d[el.dataset.th]; if(v!=null) el.innerHTML=v;});
+  document.querySelectorAll("[data-ph]").forEach(function(el){el.placeholder=d[el.dataset.ph]||"";});
+  document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed", b.dataset.lang===lang?"true":"false");});
+  document.querySelectorAll(".ph .fb").forEach(function(f){var s=f.parentElement.dataset.label; if(s&&d[s]) f.textContent=d[s];});
+  if(window.onLang) onLang(d);
+  document.title = d.title;
+  try{localStorage.setItem(SLUG+"-lang",lang);}catch(e){}
 }
 document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);});});
-(function(){var l=null; try{l=localStorage.getItem(CFG.slug+"-lang");}catch(e){}
-  if(!l){var n=(navigator.language||"en").toLowerCase(); l=n.indexOf("ru")===0?"ru":(n.indexOf("tg")===0?"tg":"en");} setLang(l);})();
 
-/* menu */
-var mb=document.querySelector(".menu-btn"), nav=document.getElementById("nav");
-function menu(o){nav.classList.toggle("open",o); mb.setAttribute("aria-expanded",o?"true":"false"); document.body.classList.toggle("lock",o); document.querySelector("header").classList.toggle("menu-open",o);}
-mb.addEventListener("click",function(){menu(!nav.classList.contains("open"));});
-nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){menu(false);});});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")menu(false);});
-
-/* contacts and form */
-document.getElementById("ch-wa").href="https://wa.me/"+CLIENT_PHONE;
-document.getElementById("ch-tg").href="https://t.me/"+CLIENT_TELEGRAM;
-document.getElementById("ch-mail").href="mailto:"+CLIENT_EMAIL;
-document.querySelectorAll(".ask").forEach(function(a){a.addEventListener("click",function(){document.getElementById("f-route").value=a.dataset.tour;});});
-document.getElementById("trip").addEventListener("submit",function(e){
-  e.preventDefault();
-  var d=T[lang], name=document.getElementById("f-name"), fld=name.closest(".field");
-  if(!name.value.trim()){fld.classList.add("bad"); name.focus(); return;}
-  fld.classList.remove("bad");
-  var r=document.getElementById("f-route");
-  var lines=[d.msg_hello, d.msg_name+": "+name.value.trim(), d.msg_dates+": "+(document.getElementById("f-dates").value.trim()||"-"), d.msg_people+": "+(document.getElementById("f-people").value||"-"), d.msg_route+": "+r.options[r.selectedIndex].textContent];
-  var m=document.getElementById("f-msg").value.trim(); if(m) lines.push(m);
-  var link=document.getElementById("wa-link"); link.href="https://wa.me/"+CLIENT_PHONE+"?text="+encodeURIComponent(lines.join("\n"));
-  document.getElementById("result").classList.add("show"); link.focus();
-});
-
-/* scroll: header state, progress bar, timeline, parallax, mobile bar */
-(function(){
-  var hd=document.querySelector("header"), pb=document.querySelector(".progress"), steps=document.querySelector(".steps"), heroArt=document.querySelector(".hero .art"), bar=document.querySelector(".mbar"), hero=document.querySelector(".hero"), tick=false;
-  var par=!REDUCED && ["classic","center","split"].indexOf(document.documentElement.dataset.hero)>-1;
-  function upd(){
-    tick=false; var y=window.scrollY, h=document.documentElement.scrollHeight-innerHeight;
-    hd.classList.toggle("scrolled", y>40);
-    pb.style.transform="scaleX("+(h>0?y/h:0)+")";
-    if(steps){var r=steps.getBoundingClientRect(); var p=Math.min(1,Math.max(0,(innerHeight*0.8-r.top)/(r.height+innerHeight*0.3))); steps.style.setProperty("--p",p.toFixed(3));}
-    if(par&&y<innerHeight*1.2){heroArt.style.transform="translateY("+(y*0.22).toFixed(1)+"px) scale(1.06)";}
-    var hb=hero.getBoundingClientRect().bottom, cf=document.getElementById("contact").getBoundingClientRect();
-    bar.classList.toggle("on", hb<80 && !(cf.top<innerHeight && cf.bottom>0));
-  }
-  window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
-  upd();
-})();
-
-/* reveal on scroll and number counters */
-(function(){
-  var els=document.querySelectorAll(".rv");
-  if(REDUCED||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");}); document.querySelectorAll(".cnt").forEach(function(c){c.classList.add("done");c.textContent=fmt(+c.dataset.to);}); return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target, sib=[].indexOf.call(el.parentNode.children,el); el.style.transitionDelay=(Math.min(sib,4)*0.08)+"s"; el.classList.add("in"); io.unobserve(el);
-    el.querySelectorAll(".cnt").forEach(function(c){var to=+c.dataset.to, t0=null; function st(ts){if(!t0)t0=ts; var k=Math.min(1,(ts-t0)/1400), v=Math.round(to*(1-Math.pow(1-k,3))); c.textContent=fmt(v); if(k<1)requestAnimationFrame(st); else c.classList.add("done");} requestAnimationFrame(st);});
-  }});},{threshold:0.12,rootMargin:"0px 0px -6% 0px"});
-  els.forEach(function(e){io.observe(e);});
-})();
-
-/* living gradient: a small WebGL shader in each brand's colours */
-(function(){
-  var cs=getComputedStyle(document.documentElement);
-  function hex(v){v=v.trim().replace("#",""); if(v.length===3)v=v.split("").map(function(c){return c+c;}).join(""); var n=parseInt(v,16); return [(n>>16&255)/255,(n>>8&255)/255,(n&255)/255];}
-  var C=[1,2,3,4].map(function(i){return hex(cs.getPropertyValue("--g"+i)||"#888");});
-  var want=[".hero-gfx"]; var H=document.documentElement.dataset;
-  if(H.land==="grad") want.push(".land-gfx");
-  if(H.contact==="center") want.push(".contact-gfx");
-  if(H.foot==="band") want.push(".band-gfx");
-  var VS="attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
-  var FS="precision mediump float;uniform vec2 r;uniform float t;uniform vec3 a,b,c,d;"+
-   "float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}"+
-   "float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.,1.)),f.x),f.y);}"+
-   "float fb(vec2 p){float v=0.,m=.5;for(int i=0;i<4;i++){v+=m*n(p);p*=2.03;m*=.5;}return v;}"+
-   "void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv*vec2(r.x/r.y,1.)*1.4;float s=t*.05;"+
-   "vec2 q=vec2(fb(p+s),fb(p+vec2(5.2,1.3)-s));vec2 w=vec2(fb(p+2.*q+vec2(1.7,9.2)+s*1.4),fb(p+2.*q+vec2(8.3,2.8)-s));float f=fb(p+2.4*w);"+
-   "vec3 col=mix(a,b,smoothstep(.15,.85,f));col=mix(col,c,smoothstep(.3,.95,length(q)*.9));col=mix(col,d,smoothstep(.5,1.,w.y)*.75);"+
-   "col+=(h(gl_FragCoord.xy+fract(t))-.5)*.035;gl_FragColor=vec4(col,1.);}";
-  function grad(cv){cv.style.background="linear-gradient(125deg,"+["--g1","--g2","--g3","--g4"].map(function(v){return cs.getPropertyValue(v);}).join(",")+")";}
-  want.forEach(function(sel){
-    var cv=document.querySelector(sel); if(!cv) return;
-    var parent=cv.parentElement; if(sel!==".hero-gfx") parent.classList.add("on-grad");
-    var gl=null; try{gl=cv.getContext("webgl",{antialias:false,premultipliedAlpha:false});}catch(e){}
-    if(!gl){grad(cv);return;}
-    function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s;}
-    var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS)); gl.linkProgram(pr);
-    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){grad(cv);return;}
-    gl.useProgram(pr);
-    var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
-    var loc=gl.getAttribLocation(pr,"p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-    var uR=gl.getUniformLocation(pr,"r"), uT=gl.getUniformLocation(pr,"t");
-    ["a","b","c","d"].forEach(function(k,i){gl.uniform3fv(gl.getUniformLocation(pr,k),C[i]);});
-    var vis=true, seed=Math.random()*100;
-    function size(){var s=0.5, w=Math.max(1,Math.round(cv.clientWidth*s)), h=Math.max(1,Math.round(cv.clientHeight*s)); if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;gl.viewport(0,0,w,h);}}
-    function draw(ts){size(); gl.uniform2f(uR,cv.width,cv.height); gl.uniform1f(uT,seed+(ts||0)/1000); gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}
-    function loop(ts){if(vis){draw(ts);} if(!REDUCED) requestAnimationFrame(loop);}
-    if("IntersectionObserver" in window) new IntersectionObserver(function(e){vis=e[0].isIntersecting;}).observe(cv);
-    window.addEventListener("resize",function(){draw(performance.now());});
-    requestAnimationFrame(loop);
+/* accordion helper for each page's own question markup */
+function qa(box, items, cls){
+  var open=[].map.call(box.querySelectorAll("button[aria-expanded]"),function(b){return b.getAttribute("aria-expanded")==="true";});
+  box.innerHTML="";
+  items.forEach(function(q,i){
+    var id=box.id+"-a"+i, o=!!open[i];
+    var wrap=document.createElement("div"); wrap.className=cls||"q";
+    wrap.innerHTML='<button type="button" aria-expanded="'+o+'" aria-controls="'+id+'"><span class="qt"></span><i aria-hidden="true"></i></button><div class="qa-a" id="'+id+'"><div><p></p></div></div>';
+    wrap.querySelector(".qt").textContent=q[0]; wrap.querySelector("p").textContent=q[1];
+    wrap.querySelector("button").addEventListener("click",function(){this.setAttribute("aria-expanded",this.getAttribute("aria-expanded")==="true"?"false":"true");});
+    box.appendChild(wrap);
   });
-})();
-
-/* illustrated scenes (shown until a photograph loads) */
-function rng(seed){return function(){seed=(seed*9301+49297)%233280;return seed/233280;};}
-function ridge(r,base,amp,step,w,h){var p="M0,"+h+" L0,"+base, x=0; while(x<=w){var y=base-amp*(0.35+0.65*r()); p+=" L"+x.toFixed(0)+","+y.toFixed(0); x+=step*(0.6+0.8*r());} return p+" L"+w+","+base+" L"+w+","+h+" Z";}
-var PAL={road:{sky:["#F6C9A0","#E9A27B"],sun:"#FBE7CF",r:["#B98A78","#8D6A66","#5E4D52","#3A3439"]},pass:{sky:["#BFD9E6","#E8E2D6"],sun:"#FFF7EA",r:["#D9E3E8","#A9B7BF","#7B8A90","#4E5A5E"],snow:1},river:{sky:["#F3DDBF","#E7C29C"],sun:"#FFF3E0",r:["#CBAE93","#A78769","#7E6550","#54453A"]},lakes:{sky:["#CFE5E5","#EEF2EC"],sun:"#FFFFFF",r:["#B6CBC7","#8AA39C","#5F7B72","#3D554E"],snow:1},lake:{sky:["#BFDCE0","#F0EBDD"],sun:"#FFFDF5",r:["#C7C1B2","#9C9584","#6E6A5C","#45443B"]},city:{sky:["#F2D7B6","#F6EBDD"],sun:"#FFF6E8",r:["#D6C6B0","#B9A68D"]},silk:{sky:["#F6D3AE","#EFC9A0"],sun:"#FFF1DF",r:["#D8B48E","#B98E66","#8E6A4C","#5E4634"]},village:{sky:["#E4D3BD","#F3E9DA"],sun:"#FFF8EC",r:["#C9B49A","#9D8670","#6F5D4E","#463B33"],snow:1}};
-function scene(kind,wide){
-  var W=wide?1600:800,H=wide?900:500,c=PAL[kind]||PAL.road,r=rng(kind.length*97+(wide?7:3)),id="g"+kind+(wide?"w":"")+Math.floor(Math.random()*1e6);
-  var s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c.sky[0]+'"/><stop offset="1" stop-color="'+c.sky[1]+'"/></linearGradient></defs><rect width="'+W+'" height="'+H+'" fill="url(#'+id+')"/><circle cx="'+(W*0.72)+'" cy="'+(H*0.26)+'" r="'+(H*0.09)+'" fill="'+c.sun+'" opacity=".9"/>';
-  for(var i=0;i<c.r.length;i++){var base=H*(0.42+i*0.13),amp=H*(0.26-i*0.045),step=W*(0.07+i*0.02); s+='<path d="'+ridge(r,base,amp,step,W,H)+'" fill="'+c.r[i]+'"/>'; if(c.snow&&i===0){s+='<path d="'+ridge(rng(11),base-amp*0.55,amp*0.35,step*0.8,W,base-amp*0.25)+'" fill="#FFFFFF" opacity=".55"/>';}}
-  if(kind==="lake"||kind==="lakes"){s+='<ellipse cx="'+(W*0.48)+'" cy="'+(H*0.86)+'" rx="'+(W*0.42)+'" ry="'+(H*0.1)+'" fill="#3FA3A6"/>';}
-  if(kind==="river"){s+='<path d="M0,'+(H*0.82)+' C'+(W*0.25)+','+(H*0.74)+' '+(W*0.45)+','+(H*0.9)+' '+(W*0.7)+','+(H*0.8)+' S'+(W*0.95)+','+(H*0.76)+' '+W+','+(H*0.79)+' L'+W+','+(H*0.86)+' C'+(W*0.8)+','+(H*0.9)+' '+(W*0.5)+','+(H*0.97)+' 0,'+(H*0.9)+' Z" fill="#7FB3B5" opacity=".9"/>';}
-  if(kind==="road"||kind==="pass"){s+='<path d="M'+(W*0.35)+','+H+' C'+(W*0.45)+','+(H*0.86)+' '+(W*0.70)+','+(H*0.84)+' '+(W*0.58)+','+(H*0.74)+' S'+(W*0.48)+','+(H*0.66)+' '+(W*0.62)+','+(H*0.62)+'" fill="none" stroke="#E9DCC8" stroke-width="'+(H*0.03)+'" stroke-linecap="round" opacity=".85"/>';}
-  return s+'</svg>';
 }
-document.querySelectorAll("[data-scene]").forEach(function(el){el.insertAdjacentHTML("afterbegin",scene(el.dataset.scene, el.dataset.wide==="1"));});
 
-/* free photographs from Wikimedia Commons; the illustration stays if none loads */
-var PHOTOS={road:["Pamir_Highway_-_Tajikistan.jpg","Pamir_Highway-1.jpg","Pamir_road_near_Kalaykhumb.jpg"],pass:["From_Langar_to_Murghab_(30357439658).jpg","Ak-Baital_Pass.jpg","Border_Pamir_highway_China.jpg"],river:["Into_the_Wakhan_Valley_(4)_(31528121094).jpg","Along_the_Afghan_border_(8)_(30886746896).jpg","Panj_river_landscape.jpg"],lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg","Nurek_Reservoir,_Tajikistan.jpg"],silk:["Panjakent_7-4-19.jpg","Pamir_Highway_Ii_(185890299).jpeg"],lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg","Nurek_Reservoir,_Tajikistan.jpg"],city:["Dushanbe_Flagpole.jpg","Dushanbe_flagpole.jpg"],village:["Temple_Vrang.jpg","Panj_river_landscape.jpg"]};
+/* photographs from Wikimedia Commons; a named placeholder stays if none loads */
 var used=[];
-function credit(name){if(used.indexOf(name)>-1)return; used.push(name); var box=document.getElementById("credit-links"),a=document.createElement("a"); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(name); a.target="_blank"; a.rel="noopener"; a.textContent=used.length; if(box.childNodes.length)box.appendChild(document.createTextNode(" ")); box.appendChild(a); document.getElementById("credits").hidden=false;}
-document.querySelectorAll("[data-scene]").forEach(function(el){
-  var ph=CFG.photo||{}, rot=CFG.rot||0, base=(PHOTOS[el.dataset.scene]||[]).slice();
-  if(base.length>1){var k=rot%base.length; base=base.slice(k).concat(base.slice(0,k));}
-  var own=el.dataset.wide==="1"?ph.hero:(el.closest(".about")?ph.about:null);
-  var list=(own||[]).concat(base), w=el.dataset.wide==="1"?1920:1000;
-  if(!list.length) return;
-  var img=new Image(); img.className="ph"; img.alt=""; img.decoding="async"; if(el.dataset.wide!=="1") img.loading="lazy";
-  img.onload=function(){if(img.naturalWidth>50){img.classList.add("ok"); credit(img.dataset.name);}};
-  img.onerror=function(){var n=list.shift(); if(n){img.dataset.name=n; img.src="https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(n)+"?width="+w;} else img.remove();};
+function credit(n){if(used.indexOf(n)>-1)return; used.push(n); var cl=document.getElementById("cl"); if(!cl)return; var a=document.createElement("a"); a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(n); a.target="_blank"; a.rel="noopener"; a.textContent=used.length; if(cl.childNodes.length)cl.appendChild(document.createTextNode(" ")); cl.appendChild(a); var c=document.getElementById("credits"); if(c)c.hidden=false;}
+function loadPhoto(el, list){
+  list = (list || el.dataset.photo || "").split("|").filter(Boolean);
+  el.querySelectorAll("img,.fb").forEach(function(x){x.remove();});
+  if(getComputedStyle(el).position==="static") el.style.position="relative";
+  var fb=document.createElement("span"); fb.className="fb"; var s=el.dataset.label; if(s&&T[lang][s]) fb.textContent=T[lang][s]; el.appendChild(fb);
+  var img=new Image(); img.alt=""; img.decoding="async"; if(!el.dataset.eager) img.loading="lazy";
+  var w=el.dataset.w||1000;
+  img.onload=function(){if(img.naturalWidth>50){img.classList.add("ok"); fb.remove(); credit(img.dataset.n);}};
+  img.onerror=function(){var n=list.shift(); if(n){img.dataset.n=n; img.src="https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(n)+"?width="+w;} else img.remove();};
   el.appendChild(img); img.onerror();
-});
+}
+
+/* WhatsApp form: every field with data-m becomes a line of the message */
+function wireForm(){
+  document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+PHONE;});
+  document.querySelectorAll("[data-tg]").forEach(function(a){a.href="https://t.me/"+TG;});
+  var f=document.getElementById("form"); if(!f) return;
+  f.addEventListener("submit",function(e){
+    e.preventDefault(); var d=T[lang], n=document.getElementById("n"), box=n.closest("[data-field]");
+    if(!n.value.trim()){box.classList.add("bad"); n.focus(); return;} box.classList.remove("bad");
+    var lines=[d.hello];
+    f.querySelectorAll("[data-m]").forEach(function(x){var v=x.tagName==="SELECT"?x.options[x.selectedIndex].textContent:x.value.trim(); if(v) lines.push((d[x.dataset.m]||"")+": "+v);});
+    var a=document.getElementById("wa"); a.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(lines.join("\n"));
+    document.getElementById("ready").classList.add("show"); a.focus();
+  });
+  document.querySelectorAll("[data-pick]").forEach(function(a){a.addEventListener("click",function(){var s=document.getElementById("r"); if(s) s.value=a.dataset.pick;});});
+}
+
+/* header turns solid after the first screen; the phone bar shows between hero and form */
+function wireChrome(){
+  var hd=document.querySelector("header"), hero=document.querySelector("[data-hero]"), mbar=document.querySelector(".mbar"), form=document.getElementById("form");
+  var tick=false;
+  function f(){tick=false; var hb=hero?hero.getBoundingClientRect().bottom:0;
+    if(hd) hd.classList.toggle("solid", hb<80);
+    if(mbar&&form){var r=form.getBoundingClientRect(); mbar.classList.toggle("on", hb<0 && !(r.top<innerHeight&&r.bottom>0));}
+    if(window.onScroll) onScroll();}
+  addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(f);}},{passive:true});
+  addEventListener("resize",f); f();
+}
+function progress(el){var r=el.getBoundingClientRect(); return Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));}
+function reveal(sel){var els=document.querySelectorAll(sel); if(RM||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{rootMargin:"0px 0px -8% 0px"}); els.forEach(function(e){io.observe(e);});}
+
+function boot(){
+  var l=null; try{l=localStorage.getItem(SLUG+"-lang");}catch(e){}
+  if(!l){var n=(navigator.language||"en").toLowerCase(); l=n.indexOf("ru")===0?"ru":n.indexOf("tg")===0?"tg":"en";}
+  setLang(l);
+  document.querySelectorAll(".ph[data-photo]").forEach(function(el){loadPhoto(el);});
+  wireForm(); wireChrome();
+}
+
+var mode="city";
+function fillList(){
+  var d=T[lang], list=document.getElementById("list"), sel=document.getElementById("r");
+  document.getElementById("lede").textContent=mode==="city"?d.l_city:d.l_nat;
+  list.innerHTML="";
+  SETS[mode].forEach(function(t){var a=document.createElement("article"); a.className="tour";
+    a.innerHTML='<div class="ph" data-label="'+t[0]+'"></div><div class="b"><span class="len"></span><h3></h3><p></p><a href="#chat"></a></div>';
+    a.querySelector(".len").textContent=d[t[0]+"l"]; a.querySelector("h3").textContent=d[t[0]]; a.querySelector("p").textContent=d[t[0]+"p"];
+    var link=a.querySelector("a"); link.textContent=d.ask+" →"; link.dataset.pick=t[0]; link.addEventListener("click",function(){sel.value=t[0];});
+    list.appendChild(a); loadPhoto(a.querySelector(".ph"),t[1]);});
+  sel.innerHTML=""; ["city","nature"].forEach(function(m){SETS[m].forEach(function(t){var o=document.createElement("option"); o.value=t[0]; o.textContent=d[t[0]]; sel.appendChild(o);});});
+}
+function setMode(m,anim){
+  mode=m; document.body.classList.toggle("nature",m==="nature");
+  document.querySelectorAll(".tg button").forEach(function(b){b.setAttribute("aria-selected",b.dataset.m2===m?"true":"false");});
+  var els=[document.getElementById("list"),document.getElementById("lede")];
+  if(anim&&!RM){els.forEach(function(e){e.classList.add("out");}); setTimeout(function(){fillList(); els.forEach(function(e){e.classList.remove("out");});},230);} else fillList();
+}
+document.querySelectorAll(".tg button").forEach(function(b){b.addEventListener("click",function(){setMode(b.dataset.m2,true);});});
+function onLang(d){ fillList(); qa(document.getElementById("qs"), d.qs, "q"); }
+boot();
 </script>
-<style>
-img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease),transform .6s var(--ease)}
-img.ph.ok{opacity:1}
-</style>
 </body>
 </html>
