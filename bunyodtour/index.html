@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" data-type="service">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="page-type" content="service">
+<meta name="site-kind" content="other">
+<title>Bunyod-Tour · Cultural, historical and trekking tours in Tajikistan</title>
+<meta name="description" content="Bunyod-Tour is a licensed travel company from Dushanbe, founded in 2017 and a member of PATA since 2019. We offer more than 500 tour products with 50 partner companies.">
+<meta property="og:title" content="Bunyod-Tour · Cultural, historical and trekking tours in Tajikistan">
+<meta property="og:description" content="Licensed tour operator · Since 2017">
+<meta name="theme-color" content="#1E2A2F">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- DEMO for Bunyod-Tour. Facts are taken from the company's own public profiles; durations and contacts to be confirmed. -->
+<style>
+:root{
+  --bg:#F3F1EB; --surface:#FFFFFF; --ink:#1A2A40; --muted:#5B666A; --line:#E2D9CA;
+  --accent:#B8862B; --accent-ink:#FFFFFF; --accent-dark:#946C21; --lake:#2F6E8F;
+  --r:14px; --r-sm:10px; --wrap:1180px; --pad:24px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:16px}
+:focus-visible{outline:3px solid var(--lake);outline-offset:3px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
+.mark{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:15px;font-weight:800}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{text-decoration:none;font-weight:600;font-size:15px;color:var(--muted);background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;transition:background-size .25s var(--ease),color .2s}
+nav a:hover{color:var(--ink);background-size:100% 2px}
+.right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface)}
+.lang button{border:0;background:transparent;font:inherit;font-size:13px;font-weight:700;padding:7px 11px;min-height:36px;border-radius:999px;cursor:pointer;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.menu-btn{display:none;border:1px solid var(--line);background:var(--surface);border-radius:10px;width:44px;height:44px;cursor:pointer;color:var(--ink);padding:0}
+.menu-btn svg{width:22px;height:22px}
+.menu-btn .i-close{display:none}
+.menu-btn[aria-expanded="true"] .i-open{display:none}
+.menu-btn[aria-expanded="true"] .i-close{display:block}
+body.lock{overflow:hidden}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:12px;font:inherit;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .18s var(--ease),background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 18px rgba(196,85,44,.25)}
+.btn-primary:hover{background:var(--accent-dark)}
+.btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.wa-ico{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px);display:flex;align-items:flex-end;overflow:hidden;color:#fff}
+.hero .art{position:absolute;inset:0}
+.hero .art svg{width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,22,26,.30) 0%,rgba(16,22,26,.42) 40%,rgba(16,22,26,.80) 100%)}
+.hero .kicker,.hero h1,.hero p{text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:64px}
+.kicker{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9;margin-bottom:16px}
+.hero h1{font-size:clamp(36px,5.6vw,72px);line-height:1.04;font-weight:800;letter-spacing:-.025em;max-width:15ch}
+.hero p{font-size:clamp(17px,1.6vw,20px);max-width:56ch;margin:22px 0 32px;opacity:.95}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero .btn-ghost{border-color:#fff;color:#fff}
+.hero .btn-ghost:hover{background:#fff;color:var(--ink)}
+[data-enter]{animation:enter .9s var(--ease) both}
+@keyframes enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* sections */
+main>section{padding:96px 0;scroll-margin-top:68px}
+.sec-head{max-width:720px;margin-bottom:44px}
+h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:18px}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.fact b{display:block;font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.fact span{color:var(--muted);font-size:15.5px}
+
+/* tours */
+.tours{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.tour{grid-column:span 2;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s}
+.tour.wide{grid-column:span 3}
+.tour:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(30,42,47,.10)}
+.tour .pic{aspect-ratio:16/10;overflow:hidden}
+.tour .pic svg{width:100%;height:100%;transition:transform .5s var(--ease)}
+.tour:hover .pic svg{transform:scale(1.03)}
+.tour .body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tour .dur{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--lake)}
+.tour h3{font-size:22px;line-height:1.2;letter-spacing:-.01em}
+.tour p{color:var(--muted);font-size:15.5px;flex:1}
+.tour .price{font-size:18px;font-weight:800;color:var(--ink)}
+.tour .ask{align-self:flex-start;margin-top:6px;font-weight:700;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;background:linear-gradient(var(--accent),var(--accent)) 0 85%/0 2px no-repeat;transition:background-size .25s var(--ease)}
+.tour .ask:hover{background-size:100% 2px}
+
+/* steps */
+.dark{background:var(--ink);color:#fff}
+.dark .sec-head p{color:#B9C3C6}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{border-top:2px solid rgba(255,255,255,.18);padding-top:24px}
+.step::before{counter-increment:s;content:"0" counter(s);font-size:15px;font-weight:800;color:#F0A27F;letter-spacing:.08em}
+.step h3{font-size:24px;margin:12px 0 10px;letter-spacing:-.01em}
+.step p{color:#C9D1D3}
+
+/* about */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.about .pic{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.about .pic svg{width:100%;height:100%}
+.about p{font-size:18px;color:#36434A;margin-top:18px}
+.langs{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.langs span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-weight:700;font-size:19px;position:relative;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:16px;font-size:28px;font-weight:500;color:var(--accent);transition:transform .25s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);max-width:68ch}
+
+/* contact */
+.contact{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+.channels{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.channel{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:16px 18px;text-decoration:none;font-weight:700;min-height:56px;transition:transform .2s var(--ease)}
+.channel:hover{transform:translateY(-2px)}
+.channel small{font-weight:500;color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:14px}
+input,select,textarea{font:inherit;font-size:16px;border:1px solid #D3C8B6;border-radius:10px;padding:13px 14px;background:#FCFAF6;color:var(--ink);min-height:50px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.note{grid-column:1/-1;font-size:13.5px;color:var(--muted)}
+.err{color:#B3261E;font-size:13.5px;font-weight:600;display:none}
+.field.bad .err{display:block}
+.field.bad input{border-color:#B3261E}
+.result{grid-column:1/-1;display:none;background:#EEF6F5;border:1px solid #C3DEDB;border-radius:10px;padding:16px}
+.result.show{display:block}
+.result a{font-weight:800;color:var(--lake)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0 110px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14.5px}
+.foot b{color:var(--ink)}
+.demo-line{margin-top:14px;font-size:13px;color:#8A8F88}
+
+/* photos over the illustrated fallback */
+[data-scene]{position:relative}
+.tour .pic,.about .pic{position:relative}
+img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease),transform .5s var(--ease)}
+img.ph.ok{opacity:1}
+.tour:hover img.ph{transform:scale(1.03)}
+.credits a{color:inherit}
+
+/* mobile action bar */
+.mbar{display:none}
+
+@media (max-width:1024px){
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .tour,.tour.wide{grid-column:span 3}
+  .about,.contact{grid-template-columns:1fr;gap:36px}
+  .about .pic{aspect-ratio:16/10;order:-1}
+}
+@media (max-width:820px){
+  nav{display:none}
+  nav.open{display:block;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:49;background:var(--bg);padding:20px var(--pad) 40px;overflow-y:auto;border-top:1px solid var(--line)}
+  nav.open ul{flex-direction:column;gap:0}
+  nav.open li{border-bottom:1px solid var(--line)}
+  nav.open a{font-size:22px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:none}
+  nav.open a::after{content:"→";color:var(--accent)}
+  .menu-btn{display:grid;place-items:center}
+  .steps{grid-template-columns:1fr}
+  main>section{padding:72px 0}
+}
+@media (max-width:620px){
+  :root{--pad:18px}
+  .tours{grid-template-columns:1fr}
+  .tour,.tour.wide{grid-column:auto}
+  .facts{grid-template-columns:1fr 1fr;gap:12px}
+  .fact{padding:18px}
+  .fact b{font-size:22px}
+  .hero h1{font-size:32px}
+  h2{font-size:28px}
+  .fact b{font-size:19px}
+  h1,h2,h3,.fact b{overflow-wrap:break-word;hyphens:auto}
+  form{grid-template-columns:1fr;padding:20px}
+  .hero .actions .btn{width:100%}
+  .lang button{padding:7px 9px}
+  .brand span.t{display:none}
+  .hero .wrap{padding-bottom:40px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:rgba(244,239,230,.96);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s var(--ease)}
+  .mbar.on{transform:none}
+  .mbar .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Bunyod-Tour"><span class="mark">B</span><span class="t" data-i18n="brand">Oriz · Tajikistan tours</span></a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#routes" data-i18n="nav_routes">Routes</a></li>
+        <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-lang="tg" aria-pressed="false">TJ</button>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg class="i-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" data-enter style="padding:0">
+    <div class="art" data-scene="pass" data-wide="1" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="kicker" data-i18n="kicker">Pamir · Wakhan · Fann Mountains</div>
+      <h1 data-i18n="h1">Private tours in the Pamirs and across Tajikistan</h1>
+      <p data-i18n="hero_p">Oriz is a Pamiri guide based in Dushanbe. For more than 10 years he and his team of guides and drivers have shown travelers the Pamir Highway, the Wakhan Valley and the lakes of the Fann Mountains.</p>
+      <div class="actions">
+        <a class="btn btn-primary wa" href="#contact"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span data-i18n="btn_plan">Plan my trip on WhatsApp</span></a>
+        <a class="btn btn-ghost" href="#routes" data-i18n="btn_routes">See the routes</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="why-h" data-i18n="why_h">Travel with a local team</h2></div>
+      <div class="facts" id="facts"></div>
+    </div>
+  </section>
+
+  <section id="routes" aria-labelledby="routes-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="routes-h" data-i18n="routes_h">Routes travelers ask for most</h2>
+        <p data-i18n="routes_p">Each tour is private. Length and stops change to fit your dates; the price depends on group size and season.</p>
+      </div>
+      <div class="tours" id="tours"></div>
+    </div>
+  </section>
+
+  <section id="how" class="dark" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="how-h" data-i18n="how_h">How a trip is planned</h2><p data-i18n="how_p">Three messages and your route is ready.</p></div>
+      <div class="steps">
+        <div class="step"><h3 data-i18n="s1">Write on WhatsApp</h3><p data-i18n="s1p">Tell Oriz your dates, how many people are coming and what you want to see.</p></div>
+        <div class="step"><h3 data-i18n="s2">Get a route and a price</h3><p data-i18n="s2p">You receive a day-by-day plan and the full price for your group.</p></div>
+        <div class="step"><h3 data-i18n="s3">Travel</h3><p data-i18n="s3p">A guide and a driver meet you in Dushanbe and stay with you on the road.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <div class="pic" data-scene="city" aria-hidden="true"></div>
+      <div>
+        <h2 id="about-h" data-i18n="about_h">About Oriz</h2>
+        <p data-i18n="about_p1">I was born in the Pamirs and live in Dushanbe. For more than ten years I have organized trips across Tajikistan for travelers from many countries, in English, Russian and German.</p>
+        <p data-i18n="about_p2">I work with a team of professional guides and drivers. We show the places we know from home: the ruins of Panjakent, the villages of the Wakhan and the high roads of the Pamirs.</p>
+        <div class="langs"><span>English</span><span>Русский</span><span>Тоҷикӣ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="faq-h" data-i18n="faq_h">Questions before you book</h2></div>
+      <div class="faq">
+        <details><summary data-i18n="q1">When is the best time for the Pamir Highway?</summary><p data-i18n="a1">From June to September the high passes are usually open and the weather is stable. The Fann Mountains are good from May to October.</p></details>
+        <details><summary data-i18n="q2">Do I need a special permit for the Pamirs?</summary><p data-i18n="a2" data-assumed>Yes. The Pamirs (GBAO) need a separate permit in addition to your visa. We help you arrange it together with the route.</p></details>
+        <details><summary data-i18n="q3">How do I get a visa?</summary><p data-i18n="a3">Many travelers apply for Tajikistan's e-Visa online before the trip. The rules depend on your passport, so check them for your country.</p></details>
+        <details><summary data-i18n="q4">Can the route be changed?</summary><p data-i18n="a4">Yes. Every tour is private, so the days, the stops and the pace are set around you.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="dark" aria-labelledby="contact-h">
+    <div class="wrap contact">
+      <div>
+        <h2 id="contact-h" data-i18n="contact_h">Plan your trip</h2>
+        <p style="color:#C9D1D3;margin-top:14px;font-size:18px" data-i18n="contact_p">Fill in a few details and send them to Oriz on WhatsApp. He replies personally.</p>
+        <div class="channels" style="color:var(--ink)">
+          <a class="channel" id="ch-wa" href="#"><span>WhatsApp</span><small id="phone-text">+992 •• ••• •• ••</small></a>
+          <a class="channel" id="ch-tg" href="#"><span>Telegram</span><small>@bunyodtour</small></a>
+          <a class="channel" id="ch-mail" href="#"><span>Email</span><small>hello@bunyodtour.example</small></a>
+        </div>
+      </div>
+      <form id="trip" novalidate style="color:var(--ink)">
+        <div class="field"><label for="f-name" data-i18n="l_name">Your name</label><input id="f-name" name="name" autocomplete="name"><span class="err" data-i18n="e_name">Please enter your name</span></div>
+        <div class="field"><label for="f-dates" data-i18n="l_dates">Travel dates</label><input id="f-dates" name="dates" data-i18n-ph="ph_dates" placeholder="e.g. 10–20 July"></div>
+        <div class="field"><label for="f-people" data-i18n="l_people">Number of people</label><input id="f-people" name="people" type="number" min="1" inputmode="numeric" value="2"></div>
+        <div class="field"><label for="f-route" data-i18n="l_route">Route</label>
+          <select id="f-route" name="route"></select></div>
+        <div class="field full"><label for="f-msg" data-i18n="l_msg">Message</label><textarea id="f-msg" name="msg" data-i18n-ph="ph_msg" placeholder="What would you like to see?"></textarea></div>
+        <div class="field full"><button class="btn btn-primary" type="submit"><span data-i18n="send">Send on WhatsApp</span></button></div>
+        <p class="note" data-i18n="note">Your message opens in WhatsApp. Nothing is sent from this page.</p>
+        <div class="result" id="result" role="status"><span data-i18n="ready">Your message is ready:</span> <a id="wa-link" href="#" target="_blank" rel="noopener" data-i18n="open_wa">Open WhatsApp</a></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span><b data-i18n="f_name">Oriz</b> · <span data-i18n="f_line">Private tours in Tajikistan · Dushanbe</span></span>
+      <span>© 2026</span>
+    </div>
+    <p class="demo-line credits" id="credits" hidden><span data-i18n="photos">Photos: Wikimedia Commons, Creative Commons licences.</span> <span id="credit-links"></span></p>
+    <p class="demo-line" data-i18n="demo">Demo site prepared for Oriz. Texts, durations and contacts are to be confirmed; the illustrations will be replaced with your own photos.</p>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn-primary" href="#contact"><span data-i18n="mbar">Message on WhatsApp</span></a></div>
+
+<script>
+/* CLIENT DATA: replace before launch */
+var CLIENT_PHONE = "992000000000";      /* digits only, for wa.me */
+var CLIENT_TELEGRAM = "bunyodtour";
+var CLIENT_EMAIL = "hello@bunyodtour.example";
+
+var T = {"en": {"skip": "Skip to content", "nav_routes": "Routes", "nav_how": "How it works", "nav_about": "About", "nav_faq": "FAQ", "nav_contact": "Contact", "btn_plan": "Plan my trip on WhatsApp", "btn_routes": "See the routes", "why_h": "Why travel with Bunyod-Tour", "routes_h": "Routes travelers ask for most", "routes_p": "Each tour can be changed. Length and stops fit your dates; the price depends on group size and season.", "ask": "Ask the price", "how_h": "How a trip is planned", "how_p": "Three messages and your route is ready.", "s1": "Write on WhatsApp", "s1p": "Tell us your dates, how many people are coming and what you want to see.", "s2": "Get a route and a price", "s2p": "You receive a day-by-day plan and the full price for your group.", "s3": "Travel", "s3p": "Your guide and driver meet you in Dushanbe and stay with you on the road.", "faq_h": "Questions before you book", "q1": "When is the best time for the Pamir Highway?", "a1": "From June to September the high passes are usually open and the weather is stable. The Fann Mountains are good from May to October.", "q2": "Do I need a special permit for the Pamirs?", "a2": "Yes. The Pamirs (GBAO) need a separate permit in addition to your visa. Ask about it when you plan the route.", "q3": "How do I get a visa?", "a3": "Many travelers apply for Tajikistan's e-Visa online before the trip. The rules depend on your passport, so check them for your country.", "q4": "Can the route be changed?", "a4": "Yes. Tell us your dates and interests, and the days, stops and pace are set around you.", "contact_h": "Plan your trip", "contact_p": "Fill in a few details and send them to Bunyod-Tour on WhatsApp.", "l_name": "Your name", "e_name": "Please enter your name", "l_dates": "Travel dates", "ph_dates": "e.g. 10–20 July", "l_people": "Number of people", "l_route": "Route", "o_none": "Not sure yet", "l_msg": "Message", "ph_msg": "What would you like to see?", "send": "Send on WhatsApp", "note": "Your message opens in WhatsApp. Nothing is sent from this page.", "ready": "Your message is ready:", "open_wa": "Open WhatsApp", "f_line": "Tours in Tajikistan · Dushanbe", "demo": "Demo site prepared for Bunyod-Tour. Texts, durations and contacts are to be confirmed; the photos will be replaced with your own.", "mbar": "Message on WhatsApp", "msg_hello": "Hello Bunyod-Tour! I found your website.", "msg_name": "Name", "msg_dates": "Dates", "msg_people": "People", "msg_route": "Route", "photos": "Photos: Wikimedia Commons, Creative Commons licences, authors on the file pages:", "about_h": "About us", "from_": "from", "brand": "Bunyod-Tour", "f_name": "Bunyod-Tour", "kicker": "Licensed tour operator · Since 2017", "h1": "Cultural, historical and trekking tours in Tajikistan", "hero_p": "Bunyod-Tour is a licensed travel company from Dushanbe, founded in 2017 and a member of PATA since 2019. We offer more than 500 tour products with 50 partner companies.", "about_p1": "Bunyod-Tour LLC was founded in Dushanbe in 2017. In 2019 we became a member of PATA, the Pacific Asia Travel Association.", "about_p2": "We organize tours and excursions in Tajikistan, partner tours to the CIS and Europe, transfers, hotel booking, visa support and invitation letters.", "title": "Bunyod-Tour · Cultural, historical and trekking tours in Tajikistan", "fb0": "500+ tours", "fs0": "with 50 national and foreign partners", "fb1": "PATA member", "fs1": "since 2019", "fb2": "Licensed", "fs2": "licence No. 0000253", "fb3": "Visa letters", "fs3": "visa support and invitations", "t1": "Pamir Highway", "t1d": "10–14 days", "t1p": "Dushanbe to Khorog, the Wakhan Valley, Murghab and on to Osh. Passes up to 4,655 m and nights in Pamiri homestays.", "t3": "Fann Mountains and Seven Lakes", "t3d": "3–5 days", "t3p": "Iskanderkul, the Seven Lakes near Panjakent and treks in the Fann range.", "t5": "Dushanbe and Hisor fortress", "t5d": "1 day", "t5p": "The capital's museums, bazaar and parks, and the Hisor fortress west of the city.", "t6": "Tajikistan and Uzbekistan", "t6d": "8–12 days", "t6p": "Dushanbe, the Fann Mountains and Panjakent, then across the border to Samarkand and Bukhara."}, "ru": {"skip": "Перейти к содержанию", "nav_routes": "Маршруты", "nav_how": "Как это работает", "nav_about": "О нас", "nav_faq": "Вопросы", "nav_contact": "Контакты", "btn_plan": "Спланировать поездку в WhatsApp", "btn_routes": "Смотреть маршруты", "why_h": "Почему Bunyod-Tour", "routes_h": "Маршруты, о которых спрашивают чаще всего", "routes_p": "Каждый тур можно изменить. Длительность и остановки подстраиваются под ваши даты, цена зависит от размера группы и сезона.", "ask": "Узнать цену", "how_h": "Как планируется поездка", "how_p": "Три сообщения, и маршрут готов.", "s1": "Напишите в WhatsApp", "s1p": "Напишите даты, сколько вас и что хотите увидеть.", "s2": "Получите маршрут и цену", "s2p": "Вы получаете план по дням и полную цену для вашей группы.", "s3": "Путешествуйте", "s3p": "Гид и водитель встречают вас в Душанбе и сопровождают всю дорогу.", "faq_h": "Вопросы перед бронированием", "q1": "Когда лучше ехать по Памирскому тракту?", "a1": "С июня по сентябрь высокие перевалы обычно открыты и погода стабильная. В Фанские горы хорошо ехать с мая по октябрь.", "q2": "Нужно ли специальное разрешение на Памир?", "a2": "Да. Для поездки на Памир (ГБАО) кроме визы нужен отдельный пропуск. Спросите о нём, когда будете планировать маршрут.", "q3": "Как получить визу?", "a3": "Многие путешественники заранее оформляют электронную визу Таджикистана онлайн. Правила зависят от паспорта, поэтому проверьте их для своей страны.", "q4": "Можно ли изменить маршрут?", "a4": "Да. Напишите даты и интересы, и дни, остановки и темп подберут под вас.", "contact_h": "Спланируйте поездку", "contact_p": "Заполните несколько полей и отправьте Bunyod-Tour в WhatsApp.", "l_name": "Ваше имя", "e_name": "Пожалуйста, введите имя", "l_dates": "Даты поездки", "ph_dates": "например, 10–20 июля", "l_people": "Количество человек", "l_route": "Маршрут", "o_none": "Пока не знаю", "l_msg": "Сообщение", "ph_msg": "Что вы хотели бы увидеть?", "send": "Отправить в WhatsApp", "note": "Сообщение откроется в WhatsApp. С этой страницы ничего не отправляется.", "ready": "Сообщение готово:", "open_wa": "Открыть WhatsApp", "f_line": "Туры по Таджикистану · Душанбе", "demo": "Демо-сайт, подготовленный для Bunyod-Tour. Тексты, сроки и контакты нужно подтвердить; фото заменятся вашими.", "mbar": "Написать в WhatsApp", "msg_hello": "Здравствуйте! Нашёл(ла) ваш сайт.", "msg_name": "Имя", "msg_dates": "Даты", "msg_people": "Человек", "msg_route": "Маршрут", "photos": "Фото: Wikimedia Commons, лицензии Creative Commons, авторы на страницах файлов:", "about_h": "О компании", "from_": "от", "brand": "Bunyod-Tour", "f_name": "Bunyod-Tour", "kicker": "Лицензированный туроператор · С 2017 года", "h1": "Культурные, исторические и треккинговые туры по Таджикистану", "hero_p": "Bunyod-Tour — лицензированная туристическая компания из Душанбе, основана в 2017 году, с 2019 года член PATA. Более 500 турпродуктов вместе с 50 компаниями-партнёрами.", "about_p1": "ООО «Bunyod-Tour» основано в Душанбе в 2017 году. В 2019 году мы вступили в PATA, Тихоокеанско-Азиатскую туристическую ассоциацию.", "about_p2": "Организуем туры и экскурсии по Таджикистану, партнёрские туры в СНГ и Европу, трансферы, бронирование отелей, визовую поддержку и приглашения.", "title": "Bunyod-Tour · Культурные, исторические и треккинговые туры по Таджикистану", "fb0": "500+ туров", "fs0": "с 50 местными и зарубежными партнёрами", "fb1": "Член PATA", "fs1": "с 2019 года", "fb2": "Лицензия", "fs2": "№ 0000253", "fb3": "Визы", "fs3": "визовая поддержка и приглашения", "t1": "Памирский тракт", "t1d": "10–14 дней", "t1p": "Душанбе, Хорог, Ваханская долина, Мургаб и дальше до Оша. Перевалы до 4655 м и ночёвки в памирских домах.", "t3": "Фанские горы и Семь озёр", "t3d": "3–5 дней", "t3p": "Искандеркуль, Семь озёр возле Пенджикента и треки в Фанских горах.", "t5": "Душанбе и Гиссарская крепость", "t5d": "1 день", "t5p": "Музеи, базар и парки столицы и Гиссарская крепость к западу от города.", "t6": "Таджикистан и Узбекистан", "t6d": "8–12 дней", "t6p": "Душанбе, Фанские горы и Пенджикент, затем через границу в Самарканд и Бухару."}, "tg": {"skip": "Гузаштан ба мундариҷа", "nav_routes": "Масирҳо", "nav_how": "Чӣ тавр кор мекунад", "nav_about": "Дар бораи мо", "nav_faq": "Саволҳо", "nav_contact": "Тамос", "btn_plan": "Сафарро дар WhatsApp ба нақша гиред", "btn_routes": "Масирҳоро бинед", "why_h": "Чаро Bunyod-Tour", "routes_h": "Масирҳое, ки сайёҳон бештар мепурсанд", "routes_p": "Ҳар сафарро тағйир додан мумкин аст. Давомнокӣ ва истгоҳҳо ба санаҳои шумо мувофиқ карда мешаванд, нарх аз шумораи гурӯҳ ва мавсим вобаста аст.", "ask": "Нархро пурсед", "how_h": "Сафар чӣ тавр ба нақша гирифта мешавад", "how_p": "Се паём ва масири шумо тайёр аст.", "s1": "Дар WhatsApp нависед", "s1p": "Санаҳо, шумораи одамон ва он чиро, ки дидан мехоҳед, нависед.", "s2": "Масир ва нархро гиред", "s2p": "Шумо нақшаи рӯз ба рӯз ва нархи пурраро барои гурӯҳатон мегиред.", "s3": "Сафар кунед", "s3p": "Роҳбалад ва ронанда шуморо дар Душанбе пешвоз гирифта, дар тамоми роҳ ҳамроҳатон мебошанд.", "faq_h": "Саволҳо пеш аз фармоиш", "q1": "Барои шоҳроҳи Помир кадом вақт беҳтар аст?", "a1": "Аз июн то сентябр ағбаҳои баланд одатан кушодаанд ва ҳаво устувор аст. Ба кӯҳҳои Фон аз май то октябр рафтан хуб аст.", "q2": "Барои Помир иҷозатномаи махсус лозим аст?", "a2": "Бале. Барои сафар ба Помир (ВМКБ) ба ғайр аз раводид иҷозатномаи алоҳида лозим аст. Дар бораи гирифтани он ҳамроҳи масир пурсед.", "q3": "Раводидро чӣ тавр гирам?", "a3": "Бисёр сайёҳон пеш аз сафар раводиди электронии Тоҷикистонро онлайн мегиранд. Қоидаҳо аз шиносномаи шумо вобастаанд, бинобар ин онҳоро барои кишвари худ санҷед.", "q4": "Масирро тағйир додан мумкин аст?", "a4": "Бале. Санаҳо ва хоҳишҳои худро нависед, рӯзҳо, истгоҳҳо ва суръат барои шумо интихоб карда мешаванд.", "contact_h": "Сафари худро ба нақша гиред", "contact_p": "Якчанд маълумотро пур кунед ва дар WhatsApp фиристед.", "l_name": "Номи шумо", "e_name": "Лутфан номатонро ворид кунед", "l_dates": "Санаҳои сафар", "ph_dates": "масалан, 10–20 июл", "l_people": "Шумораи одамон", "l_route": "Масир", "o_none": "Ҳоло намедонам", "l_msg": "Паём", "ph_msg": "Чиро дидан мехоҳед?", "send": "Дар WhatsApp фиристодан", "note": "Паём дар WhatsApp кушода мешавад. Аз ин саҳифа ҳеҷ чиз фиристода намешавад.", "ready": "Паёми шумо тайёр аст:", "open_wa": "WhatsApp-ро кушоед", "f_line": "Сафарҳо дар Тоҷикистон · Душанбе", "demo": "Сайти намунавӣ барои Bunyod-Tour. Матнҳо, мӯҳлатҳо ва тамосҳо бояд тасдиқ шаванд; аксҳо бо аксҳои худи шумо иваз карда мешаванд.", "mbar": "Дар WhatsApp нависед", "msg_hello": "Салом! Сайти шуморо дидам.", "msg_name": "Ном", "msg_dates": "Санаҳо", "msg_people": "Нафар", "msg_route": "Масир", "photos": "Аксҳо: Wikimedia Commons, иҷозатномаҳои Creative Commons, муаллифон дар саҳифаҳои файлҳо:", "about_h": "Дар бораи мо", "from_": "аз", "brand": "Bunyod-Tour", "f_name": "Bunyod-Tour", "kicker": "Туроператори литсензиядор · Аз соли 2017", "h1": "Сафарҳои фарҳангӣ, таърихӣ ва кӯҳнавардӣ дар Тоҷикистон", "hero_p": "Bunyod-Tour ширкати сайёҳии литсензиядор аз Душанбе аст, ки соли 2017 таъсис ёфта, аз соли 2019 узви PATA мебошад. Зиёда аз 500 маҳсулоти сайёҳӣ бо 50 ширкати шарик.", "about_p1": "ҶДММ «Bunyod-Tour» соли 2017 дар Душанбе таъсис ёфтааст. Соли 2019 мо узви PATA, Ассотсиатсияи сайёҳии Осиё ва уқёнуси Ором шудем.", "about_p2": "Мо сафарҳо ва экскурсияҳо дар Тоҷикистон, сафарҳои шарикӣ ба ИДМ ва Аврупо, интиқол, брони меҳмонхона, дастгирии раводид ва даъватномаҳо ташкил мекунем.", "title": "Bunyod-Tour · Сафарҳои фарҳангӣ, таърихӣ ва кӯҳнавардӣ дар Тоҷикистон", "fb0": "500+ сафар", "fs0": "бо 50 шарики дохилӣ ва хориҷӣ", "fb1": "Узви PATA", "fs1": "аз соли 2019", "fb2": "Литсензия", "fs2": "№ 0000253", "fb3": "Раводид", "fs3": "дастгирӣ ва даъватномаҳо", "t1": "Шоҳроҳи Помир", "t1d": "10–14 рӯз", "t1p": "Аз Душанбе то Хоруғ, водии Вахон, Мурғоб ва то Ош. Ағбаҳо то 4655 м ва шабгузаронӣ дар хонаҳои помирӣ.", "t3": "Кӯҳҳои Фон ва Ҳафткӯл", "t3d": "3–5 рӯз", "t3p": "Искандаркӯл, Ҳафткӯл дар наздикии Панҷакент ва пиёдагардӣ дар кӯҳҳои Фон.", "t5": "Душанбе ва қалъаи Ҳисор", "t5d": "1 рӯз", "t5p": "Осорхонаҳо, бозор ва боғҳои пойтахт ва қалъаи Ҳисор дар ғарби шаҳр.", "t6": "Тоҷикистон ва Ӯзбекистон", "t6d": "8–12 рӯз", "t6p": "Душанбе, кӯҳҳои Фон ва Панҷакент, сипас аз марз ба Самарқанд ва Бухоро."}};
+var CFG = {"tours": ["t1", "t3", "t5", "t6"], "scenes": {"t1": "pass", "t3": "lakes", "t5": "city", "t6": "road"}, "prices": []};
+(function(){
+  var f=document.getElementById("facts"), i;
+  for(i=0;i<4;i++){f.insertAdjacentHTML("beforeend",'<div class="fact"><b data-i18n="fb'+i+'"></b><span data-i18n="fs'+i+'"></span></div>');}
+  var tw=document.getElementById("tours"), sel=document.getElementById("f-route");
+  CFG.tours.forEach(function(t,k){
+    var wide=(CFG.tours.length===4)||(CFG.tours.length===5&&k<2);
+    tw.insertAdjacentHTML("beforeend",'<article class="tour'+(wide?' wide':'')+'"><div class="pic" data-scene="'+CFG.scenes[t]+'" aria-hidden="true"></div><div class="body"><span class="dur" data-i18n="'+t+'d"></span><h3 data-i18n="'+t+'"></h3><p data-i18n="'+t+'p"></p>'+(CFG.prices.indexOf(t)>-1?'<strong class="price" data-i18n="'+t+'pr"></strong>':'')+'<a class="ask" href="#contact" data-tour="'+t+'"><span data-i18n="ask"></span> →</a></div></article>');
+    sel.insertAdjacentHTML("beforeend",'<option value="'+t+'" data-i18n="'+t+'"></option>');
+  });
+  sel.insertAdjacentHTML("beforeend",'<option value="none" data-i18n="o_none"></option>');
+})();
+
+var lang = "en";
+function setLang(l){
+  if(!T[l]) l="en"; lang=l;
+  document.documentElement.lang = (l==="tg"?"tg":l);
+  var d=T[l];
+  document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n"); if(d[k]!=null) el.textContent=d[k];});
+  document.querySelectorAll("[data-i18n-ph]").forEach(function(el){var k=el.getAttribute("data-i18n-ph"); if(d[k]!=null) el.placeholder=d[k];});
+  document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed", b.dataset.lang===l?"true":"false");});
+  document.title=d.title;
+  try{localStorage.setItem("bunyodtour-lang",l);}catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang);});});
+(function(){
+  var l=null; try{l=localStorage.getItem("bunyodtour-lang");}catch(e){}
+  if(!l){var n=(navigator.language||"en").toLowerCase(); l=n.indexOf("ru")===0?"ru":(n.indexOf("tg")===0?"tg":"en");}
+  setLang(l);
+})();
+
+/* menu */
+var mb=document.querySelector(".menu-btn"), nav=document.getElementById("nav");
+function menu(o){nav.classList.toggle("open",o); mb.setAttribute("aria-expanded",o?"true":"false"); document.body.classList.toggle("lock",o);}
+mb.addEventListener("click",function(){menu(!nav.classList.contains("open"));});
+nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){menu(false);});});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")menu(false);});
+
+/* contacts */
+document.getElementById("ch-wa").href="https://wa.me/"+CLIENT_PHONE;
+document.getElementById("ch-tg").href="https://t.me/"+CLIENT_TELEGRAM;
+document.getElementById("ch-mail").href="mailto:"+CLIENT_EMAIL;
+
+/* mobile action bar appears once the hero buttons scroll away, hides at the form */
+(function(){
+  var bar=document.querySelector(".mbar"); if(!("IntersectionObserver" in window)){bar.classList.add("on");return;}
+  var heroVis=true, formVis=false;
+  function upd(){bar.classList.toggle("on", !heroVis && !formVis);}
+  new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd();}).observe(document.querySelector(".hero .actions"));
+  new IntersectionObserver(function(e){formVis=e[0].isIntersecting;upd();}).observe(document.getElementById("trip"));
+})();
+
+/* "Ask the price" preselects the route */
+document.querySelectorAll(".ask").forEach(function(a){a.addEventListener("click",function(){document.getElementById("f-route").value=a.dataset.tour;});});
+
+/* form builds a WhatsApp message */
+document.getElementById("trip").addEventListener("submit",function(e){
+  e.preventDefault();
+  var d=T[lang], name=document.getElementById("f-name"), fld=name.closest(".field");
+  if(!name.value.trim()){fld.classList.add("bad"); name.focus(); return;}
+  fld.classList.remove("bad");
+  var r=document.getElementById("f-route"), routeTxt=r.options[r.selectedIndex].textContent;
+  var lines=[d.msg_hello, d.msg_name+": "+name.value.trim(), d.msg_dates+": "+(document.getElementById("f-dates").value.trim()||"-"),
+    d.msg_people+": "+(document.getElementById("f-people").value||"-"), d.msg_route+": "+routeTxt];
+  var m=document.getElementById("f-msg").value.trim(); if(m) lines.push(m);
+  var url="https://wa.me/"+CLIENT_PHONE+"?text="+encodeURIComponent(lines.join("\n"));
+  var link=document.getElementById("wa-link"); link.href=url;
+  document.getElementById("result").classList.add("show");
+  link.focus();
+});
+
+/* illustrated scenes (stand-ins for the client's photographs) */
+function rng(seed){return function(){seed=(seed*9301+49297)%233280;return seed/233280;};}
+function ridge(r,base,amp,step,w,h){
+  var p="M0,"+h+" L0,"+base, x=0;
+  while(x<=w){var y=base-amp*(0.35+0.65*r()); p+=" L"+x.toFixed(0)+","+y.toFixed(0); x+=step*(0.6+0.8*r());}
+  return p+" L"+w+","+base+" L"+w+","+h+" Z";
+}
+var PAL={
+  road:{sky:["#F6C9A0","#E9A27B"],sun:"#FBE7CF",r:["#B98A78","#8D6A66","#5E4D52","#3A3439"]},
+  pass:{sky:["#BFD9E6","#E8E2D6"],sun:"#FFF7EA",r:["#D9E3E8","#A9B7BF","#7B8A90","#4E5A5E"],snow:1},
+  river:{sky:["#F3DDBF","#E7C29C"],sun:"#FFF3E0",r:["#CBAE93","#A78769","#7E6550","#54453A"]},
+  lakes:{sky:["#CFE5E5","#EEF2EC"],sun:"#FFFFFF",r:["#B6CBC7","#8AA39C","#5F7B72","#3D554E"],snow:1},
+  lake:{sky:["#BFDCE0","#F0EBDD"],sun:"#FFFDF5",r:["#C7C1B2","#9C9584","#6E6A5C","#45443B"]},
+  city:{sky:["#F2D7B6","#F6EBDD"],sun:"#FFF6E8",r:["#D6C6B0","#B9A68D"]},
+  village:{sky:["#E4D3BD","#F3E9DA"],sun:"#FFF8EC",r:["#C9B49A","#9D8670","#6F5D4E","#463B33"],snow:1}
+};
+function scene(kind,wide){
+  var W=wide?1600:800, H=wide?900:500, c=PAL[kind], r=rng(kind.length*97+(wide?7:3)), id="g"+kind+(wide?"w":"");
+  var s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">';
+  s+='<defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c.sky[0]+'"/><stop offset="1" stop-color="'+c.sky[1]+'"/></linearGradient></defs>';
+  s+='<rect width="'+W+'" height="'+H+'" fill="url(#'+id+')"/>';
+  s+='<circle cx="'+(W*0.72)+'" cy="'+(H*0.26)+'" r="'+(H*0.09)+'" fill="'+c.sun+'" opacity=".9"/>';
+  var n=c.r.length, i;
+  for(i=0;i<n;i++){
+    var base=H*(0.42+i*0.13), amp=H*(0.26-i*0.045), step=W*(0.07+i*0.02);
+    s+='<path d="'+ridge(r,base,amp,step,W,H)+'" fill="'+c.r[i]+'"/>';
+    if(c.snow&&i===0){s+='<path d="'+ridge(rng(11),base-amp*0.55,amp*0.35,step*0.8,W,base-amp*0.25)+'" fill="#FFFFFF" opacity=".55"/>';}
+  }
+  if(kind==="road"||kind==="pass"){
+    s+='<path d="M'+(W*0.35)+','+H+' C'+(W*0.45)+','+(H*0.86)+' '+(W*0.70)+','+(H*0.84)+' '+(W*0.58)+','+(H*0.74)+' S'+(W*0.48)+','+(H*0.66)+' '+(W*0.62)+','+(H*0.62)+'" fill="none" stroke="#E9DCC8" stroke-width="'+(H*0.03)+'" stroke-linecap="round" opacity=".85"/>';
+    s+='<path d="M'+(W*0.35)+','+H+' C'+(W*0.45)+','+(H*0.86)+' '+(W*0.70)+','+(H*0.84)+' '+(W*0.58)+','+(H*0.74)+' S'+(W*0.48)+','+(H*0.66)+' '+(W*0.62)+','+(H*0.62)+'" fill="none" stroke="#FFFFFF" stroke-width="'+(H*0.004)+'" stroke-dasharray="'+(H*0.02)+' '+(H*0.02)+'" opacity=".7"/>';
+  }
+  if(kind==="river"){
+    s+='<path d="M0,'+(H*0.82)+' C'+(W*0.25)+','+(H*0.74)+' '+(W*0.45)+','+(H*0.9)+' '+(W*0.7)+','+(H*0.8)+' S'+(W*0.95)+','+(H*0.76)+' '+W+','+(H*0.79)+' L'+W+','+(H*0.86)+' C'+(W*0.8)+','+(H*0.9)+' '+(W*0.5)+','+(H*0.97)+' 0,'+(H*0.9)+' Z" fill="#7FB3B5" opacity=".9"/>';
+  }
+  if(kind==="lake"||kind==="lakes"){
+    s+='<ellipse cx="'+(W*0.48)+'" cy="'+(H*0.86)+'" rx="'+(W*0.42)+'" ry="'+(H*0.1)+'" fill="#3FA3A6"/>';
+    s+='<ellipse cx="'+(W*0.48)+'" cy="'+(H*0.84)+'" rx="'+(W*0.3)+'" ry="'+(H*0.025)+'" fill="#FFFFFF" opacity=".25"/>';
+    if(kind==="lakes"){s+='<ellipse cx="'+(W*0.82)+'" cy="'+(H*0.95)+'" rx="'+(W*0.16)+'" ry="'+(H*0.05)+'" fill="#2E8C8F"/>';}
+  }
+  if(kind==="city"){
+    var gy=H*0.8; s+='<rect x="0" y="'+gy+'" width="'+W+'" height="'+(H-gy)+'" fill="#CDB89C"/>';
+    var bx=W*0.05; while(bx<W*0.95){var bw=W*(0.04+0.05*r()), bh=H*(0.08+0.18*r()); s+='<rect x="'+bx+'" y="'+(gy-bh)+'" width="'+bw+'" height="'+bh+'" fill="#8E7D6C" opacity="'+(0.6+0.4*r()).toFixed(2)+'"/>'; bx+=bw+W*0.012;}
+    s+='<rect x="'+(W*0.3)+'" y="'+(H*0.12)+'" width="'+(W*0.006)+'" height="'+(gy-H*0.12)+'" fill="#5A4E45"/>';
+    s+='<rect x="'+(W*0.306)+'" y="'+(H*0.12)+'" width="'+(W*0.12)+'" height="'+(H*0.025)+'" fill="#C9302C"/><rect x="'+(W*0.306)+'" y="'+(H*0.145)+'" width="'+(W*0.12)+'" height="'+(H*0.035)+'" fill="#FFFFFF"/><rect x="'+(W*0.306)+'" y="'+(H*0.18)+'" width="'+(W*0.12)+'" height="'+(H*0.025)+'" fill="#2E8B57"/>';
+  }
+  if(kind==="village"){
+    var hx=[0.18,0.3,0.42,0.6], k;
+    for(k=0;k<hx.length;k++){var x=W*hx[k], y=H*(0.84+0.04*(k%2)), w=W*0.08, h=H*0.07;
+      s+='<rect x="'+x+'" y="'+(y-h)+'" width="'+w+'" height="'+h+'" fill="#EFE3D0"/><rect x="'+(x-W*0.005)+'" y="'+(y-h-H*0.015)+'" width="'+(w+W*0.01)+'" height="'+(H*0.018)+'" fill="#8B6D55"/><rect x="'+(x+w*0.4)+'" y="'+(y-h*0.6)+'" width="'+(w*0.18)+'" height="'+(h*0.6)+'" fill="#6B5545"/>';}
+    for(k=0;k<6;k++){var tx=W*(0.08+k*0.15), ty=H*0.9; s+='<path d="M'+tx+','+ty+' l'+(W*0.012)+',-'+(H*0.12)+' l'+(W*0.012)+','+(H*0.12)+' Z" fill="#6E8A55"/>';}
+  }
+  return s+'</svg>';
+}
+document.querySelectorAll("[data-scene]").forEach(function(el){el.innerHTML=scene(el.dataset.scene, el.dataset.wide==="1");});
+
+/* free photographs from Wikimedia Commons; each slot tries its candidates in order and keeps the illustration if none loads */
+var PHOTOS={
+  road:["Pamir_Highway_-_Tajikistan.jpg","Pamir_Highway-1.jpg","Pamir_road_near_Kalaykhumb.jpg"],
+  pass:["From_Langar_to_Murghab_(30357439658).jpg","Ak-Baital_Pass.jpg","Border_Pamir_highway_China.jpg"],
+  river:["Into_the_Wakhan_Valley_(4)_(31528121094).jpg","Along_the_Afghan_border_(8)_(30886746896).jpg","Panj_river_landscape.jpg"],
+  lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg"],
+  lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg"],
+  city:["Dushanbe_Flagpole.jpg","Dushanbe_flagpole.jpg"],
+  village:["Chirtok,_Tajikistan_(17012025403).jpg"]
+};
+var used=[];
+function credit(name){
+  if(used.indexOf(name)>-1) return; used.push(name);
+  var box=document.getElementById("credit-links"), a=document.createElement("a");
+  a.href="https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(name);
+  a.target="_blank"; a.rel="noopener"; a.textContent=used.length;
+  if(box.childNodes.length) box.appendChild(document.createTextNode(" "));
+  box.appendChild(a); document.getElementById("credits").hidden=false;
+}
+document.querySelectorAll("[data-scene]").forEach(function(el){
+  var list=(PHOTOS[el.dataset.scene]||[]).slice(), w=el.dataset.wide==="1"?1920:1000;
+  if(!list.length) return;
+  var img=new Image(); img.className="ph"; img.alt=""; img.decoding="async";
+  if(el.dataset.wide!=="1") img.loading="lazy";
+  img.onload=function(){ if(img.naturalWidth>50){img.classList.add("ok"); credit(img.dataset.name);} };
+  img.onerror=function(){ var n=list.shift(); if(n){img.dataset.name=n; img.src="https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(n)+"?width="+w;} else img.remove(); };
+  el.appendChild(img); img.onerror();
+});
+</script>
+</body>
+</html>
