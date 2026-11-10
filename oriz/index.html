@@ -25,12 +25,13 @@
 :root{
   --bg:#F4EFE6; --surface:#FFFFFF; --ink:#1E2A2F; --muted:#5B666A; --line:#E2D9CA;
   --accent:#C4552C; --accent-ink:#FFFFFF; --accent-dark:#A54522; --lake:#2C7A80;
+  --fh:Manrope,system-ui,sans-serif; --fb:Manrope,system-ui,sans-serif;
   --r:14px; --r-sm:10px; --wrap:1180px; --pad:24px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
@@ -210,6 +211,121 @@ img.ph.ok{opacity:1}
   .mbar.on{transform:none}
   .mbar .btn{width:100%}
 }
+
+/* ===== layout variants (data-hero, data-tours, data-facts, data-theme, data-btn, data-order on <html>) ===== */
+h1,h2,h3,.brand,.fact b,.step::before{font-family:var(--fh)}
+main{display:flex;flex-direction:column}
+main>section{order:5}
+main>.hero{order:0}
+#contact{order:9}#faq{order:8}
+[data-order="A"] #routes{order:1}[data-order="A"] #why{order:2}[data-order="A"] #how{order:3}[data-order="A"] #about{order:4}
+[data-order="B"] #why{order:1}[data-order="B"] #routes{order:2}[data-order="B"] #about{order:3}[data-order="B"] #how{order:4}
+[data-order="C"] #about{order:1}[data-order="C"] #routes{order:2}[data-order="C"] #why{order:3}[data-order="C"] #how{order:4}
+[data-order="D"] #why{order:1}[data-order="D"] #routes{order:2}[data-order="D"] #how{order:3}[data-order="D"] #about{order:4}
+
+/* buttons and corners */
+[data-btn="pill"]{--r:24px;--r-sm:18px}
+[data-btn="pill"] .btn{border-radius:999px}
+[data-btn="square"]{--r:4px;--r-sm:4px}
+[data-btn="square"] .btn{border-radius:4px;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+[data-btn="square"] .mark{border-radius:6px}
+
+/* HERO: split (text panel + photo) */
+[data-hero="split"] .hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--ink);min-height:calc(100svh - 68px)}
+[data-hero="split"] .hero::after{display:none}
+[data-hero="split"] .hero .art{position:relative;inset:auto;order:2}
+[data-hero="split"] .hero .wrap{order:1;align-self:center;max-width:640px;margin:0 0 0 auto;padding:64px 48px 64px var(--pad)}
+[data-hero="split"] .hero h1{font-size:clamp(34px,4.2vw,58px);max-width:16ch}
+[data-hero="split"] .hero .kicker,[data-hero="split"] .hero h1,[data-hero="split"] .hero p{text-shadow:none}
+[data-hero="split"] .hero .kicker{color:var(--accent);filter:brightness(1.35);opacity:1}
+
+/* HERO: centered over photo */
+[data-hero="center"] .hero{align-items:center;text-align:center}
+[data-hero="center"] .hero::after{background:rgba(14,20,24,.52)}
+[data-hero="center"] .hero .wrap{display:flex;flex-direction:column;align-items:center;padding:60px var(--pad)}
+[data-hero="center"] .hero h1{max-width:20ch;font-size:clamp(34px,5vw,66px)}
+[data-hero="center"] .hero p{margin-left:auto;margin-right:auto}
+[data-hero="center"] .hero .actions{justify-content:center}
+
+/* HERO: framed photo with text below */
+[data-hero="framed"] .hero{display:block;min-height:0;color:var(--ink);background:var(--bg);padding:22px 0 0}
+[data-hero="framed"] .hero::after{display:none}
+[data-hero="framed"] .hero .art{position:relative;inset:auto;height:min(50vh,520px);min-height:320px;max-width:calc(var(--wrap) - 2*var(--pad));margin:0 auto;border-radius:28px;overflow:hidden}
+[data-hero="framed"] .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:12px 48px;align-items:end;padding-top:40px;padding-bottom:24px}
+[data-hero="framed"] .hero .kicker{grid-column:1/-1;color:var(--accent);margin:0}
+[data-hero="framed"] .hero h1{font-size:clamp(32px,3.6vw,52px);max-width:none}
+[data-hero="framed"] .hero .wrap{padding-top:28px}
+[data-hero="framed"] .hero p{margin:0 0 6px;color:var(--muted);opacity:1}
+[data-hero="framed"] .hero .actions{grid-column:1/-1;margin-top:18px}
+[data-hero="framed"] .hero .kicker,[data-hero="framed"] .hero h1,[data-hero="framed"] .hero p{text-shadow:none}
+[data-hero="framed"] .hero .btn-ghost{border-color:var(--ink);color:var(--ink)}
+[data-hero="framed"] .hero .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* TOURS: list rows */
+[data-tours="list"] .tours{grid-template-columns:1fr;gap:18px}
+[data-tours="list"] .tour,[data-tours="list"] .tour.wide{grid-column:auto;flex-direction:row}
+[data-tours="list"] .tour .pic{width:42%;flex:none;aspect-ratio:auto;min-height:250px}
+[data-tours="list"] .tour .body{padding:30px 32px;justify-content:center}
+[data-tours="list"] .tour h3{font-size:26px}
+
+/* TOURS: text over photo */
+[data-tours="overlay"] .tour{position:relative;min-height:440px;border:0;color:#fff;justify-content:flex-end;background:#222}
+[data-tours="overlay"] .tour .pic{position:absolute;inset:0;aspect-ratio:auto}
+[data-tours="overlay"] .tour .pic::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.78) 100%)}
+[data-tours="overlay"] .tour .body{position:relative;z-index:2;flex:none}
+[data-tours="overlay"] .tour p{color:rgba(255,255,255,.86)}
+[data-tours="overlay"] .tour .dur{color:#fff;opacity:.85}
+[data-tours="overlay"] .tour .ask,[data-tours="overlay"] .tour .price{color:#fff}
+[data-tours="overlay"] .tour .ask{background-image:linear-gradient(#fff,#fff)}
+
+/* FACTS: strip with dividers */
+[data-facts="strip"] .facts{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+[data-facts="strip"] .fact{background:none;border:0;border-radius:0;border-right:1px solid var(--line);padding:30px 26px}
+[data-facts="strip"] .fact:last-child{border-right:0}
+/* FACTS: dark band with big numbers */
+[data-facts="band"] #why{background:var(--deep,#14202A);color:#fff}
+[data-facts="band"] #why h2{color:#fff}
+[data-facts="band"] .fact{background:none;border:0;border-left:3px solid var(--accent);border-radius:0;padding:6px 0 6px 20px}
+[data-facts="band"] .fact b{font-size:34px;color:#fff}
+[data-facts="band"] .fact span{color:#C6D0D3}
+
+/* THEME: dark page */
+[data-theme="dark"]{--bg:#111A1D;--surface:#19242A;--line:#28363C;--muted:#9FB0B5;--ink:#ECF1F2;--deep:#0A1012}
+[data-theme="dark"] .dark{background:var(--deep)}
+[data-theme="dark"] header{background:#111A1D}
+[data-theme="dark"] .mark{color:#111A1D}
+[data-theme="dark"] .lang button[aria-pressed="true"]{color:#111A1D}
+[data-theme="dark"] .about p{color:#C9D4D7}
+[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{background:#0F171A;border-color:#2E3D43;color:#ECF1F2}
+[data-theme="dark"] .result{background:#12302E;border-color:#1F4D49}
+[data-theme="dark"] .btn-ghost:hover{color:#111A1D}
+[data-theme="dark"] .mbar{background:rgba(17,26,29,.96)}
+[data-theme="dark"] h1,[data-theme="dark"] h2{text-transform:uppercase;letter-spacing:-.005em}
+
+@media (max-width:1024px){
+  [data-hero="split"] .hero{grid-template-columns:1fr}
+  [data-hero="split"] .hero .art{order:0;height:44vh;min-height:280px}
+  [data-hero="split"] .hero .wrap{margin:0;max-width:none;padding:40px var(--pad) 48px}
+  [data-hero="framed"] .hero .wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  [data-hero="framed"] .hero{padding-top:12px}
+  [data-hero="framed"] .hero .art{height:42vh;min-height:260px;margin:0 12px;border-radius:20px}
+  [data-hero="framed"] .hero .wrap{padding-top:26px}
+  [data-hero="framed"] .hero h1,[data-hero="split"] .hero h1,[data-hero="center"] .hero h1{font-size:31px}
+  [data-tours="list"] .tour,[data-tours="list"] .tour.wide{flex-direction:column}
+  [data-tours="list"] .tour .pic{width:100%;min-height:0;aspect-ratio:16/10}
+  [data-tours="list"] .tour .body{padding:22px}
+  [data-tours="overlay"] .tour{min-height:380px}
+  [data-facts="strip"] .fact{border-right:0;border-bottom:1px solid var(--line);padding:18px 4px}
+  [data-facts="strip"] .facts{grid-template-columns:1fr 1fr;border-bottom:0}
+  [data-facts="band"] .fact b{font-size:20px}
+  [data-facts="band"] .fact{padding-left:12px}
+  .fact{min-width:0}
+  .fact b{overflow-wrap:anywhere}
+  [data-theme="dark"] h1,[data-theme="dark"] h2{text-transform:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -267,7 +383,7 @@ img.ph.ok{opacity:1}
     </div>
   </section>
 
-  <section id="routes" aria-labelledby="routes-h" style="padding-top:0">
+  <section id="routes" aria-labelledby="routes-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="routes-h" data-i18n="routes_h">Routes travelers ask for most</h2>
@@ -321,7 +437,7 @@ img.ph.ok{opacity:1}
     </div>
   </section>
 
-  <section id="faq" aria-labelledby="faq-h" style="padding-top:0">
+  <section id="faq" aria-labelledby="faq-h">
     <div class="wrap">
       <div class="sec-head"><h2 id="faq-h" data-i18n="faq_h">Questions before you book</h2></div>
       <div class="faq">
@@ -534,6 +650,7 @@ var PAL={
   lakes:{sky:["#CFE5E5","#EEF2EC"],sun:"#FFFFFF",r:["#B6CBC7","#8AA39C","#5F7B72","#3D554E"],snow:1},
   lake:{sky:["#BFDCE0","#F0EBDD"],sun:"#FFFDF5",r:["#C7C1B2","#9C9584","#6E6A5C","#45443B"]},
   city:{sky:["#F2D7B6","#F6EBDD"],sun:"#FFF6E8",r:["#D6C6B0","#B9A68D"]},
+  silk:{sky:["#F6D3AE","#EFC9A0"],sun:"#FFF1DF",r:["#D8B48E","#B98E66","#8E6A4C","#5E4634"]},
   village:{sky:["#E4D3BD","#F3E9DA"],sun:"#FFF8EC",r:["#C9B49A","#9D8670","#6F5D4E","#463B33"],snow:1}
 };
 function scene(kind,wide){
@@ -581,10 +698,11 @@ var PHOTOS={
   road:["Pamir_Highway_-_Tajikistan.jpg","Pamir_Highway-1.jpg","Pamir_road_near_Kalaykhumb.jpg"],
   pass:["From_Langar_to_Murghab_(30357439658).jpg","Ak-Baital_Pass.jpg","Border_Pamir_highway_China.jpg"],
   river:["Into_the_Wakhan_Valley_(4)_(31528121094).jpg","Along_the_Afghan_border_(8)_(30886746896).jpg","Panj_river_landscape.jpg"],
-  lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg"],
-  lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg"],
+  lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg","Nurek_Reservoir,_Tajikistan.jpg"],
+  silk:["Panjakent_7-4-19.jpg","Pamir_Highway_Ii_(185890299).jpeg"],
+  lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg","Nurek_Reservoir,_Tajikistan.jpg"],
   city:["Dushanbe_Flagpole.jpg","Dushanbe_flagpole.jpg"],
-  village:["Chirtok,_Tajikistan_(17012025403).jpg"]
+  village:["Temple_Vrang.jpg","Panj_river_landscape.jpg"]
 };
 var used=[];
 function credit(name){
@@ -596,7 +714,10 @@ function credit(name){
   box.appendChild(a); document.getElementById("credits").hidden=false;
 }
 document.querySelectorAll("[data-scene]").forEach(function(el){
-  var list=(PHOTOS[el.dataset.scene]||[]).slice(), w=el.dataset.wide==="1"?1920:1000;
+  var cf=window.CFG||{}, ph=cf.photo||{}, rot=cf.rot||0, base=(PHOTOS[el.dataset.scene]||[]).slice();
+  if(base.length>1){var k=rot%base.length; base=base.slice(k).concat(base.slice(0,k));}
+  var own=el.dataset.wide==="1"?ph.hero:(el.closest(".about")?ph.about:null);
+  var list=(own||[]).concat(base), w=el.dataset.wide==="1"?1920:1000;
   if(!list.length) return;
   var img=new Image(); img.className="ph"; img.alt=""; img.decoding="async";
   if(el.dataset.wide!=="1") img.loading="lazy";

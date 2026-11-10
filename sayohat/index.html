@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-type="service">
+<html lang="en" data-type="service" data-hero="framed" data-tours="grid" data-facts="band" data-theme="light" data-btn="pill" data-order="A">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,18 +13,19 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <!-- DEMO for Sayohat Travel. Facts are taken from the company's own public profiles; durations and contacts to be confirmed. -->
 <style>
 :root{
   --bg:#F4F1EA; --surface:#FFFFFF; --ink:#1E2B2A; --muted:#5B666A; --line:#E2D9CA;
   --accent:#D35A2E; --accent-ink:#FFFFFF; --accent-dark:#B04922; --lake:#1F7F86;
+  --fh:'Comfortaa',system-ui,sans-serif; --fb:'Nunito',system-ui,sans-serif;
   --r:14px; --r-sm:10px; --wrap:1180px; --pad:24px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:Manrope,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6}
+body{font-family:var(--fb);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.6}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
@@ -205,6 +206,122 @@ img.ph.ok{opacity:1}
   .mbar.on{transform:none}
   .mbar .btn{width:100%}
 }
+
+/* ===== layout variants (data-hero, data-tours, data-facts, data-theme, data-btn, data-order on <html>) ===== */
+h1,h2,h3,.brand,.fact b,.step::before{font-family:var(--fh)}
+main{display:flex;flex-direction:column}
+main>section{order:5}
+main>.hero{order:0}
+#contact{order:9}#faq{order:8}
+[data-order="A"] #routes{order:1}[data-order="A"] #why{order:2}[data-order="A"] #how{order:3}[data-order="A"] #about{order:4}
+[data-order="B"] #why{order:1}[data-order="B"] #routes{order:2}[data-order="B"] #about{order:3}[data-order="B"] #how{order:4}
+[data-order="C"] #about{order:1}[data-order="C"] #routes{order:2}[data-order="C"] #why{order:3}[data-order="C"] #how{order:4}
+[data-order="D"] #why{order:1}[data-order="D"] #routes{order:2}[data-order="D"] #how{order:3}[data-order="D"] #about{order:4}
+
+/* buttons and corners */
+[data-btn="pill"]{--r:24px;--r-sm:18px}
+[data-btn="pill"] .btn{border-radius:999px}
+[data-btn="square"]{--r:4px;--r-sm:4px}
+[data-btn="square"] .btn{border-radius:4px;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+[data-btn="square"] .mark{border-radius:6px}
+
+/* HERO: split (text panel + photo) */
+[data-hero="split"] .hero{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--ink);min-height:calc(100svh - 68px)}
+[data-hero="split"] .hero::after{display:none}
+[data-hero="split"] .hero .art{position:relative;inset:auto;order:2}
+[data-hero="split"] .hero .wrap{order:1;align-self:center;max-width:640px;margin:0 0 0 auto;padding:64px 48px 64px var(--pad)}
+[data-hero="split"] .hero h1{font-size:clamp(34px,4.2vw,58px);max-width:16ch}
+[data-hero="split"] .hero .kicker,[data-hero="split"] .hero h1,[data-hero="split"] .hero p{text-shadow:none}
+[data-hero="split"] .hero .kicker{color:var(--accent);filter:brightness(1.35);opacity:1}
+
+/* HERO: centered over photo */
+[data-hero="center"] .hero{align-items:center;text-align:center}
+[data-hero="center"] .hero::after{background:rgba(14,20,24,.52)}
+[data-hero="center"] .hero .wrap{display:flex;flex-direction:column;align-items:center;padding:60px var(--pad)}
+[data-hero="center"] .hero h1{max-width:20ch;font-size:clamp(34px,5vw,66px)}
+[data-hero="center"] .hero p{margin-left:auto;margin-right:auto}
+[data-hero="center"] .hero .actions{justify-content:center}
+
+/* HERO: framed photo with text below */
+[data-hero="framed"] .hero{display:block;min-height:0;color:var(--ink);background:var(--bg);padding:22px 0 0}
+[data-hero="framed"] .hero::after{display:none}
+[data-hero="framed"] .hero .art{position:relative;inset:auto;height:min(50vh,520px);min-height:320px;max-width:calc(var(--wrap) - 2*var(--pad));margin:0 auto;border-radius:28px;overflow:hidden}
+[data-hero="framed"] .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:12px 48px;align-items:end;padding-top:40px;padding-bottom:24px}
+[data-hero="framed"] .hero .kicker{grid-column:1/-1;color:var(--accent);margin:0}
+[data-hero="framed"] .hero h1{font-size:clamp(32px,3.6vw,52px);max-width:none}
+[data-hero="framed"] .hero .wrap{padding-top:28px}
+[data-hero="framed"] .hero p{margin:0 0 6px;color:var(--muted);opacity:1}
+[data-hero="framed"] .hero .actions{grid-column:1/-1;margin-top:18px}
+[data-hero="framed"] .hero .kicker,[data-hero="framed"] .hero h1,[data-hero="framed"] .hero p{text-shadow:none}
+[data-hero="framed"] .hero .btn-ghost{border-color:var(--ink);color:var(--ink)}
+[data-hero="framed"] .hero .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* TOURS: list rows */
+[data-tours="list"] .tours{grid-template-columns:1fr;gap:18px}
+[data-tours="list"] .tour,[data-tours="list"] .tour.wide{grid-column:auto;flex-direction:row}
+[data-tours="list"] .tour .pic{width:42%;flex:none;aspect-ratio:auto;min-height:250px}
+[data-tours="list"] .tour .body{padding:30px 32px;justify-content:center}
+[data-tours="list"] .tour h3{font-size:26px}
+
+/* TOURS: text over photo */
+[data-tours="overlay"] .tour{position:relative;min-height:440px;border:0;color:#fff;justify-content:flex-end;background:#222}
+[data-tours="overlay"] .tour .pic{position:absolute;inset:0;aspect-ratio:auto}
+[data-tours="overlay"] .tour .pic::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,0) 25%,rgba(0,0,0,.78) 100%)}
+[data-tours="overlay"] .tour .body{position:relative;z-index:2;flex:none}
+[data-tours="overlay"] .tour p{color:rgba(255,255,255,.86)}
+[data-tours="overlay"] .tour .dur{color:#fff;opacity:.85}
+[data-tours="overlay"] .tour .ask,[data-tours="overlay"] .tour .price{color:#fff}
+[data-tours="overlay"] .tour .price{font-size:18px;font-weight:800;color:var(--ink)}
+.tour .ask{background-image:linear-gradient(#fff,#fff)}
+
+/* FACTS: strip with dividers */
+[data-facts="strip"] .facts{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+[data-facts="strip"] .fact{background:none;border:0;border-radius:0;border-right:1px solid var(--line);padding:30px 26px}
+[data-facts="strip"] .fact:last-child{border-right:0}
+/* FACTS: dark band with big numbers */
+[data-facts="band"] #why{background:var(--deep,#14202A);color:#fff}
+[data-facts="band"] #why h2{color:#fff}
+[data-facts="band"] .fact{background:none;border:0;border-left:3px solid var(--accent);border-radius:0;padding:6px 0 6px 20px}
+[data-facts="band"] .fact b{font-size:34px;color:#fff}
+[data-facts="band"] .fact span{color:#C6D0D3}
+
+/* THEME: dark page */
+[data-theme="dark"]{--bg:#111A1D;--surface:#19242A;--line:#28363C;--muted:#9FB0B5;--ink:#ECF1F2;--deep:#0A1012}
+[data-theme="dark"] .dark{background:var(--deep)}
+[data-theme="dark"] header{background:#111A1D}
+[data-theme="dark"] .mark{color:#111A1D}
+[data-theme="dark"] .lang button[aria-pressed="true"]{color:#111A1D}
+[data-theme="dark"] .about p{color:#C9D4D7}
+[data-theme="dark"] input,[data-theme="dark"] select,[data-theme="dark"] textarea{background:#0F171A;border-color:#2E3D43;color:#ECF1F2}
+[data-theme="dark"] .result{background:#12302E;border-color:#1F4D49}
+[data-theme="dark"] .btn-ghost:hover{color:#111A1D}
+[data-theme="dark"] .mbar{background:rgba(17,26,29,.96)}
+[data-theme="dark"] h1,[data-theme="dark"] h2{text-transform:uppercase;letter-spacing:-.005em}
+
+@media (max-width:1024px){
+  [data-hero="split"] .hero{grid-template-columns:1fr}
+  [data-hero="split"] .hero .art{order:0;height:44vh;min-height:280px}
+  [data-hero="split"] .hero .wrap{margin:0;max-width:none;padding:40px var(--pad) 48px}
+  [data-hero="framed"] .hero .wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  [data-hero="framed"] .hero{padding-top:12px}
+  [data-hero="framed"] .hero .art{height:42vh;min-height:260px;margin:0 12px;border-radius:20px}
+  [data-hero="framed"] .hero .wrap{padding-top:26px}
+  [data-hero="framed"] .hero h1,[data-hero="split"] .hero h1,[data-hero="center"] .hero h1{font-size:31px}
+  [data-tours="list"] .tour,[data-tours="list"] .tour.wide{flex-direction:column}
+  [data-tours="list"] .tour .pic{width:100%;min-height:0;aspect-ratio:16/10}
+  [data-tours="list"] .tour .body{padding:22px}
+  [data-tours="overlay"] .tour{min-height:380px}
+  [data-facts="strip"] .fact{border-right:0;border-bottom:1px solid var(--line);padding:18px 4px}
+  [data-facts="strip"] .facts{grid-template-columns:1fr 1fr;border-bottom:0}
+  [data-facts="band"] .fact b{font-size:20px}
+  [data-facts="band"] .fact{padding-left:12px}
+  .fact{min-width:0}
+  .fact b{overflow-wrap:anywhere}
+  [data-theme="dark"] h1,[data-theme="dark"] h2{text-transform:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -257,7 +374,7 @@ img.ph.ok{opacity:1}
     </div>
   </section>
 
-  <section id="routes" aria-labelledby="routes-h" style="padding-top:0">
+  <section id="routes" aria-labelledby="routes-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="routes-h" data-i18n="routes_h">Routes travelers ask for most</h2>
@@ -290,7 +407,7 @@ img.ph.ok{opacity:1}
     </div>
   </section>
 
-  <section id="faq" aria-labelledby="faq-h" style="padding-top:0">
+  <section id="faq" aria-labelledby="faq-h">
     <div class="wrap">
       <div class="sec-head"><h2 id="faq-h" data-i18n="faq_h">Questions before you book</h2></div>
       <div class="faq">
@@ -348,7 +465,7 @@ var CLIENT_TELEGRAM = "sayohat";
 var CLIENT_EMAIL = "hello@sayohat.example";
 
 var T = {"en": {"skip": "Skip to content", "nav_routes": "Routes", "nav_how": "How it works", "nav_about": "About", "nav_faq": "FAQ", "nav_contact": "Contact", "btn_plan": "Plan my trip on WhatsApp", "btn_routes": "See the routes", "why_h": "Why travel with Sayohat Travel", "routes_h": "Routes travelers ask for most", "routes_p": "Each tour can be changed. Length and stops fit your dates; the price depends on group size and season.", "ask": "Ask the price", "how_h": "How a trip is planned", "how_p": "Three messages and your route is ready.", "s1": "Write on WhatsApp", "s1p": "Tell us your dates, how many people are coming and what you want to see.", "s2": "Get a route and a price", "s2p": "You receive a day-by-day plan and the full price for your group.", "s3": "Travel", "s3p": "Your guide and driver meet you in Dushanbe and stay with you on the road.", "faq_h": "Questions before you book", "q1": "When is the best time for the Pamir Highway?", "a1": "From June to September the high passes are usually open and the weather is stable. The Fann Mountains are good from May to October.", "q2": "Do I need a special permit for the Pamirs?", "a2": "Yes. The Pamirs (GBAO) need a separate permit in addition to your visa. Ask about it when you plan the route.", "q3": "How do I get a visa?", "a3": "Many travelers apply for Tajikistan's e-Visa online before the trip. The rules depend on your passport, so check them for your country.", "q4": "Can the route be changed?", "a4": "Yes. Tell us your dates and interests, and the days, stops and pace are set around you.", "contact_h": "Plan your trip", "contact_p": "Fill in a few details and send them to Sayohat Travel on WhatsApp.", "l_name": "Your name", "e_name": "Please enter your name", "l_dates": "Travel dates", "ph_dates": "e.g. 10–20 July", "l_people": "Number of people", "l_route": "Route", "o_none": "Not sure yet", "l_msg": "Message", "ph_msg": "What would you like to see?", "send": "Send on WhatsApp", "note": "Your message opens in WhatsApp. Nothing is sent from this page.", "ready": "Your message is ready:", "open_wa": "Open WhatsApp", "f_line": "Tours in Tajikistan · Dushanbe", "demo": "Demo site prepared for Sayohat Travel. Texts, durations and contacts are to be confirmed; the photos will be replaced with your own.", "mbar": "Message on WhatsApp", "msg_hello": "Hello Sayohat Travel! I found your website.", "msg_name": "Name", "msg_dates": "Dates", "msg_people": "People", "msg_route": "Route", "photos": "Photos: Wikimedia Commons, Creative Commons licences, authors on the file pages:", "about_h": "About us", "from_": "from", "brand": "Sayohat Travel", "f_name": "Sayohat Travel", "kicker": "Since 2016 · Tajikistan and abroad", "h1": "Hiking and car tours in Tajikistan for any budget", "hero_p": "Sayohat Travel has worked since 2016. We plan hiking and car tours across Tajikistan with experienced drivers, book flights and arrange holidays abroad.", "about_p1": "Sayohat Travel was established in 2016. We help travelers choose the right trip in Tajikistan or abroad, for any budget.", "about_p2": "For Tajikistan we offer mountain hikes and car tours: our experienced drivers take you to the sights, hidden corners and the best viewpoints.", "title": "Sayohat Travel · Hiking and car tours in Tajikistan for any budget", "fb0": "Since 2016", "fs0": "ten years of trips", "fb1": "Car tours", "fs1": "experienced drivers", "fb2": "Hiking", "fs2": "mountain routes", "fb3": "Flights", "fs3": "tickets to Tajikistan and abroad", "t3": "Fann Mountains and Seven Lakes", "t3d": "3–5 days", "t3p": "Iskanderkul, the Seven Lakes near Panjakent and treks in the Fann range.", "t1": "Pamir Highway", "t1d": "10–14 days", "t1p": "Dushanbe to Khorog, the Wakhan Valley, Murghab and on to Osh. Passes up to 4,655 m and nights in Pamiri homestays.", "t4": "Iskanderkul day trip", "t4d": "1 day", "t4p": "From Dushanbe over the Anzob pass to Iskanderkul lake and the waterfall nearby. Back the same evening.", "t6": "Tajikistan and Uzbekistan", "t6d": "8–12 days", "t6p": "Dushanbe, the Fann Mountains and Panjakent, then across the border to Samarkand and Bukhara."}, "ru": {"skip": "Перейти к содержанию", "nav_routes": "Маршруты", "nav_how": "Как это работает", "nav_about": "О нас", "nav_faq": "Вопросы", "nav_contact": "Контакты", "btn_plan": "Спланировать поездку в WhatsApp", "btn_routes": "Смотреть маршруты", "why_h": "Почему Sayohat Travel", "routes_h": "Маршруты, о которых спрашивают чаще всего", "routes_p": "Каждый тур можно изменить. Длительность и остановки подстраиваются под ваши даты, цена зависит от размера группы и сезона.", "ask": "Узнать цену", "how_h": "Как планируется поездка", "how_p": "Три сообщения, и маршрут готов.", "s1": "Напишите в WhatsApp", "s1p": "Напишите даты, сколько вас и что хотите увидеть.", "s2": "Получите маршрут и цену", "s2p": "Вы получаете план по дням и полную цену для вашей группы.", "s3": "Путешествуйте", "s3p": "Гид и водитель встречают вас в Душанбе и сопровождают всю дорогу.", "faq_h": "Вопросы перед бронированием", "q1": "Когда лучше ехать по Памирскому тракту?", "a1": "С июня по сентябрь высокие перевалы обычно открыты и погода стабильная. В Фанские горы хорошо ехать с мая по октябрь.", "q2": "Нужно ли специальное разрешение на Памир?", "a2": "Да. Для поездки на Памир (ГБАО) кроме визы нужен отдельный пропуск. Спросите о нём, когда будете планировать маршрут.", "q3": "Как получить визу?", "a3": "Многие путешественники заранее оформляют электронную визу Таджикистана онлайн. Правила зависят от паспорта, поэтому проверьте их для своей страны.", "q4": "Можно ли изменить маршрут?", "a4": "Да. Напишите даты и интересы, и дни, остановки и темп подберут под вас.", "contact_h": "Спланируйте поездку", "contact_p": "Заполните несколько полей и отправьте Sayohat Travel в WhatsApp.", "l_name": "Ваше имя", "e_name": "Пожалуйста, введите имя", "l_dates": "Даты поездки", "ph_dates": "например, 10–20 июля", "l_people": "Количество человек", "l_route": "Маршрут", "o_none": "Пока не знаю", "l_msg": "Сообщение", "ph_msg": "Что вы хотели бы увидеть?", "send": "Отправить в WhatsApp", "note": "Сообщение откроется в WhatsApp. С этой страницы ничего не отправляется.", "ready": "Сообщение готово:", "open_wa": "Открыть WhatsApp", "f_line": "Туры по Таджикистану · Душанбе", "demo": "Демо-сайт, подготовленный для Sayohat Travel. Тексты, сроки и контакты нужно подтвердить; фото заменятся вашими.", "mbar": "Написать в WhatsApp", "msg_hello": "Здравствуйте! Нашёл(ла) ваш сайт.", "msg_name": "Имя", "msg_dates": "Даты", "msg_people": "Человек", "msg_route": "Маршрут", "photos": "Фото: Wikimedia Commons, лицензии Creative Commons, авторы на страницах файлов:", "about_h": "О компании", "from_": "от", "brand": "Sayohat Travel", "f_name": "Sayohat Travel", "kicker": "С 2016 года · Таджикистан и за рубежом", "h1": "Пешие и автомобильные туры по Таджикистану на любой бюджет", "hero_p": "Sayohat Travel работает с 2016 года. Мы организуем пешие и автотуры по Таджикистану с опытными водителями, продаём авиабилеты и подбираем отдых за рубежом.", "about_p1": "Sayohat Travel основано в 2016 году. Помогаем выбрать поездку по Таджикистану или за границу на любой бюджет.", "about_p2": "По Таджикистану предлагаем походы в горы и автотуры: опытные водители отвезут вас к достопримечательностям, малоизвестным местам и лучшим видам.", "title": "Sayohat Travel · Пешие и автомобильные туры по Таджикистану на любой бюджет", "fb0": "С 2016 года", "fs0": "десять лет поездок", "fb1": "Автотуры", "fs1": "опытные водители", "fb2": "Походы", "fs2": "маршруты в горах", "fb3": "Авиабилеты", "fs3": "в Таджикистан и за рубеж", "t3": "Фанские горы и Семь озёр", "t3d": "3–5 дней", "t3p": "Искандеркуль, Семь озёр возле Пенджикента и треки в Фанских горах.", "t1": "Памирский тракт", "t1d": "10–14 дней", "t1p": "Душанбе, Хорог, Ваханская долина, Мургаб и дальше до Оша. Перевалы до 4655 м и ночёвки в памирских домах.", "t4": "Искандеркуль за один день", "t4d": "1 день", "t4p": "Из Душанбе через перевал Анзоб к озеру Искандеркуль и водопаду рядом с ним. Вечером обратно.", "t6": "Таджикистан и Узбекистан", "t6d": "8–12 дней", "t6p": "Душанбе, Фанские горы и Пенджикент, затем через границу в Самарканд и Бухару."}, "tg": {"skip": "Гузаштан ба мундариҷа", "nav_routes": "Масирҳо", "nav_how": "Чӣ тавр кор мекунад", "nav_about": "Дар бораи мо", "nav_faq": "Саволҳо", "nav_contact": "Тамос", "btn_plan": "Сафарро дар WhatsApp ба нақша гиред", "btn_routes": "Масирҳоро бинед", "why_h": "Чаро Sayohat Travel", "routes_h": "Масирҳое, ки сайёҳон бештар мепурсанд", "routes_p": "Ҳар сафарро тағйир додан мумкин аст. Давомнокӣ ва истгоҳҳо ба санаҳои шумо мувофиқ карда мешаванд, нарх аз шумораи гурӯҳ ва мавсим вобаста аст.", "ask": "Нархро пурсед", "how_h": "Сафар чӣ тавр ба нақша гирифта мешавад", "how_p": "Се паём ва масири шумо тайёр аст.", "s1": "Дар WhatsApp нависед", "s1p": "Санаҳо, шумораи одамон ва он чиро, ки дидан мехоҳед, нависед.", "s2": "Масир ва нархро гиред", "s2p": "Шумо нақшаи рӯз ба рӯз ва нархи пурраро барои гурӯҳатон мегиред.", "s3": "Сафар кунед", "s3p": "Роҳбалад ва ронанда шуморо дар Душанбе пешвоз гирифта, дар тамоми роҳ ҳамроҳатон мебошанд.", "faq_h": "Саволҳо пеш аз фармоиш", "q1": "Барои шоҳроҳи Помир кадом вақт беҳтар аст?", "a1": "Аз июн то сентябр ағбаҳои баланд одатан кушодаанд ва ҳаво устувор аст. Ба кӯҳҳои Фон аз май то октябр рафтан хуб аст.", "q2": "Барои Помир иҷозатномаи махсус лозим аст?", "a2": "Бале. Барои сафар ба Помир (ВМКБ) ба ғайр аз раводид иҷозатномаи алоҳида лозим аст. Дар бораи гирифтани он ҳамроҳи масир пурсед.", "q3": "Раводидро чӣ тавр гирам?", "a3": "Бисёр сайёҳон пеш аз сафар раводиди электронии Тоҷикистонро онлайн мегиранд. Қоидаҳо аз шиносномаи шумо вобастаанд, бинобар ин онҳоро барои кишвари худ санҷед.", "q4": "Масирро тағйир додан мумкин аст?", "a4": "Бале. Санаҳо ва хоҳишҳои худро нависед, рӯзҳо, истгоҳҳо ва суръат барои шумо интихоб карда мешаванд.", "contact_h": "Сафари худро ба нақша гиред", "contact_p": "Якчанд маълумотро пур кунед ва дар WhatsApp фиристед.", "l_name": "Номи шумо", "e_name": "Лутфан номатонро ворид кунед", "l_dates": "Санаҳои сафар", "ph_dates": "масалан, 10–20 июл", "l_people": "Шумораи одамон", "l_route": "Масир", "o_none": "Ҳоло намедонам", "l_msg": "Паём", "ph_msg": "Чиро дидан мехоҳед?", "send": "Дар WhatsApp фиристодан", "note": "Паём дар WhatsApp кушода мешавад. Аз ин саҳифа ҳеҷ чиз фиристода намешавад.", "ready": "Паёми шумо тайёр аст:", "open_wa": "WhatsApp-ро кушоед", "f_line": "Сафарҳо дар Тоҷикистон · Душанбе", "demo": "Сайти намунавӣ барои Sayohat Travel. Матнҳо, мӯҳлатҳо ва тамосҳо бояд тасдиқ шаванд; аксҳо бо аксҳои худи шумо иваз карда мешаванд.", "mbar": "Дар WhatsApp нависед", "msg_hello": "Салом! Сайти шуморо дидам.", "msg_name": "Ном", "msg_dates": "Санаҳо", "msg_people": "Нафар", "msg_route": "Масир", "photos": "Аксҳо: Wikimedia Commons, иҷозатномаҳои Creative Commons, муаллифон дар саҳифаҳои файлҳо:", "about_h": "Дар бораи мо", "from_": "аз", "brand": "Sayohat Travel", "f_name": "Sayohat Travel", "kicker": "Аз соли 2016 · Тоҷикистон ва хориҷа", "h1": "Сафарҳои пиёда ва автомобилӣ дар Тоҷикистон барои ҳар буҷа", "hero_p": "Sayohat Travel аз соли 2016 кор мекунад. Мо сафарҳои пиёда ва автомобилиро дар Тоҷикистон бо ронандагони ботаҷриба ташкил мекунем, чиптаҳои ҳавоӣ мефурӯшем ва истироҳат дар хориҷаро интихоб мекунем.", "about_p1": "Sayohat Travel соли 2016 таъсис ёфтааст. Мо дар интихоби сафар дар Тоҷикистон ё хориҷа барои ҳар буҷа кӯмак мекунем.", "about_p2": "Дар Тоҷикистон мо сайрҳои кӯҳӣ ва сафарҳои автомобилӣ пешниҳод мекунем: ронандагони ботаҷриба шуморо ба ҷойҳои диданбоб, гӯшаҳои камшинос ва манзараҳои беҳтарин мебаранд.", "title": "Sayohat Travel · Сафарҳои пиёда ва автомобилӣ дар Тоҷикистон барои ҳар буҷа", "fb0": "Аз соли 2016", "fs0": "даҳ соли сафарҳо", "fb1": "Сафари автомобилӣ", "fs1": "ронандагони ботаҷриба", "fb2": "Пиёдагардӣ", "fs2": "масирҳои кӯҳӣ", "fb3": "Чиптаҳо", "fs3": "ба Тоҷикистон ва хориҷа", "t3": "Кӯҳҳои Фон ва Ҳафткӯл", "t3d": "3–5 рӯз", "t3p": "Искандаркӯл, Ҳафткӯл дар наздикии Панҷакент ва пиёдагардӣ дар кӯҳҳои Фон.", "t1": "Шоҳроҳи Помир", "t1d": "10–14 рӯз", "t1p": "Аз Душанбе то Хоруғ, водии Вахон, Мурғоб ва то Ош. Ағбаҳо то 4655 м ва шабгузаронӣ дар хонаҳои помирӣ.", "t4": "Искандаркӯл дар як рӯз", "t4d": "1 рӯз", "t4p": "Аз Душанбе тавассути ағбаи Анзоб то кӯли Искандаркӯл ва шаршараи наздики он. Бегоҳ бозгашт.", "t6": "Тоҷикистон ва Ӯзбекистон", "t6d": "8–12 рӯз", "t6p": "Душанбе, кӯҳҳои Фон ва Панҷакент, сипас аз марз ба Самарқанд ва Бухоро."}};
-var CFG = {"tours": ["t3", "t1", "t4", "t6"], "scenes": {"t3": "lakes", "t1": "pass", "t4": "lake", "t6": "road"}, "prices": []};
+var CFG = {"photo": {"hero": ["Along_the_Afghan_border_(8)_(30886746896).jpg"], "about": ["Jamoat_Dahana,_Kulob,_Tajikistan._jpg.jpg"]}, "rot": 8, "tours": ["t3", "t1", "t4", "t6"], "scenes": {"t3": "lakes", "t1": "pass", "t4": "lake", "t6": "silk"}, "prices": []};
 (function(){
   var f=document.getElementById("facts"), i;
   for(i=0;i<4;i++){f.insertAdjacentHTML("beforeend",'<div class="fact"><b data-i18n="fb'+i+'"></b><span data-i18n="fs'+i+'"></span></div>');}
@@ -433,6 +550,7 @@ var PAL={
   lakes:{sky:["#CFE5E5","#EEF2EC"],sun:"#FFFFFF",r:["#B6CBC7","#8AA39C","#5F7B72","#3D554E"],snow:1},
   lake:{sky:["#BFDCE0","#F0EBDD"],sun:"#FFFDF5",r:["#C7C1B2","#9C9584","#6E6A5C","#45443B"]},
   city:{sky:["#F2D7B6","#F6EBDD"],sun:"#FFF6E8",r:["#D6C6B0","#B9A68D"]},
+  silk:{sky:["#F6D3AE","#EFC9A0"],sun:"#FFF1DF",r:["#D8B48E","#B98E66","#8E6A4C","#5E4634"]},
   village:{sky:["#E4D3BD","#F3E9DA"],sun:"#FFF8EC",r:["#C9B49A","#9D8670","#6F5D4E","#463B33"],snow:1}
 };
 function scene(kind,wide){
@@ -480,10 +598,11 @@ var PHOTOS={
   road:["Pamir_Highway_-_Tajikistan.jpg","Pamir_Highway-1.jpg","Pamir_road_near_Kalaykhumb.jpg"],
   pass:["From_Langar_to_Murghab_(30357439658).jpg","Ak-Baital_Pass.jpg","Border_Pamir_highway_China.jpg"],
   river:["Into_the_Wakhan_Valley_(4)_(31528121094).jpg","Along_the_Afghan_border_(8)_(30886746896).jpg","Panj_river_landscape.jpg"],
-  lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg"],
-  lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg"],
+  lakes:["Tajikistan-Famous-lakes_(26532537019)_(cropped).jpg","Nurek_Reservoir,_Tajikistan.jpg"],
+  silk:["Panjakent_7-4-19.jpg","Pamir_Highway_Ii_(185890299).jpeg"],
+  lake:["Iskanderkul.jpg","Iskanderkul_lake.jpg","Lake_Iskanderkul.jpg","Nurek_Reservoir,_Tajikistan.jpg"],
   city:["Dushanbe_Flagpole.jpg","Dushanbe_flagpole.jpg"],
-  village:["Chirtok,_Tajikistan_(17012025403).jpg"]
+  village:["Temple_Vrang.jpg","Panj_river_landscape.jpg"]
 };
 var used=[];
 function credit(name){
@@ -495,7 +614,10 @@ function credit(name){
   box.appendChild(a); document.getElementById("credits").hidden=false;
 }
 document.querySelectorAll("[data-scene]").forEach(function(el){
-  var list=(PHOTOS[el.dataset.scene]||[]).slice(), w=el.dataset.wide==="1"?1920:1000;
+  var cf=window.CFG||{}, ph=cf.photo||{}, rot=cf.rot||0, base=(PHOTOS[el.dataset.scene]||[]).slice();
+  if(base.length>1){var k=rot%base.length; base=base.slice(k).concat(base.slice(0,k));}
+  var own=el.dataset.wide==="1"?ph.hero:(el.closest(".about")?ph.about:null);
+  var list=(own||[]).concat(base), w=el.dataset.wide==="1"?1920:1000;
   if(!list.length) return;
   var img=new Image(); img.className="ph"; img.alt=""; img.decoding="async";
   if(el.dataset.wide!=="1") img.loading="lazy";
